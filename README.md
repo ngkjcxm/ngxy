@@ -34,7 +34,7 @@
 </action>
 ```
 
-使用了"*_*"，所以url的样式应该为"actionClass_method"，第一个参数为action类在spring容器的id，第二个参数为处理请求的方法名。
+使用了"\*_\*"，所以url的样式应该为"actionClass_method"，第一个参数为action类在spring容器的id，第二个参数为处理请求的方法名。
 
 ### 返回视图
 
