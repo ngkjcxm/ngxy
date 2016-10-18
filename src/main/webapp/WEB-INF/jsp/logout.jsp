@@ -10,19 +10,14 @@
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
+
 <html>
 <head>
     <title>Title</title>
     <base href=" <%=basePath%>">
 </head>
 <body>
-<h1>Hello</h1>
-<a href="login.jsp">登录</a> <br/>
-<a href="login_logout.action">退出登录</a>
-
-<br/><br/><br/><br/>
-
-<a href="resource_security.action">敏感资源，登录后才能访问</a> <br/>
-<a href="resource_simple.action">游客访问</a>
+    <h1>Logout</h1>
+    <a href="index.jsp">首页</a>
 </body>
 </html>

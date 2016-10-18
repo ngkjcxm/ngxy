@@ -7,12 +7,12 @@ import org.springframework.stereotype.Controller;
 
 /**
  * Created by 郭昌仑 on 2016/10/17.
- *
+ * <p>
  * 登录和注销
  */
 
 @Controller
-public class Login extends BaseAction{
+public class Login extends BaseAction {
 
     private String username;
     private String password;
@@ -21,12 +21,19 @@ public class Login extends BaseAction{
     private LoginService loginService;
 
     public String login() {
-        if(loginService.login(username, password)){
-            DIRECT_URL = "login_success";
-        }else{
-            DIRECT_URL = "login_error";
+        if (loginService.login(username, password)) {
+            return view("login_success");
+        } else {
+            return view("login_error");
         }
-        return SUCCESS;
+    }
+
+    /**
+     * 退出登录
+     */
+    public String logout() {
+        loginService.logout();
+        return view("logout");
     }
 
     public String getUsername() {
