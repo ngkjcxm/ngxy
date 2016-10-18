@@ -8,6 +8,7 @@
 
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <constant name="struts.i18n.encoding" value="utf-8"/>
+    <constant name="struts.devMode" value="false" />
 
     <package name="default" extends="struts-default" namespace="/">
 
