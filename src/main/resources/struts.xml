@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <include file="struts-default.xml"></include>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+
+    <package name="default" extends="struts-default" namespace="/">
+
+        <global-results>
+            <result name="login" type="redirect">/login.jsp</result>
+        </global-results>
+
+        <!-- 异常处理:用于处理shiro抛出的异常 -->
+        <global-exception-mappings>
+            <!-- 未登录 -->
+            <exception-mapping exception="org.apache.shiro.authz.UnauthenticatedException"
+                               result="login"/>
+            <!-- 没有权限访问 -->
+            <exception-mapping exception="org.apache.shiro.authz.UnauthorizedException"
+                               result="login" />
+        </global-exception-mappings>
+
+        <action name="*_*" class="{1}" method="{2}">
+            <result name="success">WEB-INF/jsp/${directUrl}.jsp</result>
+
+            <!-- 配置所有方法可访问，新版本struts2添加 -->
+            <allowed-methods>*</allowed-methods>
+        </action>
+    </package>
+
+</struts>
