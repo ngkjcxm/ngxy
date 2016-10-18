@@ -2,6 +2,7 @@ package com.sdut.ngxykjc.action;
 
 
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 /**

@@ -3,6 +3,7 @@ package com.sdut.ngxykjc.action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sdut.ngxykjc.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
  */
 
 @Controller
+@Scope("prototype")
 public class Login extends BaseAction {
 
     private String username;
