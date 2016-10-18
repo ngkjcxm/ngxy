@@ -64,3 +64,7 @@ public String login() {
     <allowed-methods>*</allowed-methods>
 </action>
 ```
+
+## Shiro使用
+
+待续......
