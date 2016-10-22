@@ -1,6 +1,7 @@
-package com.sdut.ngxykjc.action;
+package com.sdut.ngxykjc.action.home;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.sdut.ngxykjc.action.BaseAction;
 import com.sdut.ngxykjc.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;

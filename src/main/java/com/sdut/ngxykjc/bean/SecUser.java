@@ -1,19 +1,21 @@
 package com.sdut.ngxykjc.bean;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by gcl on 2016/10/17.
  */
 
 @Entity
-@Table(name = "sec_user")
 public class SecUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
+    @Column(nullable = false, unique = true)
     private String username;
 
     private String password;
@@ -26,13 +28,15 @@ public class SecUser {
     /**
      * 权限
      */
-    private String permission;
+    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "permissions")
+    private List<String> permissions = new ArrayList<>();
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -60,22 +64,22 @@ public class SecUser {
         this.role = role;
     }
 
-    public String getPermission() {
-        return permission;
+    public List<String> getPermissions() {
+        return permissions;
     }
 
-    public void setPermission(String permission) {
-        this.permission = permission;
+    public void setPermissions(List<String> permissions) {
+        this.permissions = permissions;
     }
 
     @Override
     public String toString() {
         return "SecUser{" +
                 "id=" + id +
-                ", name='" + username + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
-                ", permission='" + permission + '\'' +
+                ", permissions=" + permissions +
                 '}';
     }
 }

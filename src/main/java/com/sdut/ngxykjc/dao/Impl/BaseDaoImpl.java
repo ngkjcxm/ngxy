@@ -13,10 +13,9 @@ import java.util.List;
 
 /**
  * Created by 郭昌仑 on 2016/10/17.
- *
  */
 
-@Repository
+@Repository("baseDao")
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 
     @Override
@@ -28,21 +27,24 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
     public List<T> get(Class<T> entityClazz, String sql) {
         return getHibernateTemplate().executeWithNativeSession(new HibernateCallback<List<T>>() {
             public List<T> doInHibernate(Session session) {
-                return (List<T>)session.createSQLQuery(sql).addEntity(entityClazz).list();
+                return (List<T>) session.createSQLQuery(sql).addEntity(entityClazz).list();
             }
         });
     }
 
+    @Transactional
     @Override
     public void update(T t) {
         getHibernateTemplate().update(t);
     }
 
+    @Transactional
     @Override
     public void save(T t) {
         getHibernateTemplate().saveOrUpdate(t);
     }
 
+    @Transactional
     @Override
     public void delete(T t) {
         getHibernateTemplate().delete(t);

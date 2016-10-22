@@ -18,12 +18,12 @@ public class BaseDaoTest extends BaseJunitTest {
 
     @Test
     public void testHor(){
-        HorizontalProject pro = new HorizontalProject();
-        pro.setAuditor("张三");
-        pro.setConsignor("李四");
-        pro.setDirectorUnit("计算机");
-
-        baseDao.save(pro);
+//        HorizontalProject pro = new HorizontalProject();
+//        pro.setAuditor("张三");
+//        pro.setConsignor("李四");
+//        pro.setDirectorUnit("计算机");
+//
+//        baseDao.save(pro);
     }
 
 }

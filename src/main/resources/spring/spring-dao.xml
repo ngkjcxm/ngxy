@@ -12,7 +12,7 @@
     <!-- dataSource -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/gcl"/>
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/gcl?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="user" value="root"/>
         <property name="password" value="gcl"/>
         <!-- 初始化连接池大小 -->
@@ -36,22 +36,4 @@
     <!-- 扫描dao组件 -->
     <context:component-scan base-package="com.sdut.ngxykjc.dao"/>
 
-    <!-- 事务管理器 -->
-    <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-
-    <tx:advice id="txAdvice" transaction-manager="txManager">
-        <tx:attributes>
-            <tx:method name="save" propagation="REQUIRED"/>
-            <tx:method name="update" propagation="REQUIRED"/>
-            <tx:method name="get" read-only="true"/>
-            <tx:method name="delete" propagation="REQUIRED"/>
-        </tx:attributes>
-    </tx:advice>
-
-    <aop:config proxy-target-class="true">
-        <aop:pointcut id="pointcut" expression="execution(* com.sdut.ngxykjc.dao.Impl.*.*(..))"/>
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"/>
-    </aop:config>
 </beans>

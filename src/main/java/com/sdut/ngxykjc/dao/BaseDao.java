@@ -1,5 +1,7 @@
 package com.sdut.ngxykjc.dao;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**

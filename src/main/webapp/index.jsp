@@ -21,8 +21,8 @@
 <a href="login_logout.action">退出登录</a>
 
 <br/><br/><br/><br/>
-
-<a href="resource_security.action">敏感资源，登录后才能访问</a> <br/>
+<a href="resource_logined.action">敏感资源，登录后才能访问</a> <br/>
+<a href="resource_security.action">超敏感资源，super!</a> <br/>
 <a href="resource_simple.action">游客访问</a>
 </body>
 </html>
