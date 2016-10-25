@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * Created by gcl on 2016/10/22.
  */
-public interface UserDao<T> extends BaseDao<T> {
+public interface UserDao extends BaseDao {
 
     /**
      * 根据用户名获取权限
