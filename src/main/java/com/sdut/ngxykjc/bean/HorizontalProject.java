@@ -1,15 +1,18 @@
 package com.sdut.ngxykjc.bean;
 
+import org.hibernate.annotations.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.util.*;
 
 /**
  * Created by 郭昌仑 on 2016/10/18.
- *
+ * <p>
  * 横向课题
- *
  */
 @Entity
 @Table
@@ -66,13 +69,13 @@ public class HorizontalProject {
     /**
      * 有效期开始时间
      */
-    @DateTimeFormat(style = "yyyy-MM")
+    @Temporal(TemporalType.DATE)
     private Date indateFrom;
 
     /**
      * 有效期结束时间
      */
-    @DateTimeFormat(style = "yyyy-MM")
+    @Temporal(TemporalType.DATE)
     private Date indateTo;
 
     /**
@@ -129,7 +132,7 @@ public class HorizontalProject {
     /**
      * 登记时间
      */
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
     private Date registTime;
 
     /**

@@ -135,6 +135,13 @@
             <version>5.1.38</version>
         </dependency>
 
+        <!-- Gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.7</version>
+        </dependency>
+
         <!-- slf4j -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -169,7 +176,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -182,6 +188,7 @@
                 <configuration>
                     <port>8080</port>
                     <path>/ngxykjc</path>
+                    <contextReloadable>true</contextReloadable>
                 </configuration>
             </plugin>
 

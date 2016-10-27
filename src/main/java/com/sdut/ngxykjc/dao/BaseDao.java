@@ -25,9 +25,9 @@ public interface BaseDao {
     public void update(Object t);
 
     /**
-     * 插入数据
+     * 插入或更新数据
      */
-    public void save(Object t);
+    public void saveOrUpdate(Object t);
 
     /**
      * 删除数据

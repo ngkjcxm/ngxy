@@ -8,6 +8,9 @@
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <!-- 扫描service -->
-    <context:component-scan base-package="com.sdut.ngxykjc.service" />
+    <context:component-scan base-package="com.sdut.ngxykjc.service"/>
+
+    <!-- Gson -->
+    <bean class="com.google.gson.Gson"/>
 
 </beans>

@@ -36,7 +36,7 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
 
     @Transactional
     @Override
-    public void save(Object t) {
+    public void saveOrUpdate(Object t) {
         getHibernateTemplate().saveOrUpdate(t);
     }
 
