@@ -20,6 +20,11 @@ public interface BaseDao {
     public List<?> getBySql(Class<?> entityClazz, String sql);
 
     /**
+     * 根据HQL语句获取数据
+     */
+    public List<?> getByHql(String hql);
+
+    /**
      * 修改数据
      */
     public void update(Object t);

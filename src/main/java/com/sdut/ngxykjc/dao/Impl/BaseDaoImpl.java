@@ -28,6 +28,13 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
         });
     }
 
+    @Override
+    public List<?> getByHql(String hql) {
+        return (List<?>) getHibernateTemplate().executeWithNativeSession(session -> {
+            return session.createQuery(hql).list();
+        });
+    }
+
     @Transactional
     @Override
     public void update(Object t) {

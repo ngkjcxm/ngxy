@@ -11,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import java.util.List;
 
 /**
- * Created by gcl on 2016/10/27.
+ * Created by 郭昌仑 on 2016/10/27.
+ * <p>
+ * 处理和纵向课题有关的操作
  */
 
 @Controller

@@ -27,7 +27,7 @@ public class RoleDaoTest extends BaseJunitTest {
         role.setCreatePersonName("战三");
         role.setCreateTime(new Date());
         role.setRemark("权限允许编辑");
-        roleDao.save(role);
+        roleDao.saveOrUpdate(role);
     }
 
     @Test

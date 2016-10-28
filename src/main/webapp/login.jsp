@@ -17,10 +17,20 @@
 </head>
 <body>
 <h1>Login</h1>
-<form action="login_login.action" method="POST">
-    <input type="text" name="username">
-    <input type="password" name="password">
+<form action="userAction_login.action" method="POST">
+    <input type="text" name="user.username">
+    <input type="password" name="user.password">
     <button type="submit">提交</button>
 </form>
+
+<h1>修改密码</h1>
+<form action="userAction_change.action" method="POST">
+    <input type="text" name="oldPwd">
+    <input type="password" name="newPwd">
+    <button type="submit">提交</button>
+</form>
+
+<a href="userAction_logout.action">退出登录</a>
+
 </body>
 </html>
