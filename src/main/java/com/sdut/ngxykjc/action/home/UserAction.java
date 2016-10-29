@@ -28,18 +28,24 @@ public class UserAction extends BaseAction {
     public String login() {
         // 如果登录成功
         if (userService.login(user)) {
-            return view("loginOK");
+            return redirect("userAction_home.action");
         }
         return view("loginError");
     }
+
+    public String home(){
+        return view("home");
+    }
+
 
     /**
      * 退出
      */
     public String logout() {
         userService.logout();
-        return view("loginOK");
+        return view("index");
     }
+
 
     /********************修改密码方法***********************/
     private String oldPwd;

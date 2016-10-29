@@ -20,7 +20,7 @@ public class BaseAction extends ActionSupport {
     /**
      * 返回的视图名，用于被子类覆盖
      */
-    protected String DIRECT_URL;
+    private String DIRECT_URL;
 
     public String getDirectUrl() {
         return DIRECT_URL;
@@ -51,7 +51,7 @@ public class BaseAction extends ActionSupport {
     /**
      * 封装返回json的方法
      */
-    public void json(String json){
+    public void json(String json) {
         PrintWriter out = null;
         try {
             out = getResponse().getWriter();
@@ -59,7 +59,7 @@ public class BaseAction extends ActionSupport {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if(out != null){
+            if (out != null) {
                 out.close();
             }
         }
@@ -67,9 +67,21 @@ public class BaseAction extends ActionSupport {
 
     /**
      * 让子类返回此方法，用于隐藏DIRECT_URL
+     * <p>
+     * 默认resultType:dispatcher
      */
     public String view(String viewName) {
         DIRECT_URL = viewName;
         return SUCCESS;
+    }
+
+    /**
+     * 重定向到视图
+     * <p>
+     * resultType:redirect
+     */
+    public String redirect(String viewName) {
+        DIRECT_URL = viewName;
+        return "action";
     }
 }

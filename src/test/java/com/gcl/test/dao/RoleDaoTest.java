@@ -32,7 +32,7 @@ public class RoleDaoTest extends BaseJunitTest {
 
     @Test
     public void testGetByName() {
-        List<Role> list = roleDao.getByCreatePersonName("zhang三");
+        List<Role> list = roleDao.getByCreatePersonName("张三");
         System.out.println(list);
     }
 

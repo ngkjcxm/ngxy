@@ -20,8 +20,8 @@ public class UserServiceTest extends BaseJunitTest {
     @Test
     public void testRegister(){
         User user = new User();
-        user.setUsername("pp");
-        user.setPassword("pp");
+        user.setUsername("liept_admin");
+        user.setPassword("liept_admin");
         user.setAvatar("avatar");
         user.setRegisterDate(new Date());
         user.setRole(UserRole.SIMPLE);

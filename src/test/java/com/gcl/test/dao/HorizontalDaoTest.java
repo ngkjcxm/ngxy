@@ -57,7 +57,7 @@ public class HorizontalDaoTest extends BaseJunitTest {
                 //horizontalProject.getHorizontalWorks().add(horizontalWork);
             }
 
-            //horizontalDao.save(horizontalProject);
+           // horizontalDao.saveOrUpdate(horizontalProject);
         }
     }
 

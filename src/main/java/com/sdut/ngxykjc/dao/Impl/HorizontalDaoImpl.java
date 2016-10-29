@@ -36,4 +36,10 @@ public class HorizontalDaoImpl extends BaseDaoImpl implements HorizontalDao {
                     .list();
         });
     }
+
+    @Override
+    public List<HorizontalProject> getByProjectCheckState(int state) {
+        return (List<HorizontalProject>) getBySql(HorizontalProject.class, "select * from HorizontalProject where isPass = " + state);
+
+    }
 }

@@ -58,7 +58,7 @@ public class HorizontalProject {
     /**
      * 签订日期
      */
-    @DateTimeFormat(style = "yyyy-MM")
+    @Temporal(TemporalType.DATE)
     private Date signDate;
 
     /**
