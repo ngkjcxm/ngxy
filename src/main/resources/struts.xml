@@ -10,10 +10,12 @@
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.devMode" value="true"/>
 
-    <package name="default" extends="struts-default" namespace="/">
+
+    <package name="basePackage" extends="struts-default">
 
         <global-results>
             <result name="login" type="redirect">/login.jsp</result>
+            <result name="runtimeException" >/WEB-INF/jsp/error.jsp</result>
         </global-results>
 
         <!-- 异常处理:用于处理shiro抛出的异常 -->
@@ -26,13 +28,17 @@
                                result="login"/>
         </global-exception-mappings>
 
+        <!--
         <action name="*_*" class="{1}" method="{2}">
-            <result name="success">jsp/${directUrl}.jsp</result>
-            <!-- 场定向到action -->
-            <result name="action" type="redirectAction">${directUrl}</result>
-            <!-- 配置所有方法可访问，新版本struts2添加 -->
+             <result name="success">jsp/${directUrl}.jsp</result>
+
+           <result name="action" type="redirectAction">${directUrl}</result>
+
             <allowed-methods>*</allowed-methods>
-        </action>
+         </action>
+         -->
     </package>
+
+    <include file="com/sdut/ngxykjc/User/conf/user-struts.xml"></include>
 
 </struts>

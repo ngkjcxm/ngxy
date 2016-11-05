@@ -1,9 +1,9 @@
 package com.gcl.test.service;
 
 import com.gcl.test.BaseJunitTest;
-import com.sdut.ngxykjc.bean.User;
-import com.sdut.ngxykjc.service.UserService;
-import com.sdut.ngxykjc.util.UserRole;
+import com.sdut.ngxykjc.User.bean.User;
+import com.sdut.ngxykjc.User.service.UserService;
+import com.sdut.ngxykjc.base.util.UserRole;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

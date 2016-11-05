@@ -1,4 +1,4 @@
-package com.sdut.ngxykjc.util;
+package com.sdut.ngxykjc.base.util;
 
 /**
  * Created by 郭昌仑 on 2016/10/28.

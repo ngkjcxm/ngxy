@@ -9,7 +9,7 @@
     <!-- dataSource -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/ngxykjc?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="jdbcUrl" value="jdbc:mysql://121.42.205.85:3306/ngxykjc?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="user" value="root"/>
         <property name="password" value="lalala"/>
         <!-- 初始化连接池大小 -->
@@ -25,12 +25,12 @@
         <!-- 搜索注解bean -->
         <property name="packagesToScan">
             <list>
-                <value>com.sdut.ngxykjc.bean</value>
+                <value>com.sdut.ngxykjc.User.bean</value>
             </list>
         </property>
     </bean>
 
     <!-- 扫描dao组件 -->
-    <context:component-scan base-package="com.sdut.ngxykjc.dao"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.User.dao"/>
 
 </beans>
