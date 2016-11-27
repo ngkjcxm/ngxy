@@ -88,6 +88,9 @@ public class Employee {
      */
     private String PoliticalLandscape;
 
+    private String departmentId;
+
+    private String departmentName;
 
     /**
      * 入党时间
@@ -306,9 +309,6 @@ public class Employee {
      * 备注
      */
     private String remark;
-
-
-
 
 
     /**********************getter or setter **************************/
@@ -769,6 +769,22 @@ public class Employee {
         this.remark = remark;
     }
 
+    public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -787,6 +803,8 @@ public class Employee {
                 ", nativePlace='" + nativePlace + '\'' +
                 ", birthday=" + birthday +
                 ", PoliticalLandscape='" + PoliticalLandscape + '\'' +
+                ", departmentId='" + departmentId + '\'' +
+                ", departmentName='" + departmentName + '\'' +
                 ", joinPartyDate=" + joinPartyDate +
                 ", staffingType='" + staffingType + '\'' +
                 ", nowPost='" + nowPost + '\'' +

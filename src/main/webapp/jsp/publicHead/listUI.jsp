@@ -32,6 +32,7 @@
     <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
     <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
           type="text/css"/>
+    <link rel="StyleSheet" href="/dtree/dtree.css" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link rel="stylesheet" type="text/css" href="/assets/global/plugins/select2/select2.css"/>
@@ -542,6 +543,7 @@
 <script src="/assets/admin/pages/scripts/ui-tree1.js"></script>
 <script src="/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/assets/admin/pages/scripts/components-pickers.js"></script>
+<script type="text/javascript" src="/dtree/dtree.js"></script>
 <script>
     jQuery(document).ready(function () {
         // initiate layout and plugins

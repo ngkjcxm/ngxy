@@ -26,8 +26,8 @@ public class EmployeeAction extends BaseAction {
     /**
      * 详细信息
      */
-    public String detail(){
-        if(id == -1){
+    public String detail() {
+        if (id == -1) {
             return SUCCESS;
         }
         employee = employeeService.get(id);
@@ -36,11 +36,11 @@ public class EmployeeAction extends BaseAction {
         return SUCCESS;
     }
 
-    public String listUI(){
+    public String listUI() {
         return SUCCESS;
     }
 
-    public String save(){
+    public String save() {
         employeeService.addOrUpdate(employee);
         employee = null;
         return SUCCESS;
@@ -49,7 +49,7 @@ public class EmployeeAction extends BaseAction {
     /**
      * 删除
      */
-    public String delete(){
+    public String delete() {
         employeeService.delete(employee);
         employeeService = null;
         return SUCCESS;
@@ -58,7 +58,8 @@ public class EmployeeAction extends BaseAction {
     /**
      * 返回tree数据
      */
-    public void tree(){
+    public void tree() {
+        json(employeeService.tree());
     }
 
     /************** getter or setter ***************/

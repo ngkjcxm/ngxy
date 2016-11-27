@@ -597,7 +597,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 font-red-sunglo">项目负责人单位</label>
                                                             <div class="col-md-8">
-                                                                <s:textfield type="text" name="horizontal.unitName"
+                                                                <s:textfield type="text"
+                                                                             name="horizontal.unitName"
                                                                              class="form-control"
                                                                              placeholder="项目负责人单位"/>
                                                             </div>
@@ -608,10 +609,12 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 font-red-sunglo">项目负责人</label>
                                                             <div class="col-md-8">
-                                                                <s:textfield type="text"
-                                                                             name="horizontal.projectHeaderName"
-                                                                             class="form-control"
-                                                                             placeholder="项目负责人"/>
+                                                                <a data-target="#long5" data-toggle="modal">
+                                                                    <s:textfield id="treePeople" type="text"
+                                                                                 name="horizontal.projectHeaderName"
+                                                                                 class="form-control"
+                                                                                 placeholder="项目负责人"/>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1862,6 +1865,23 @@
     </div>
 </div>
 <!-- End弹出框 工作量审核 -->
+<div class="portlet-body">
+    <div id="long5" class="modal fade modal-scroll" tabindex="-1" data-replace="true"
+         style="width:30%;height:60%;margin-top:-300px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN SAMPLE FORM PORTLET-->
+                <div class="portlet light ">
+                    <div id="treeDiv"></div>
+                </div>
+                <!-- END SAMPLE FORM PORTLET-->
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- BEGIN FOOTER -->
@@ -1880,6 +1900,16 @@
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <script>
     jQuery(document).ready(function () {
+
+        // 添加树
+        $.get('/employee/employee/tree.html', function (data) {
+            data = JSON.parse(data);
+            window.d = new dTree('d');
+            data.forEach(function (obj) {
+                d.add(obj.id, obj.pid, obj.text, obj.url);
+            });
+            $('#treeDiv').html(d.toString());
+        });
 
         // 分页
         $('#pre').click(function () {
@@ -2033,7 +2063,12 @@
                     $('#detailBody').html(str);
                 });
             });
-        })
+        });
+    }
+
+    // 处理employee树
+    function employeeTree(name) {
+        $('#treePeople').val(name);
     }
 </script>
 <!-- END JAVASCRIPTS -->
