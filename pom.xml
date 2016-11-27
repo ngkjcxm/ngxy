@@ -96,6 +96,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-json-plugin</artifactId>
+            <version>2.3.30</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax.el</groupId>
             <artifactId>el-api</artifactId>
             <version>2.2</version>
@@ -142,6 +148,17 @@
             <version>2.7</version>
         </dependency>
 
+        <!-- json -->
+
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.1</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+
+
+
         <!-- slf4j -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -177,6 +194,19 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-dojo-plugin</artifactId>
+            <version>2.3.31</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.tuckey</groupId>
+            <artifactId>urlrewrite</artifactId>
+            <version>2.5.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -203,5 +233,28 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <!-- 包含资源文件 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
+
 </project>
