@@ -1,2 +1,6 @@
 
 # 唉，什么都别留下了....
+
+target/
+
+src/main/webapp/assets

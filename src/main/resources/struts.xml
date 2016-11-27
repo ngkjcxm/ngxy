@@ -9,13 +9,12 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.devMode" value="true"/>
-
+    <constant name="struts.devMode" value="true"/>
 
     <package name="basePackage" extends="struts-default">
 
         <global-results>
-            <result name="login" type="redirect">/login.jsp</result>
-            <result name="runtimeException" >/WEB-INF/jsp/error.jsp</result>
+            <result name="runtimeException">/WEB-INF/jsp/error.jsp</result>
         </global-results>
 
         <!-- 异常处理:用于处理shiro抛出的异常 -->
@@ -27,18 +26,19 @@
             <exception-mapping exception="org.apache.shiro.authz.UnauthorizedException"
                                result="login"/>
         </global-exception-mappings>
-
-        <!--
-        <action name="*_*" class="{1}" method="{2}">
-             <result name="success">jsp/${directUrl}.jsp</result>
-
-           <result name="action" type="redirectAction">${directUrl}</result>
-
-            <allowed-methods>*</allowed-methods>
-         </action>
-         -->
     </package>
 
     <include file="com/sdut/ngxykjc/User/conf/user-struts.xml"></include>
-
+    <include file="com/sdut/ngxykjc/basicsInfo/school/conf/school-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/basicsInfo/department/conf/department-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/basicsInfo/unit/conf/unit-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/basicsInfo/systemParameter/conf/parameter-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/basicsInfo/employee/conf/employee-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/work/HorizontalProject/conf/horizontal-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/work/VerticalProject/conf/vertical-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/work/workAchievement/conf/workAchieve-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/work/scientificResearch/conf/research-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/work/softwareWork/conf/software-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/work/paper/conf/paper-struts.xml"></include>
+    <include file="com/sdut/ngxykjc/work/patent/conf/patent-struts.xml"></include>
 </struts>

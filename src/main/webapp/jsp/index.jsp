@@ -1,7 +1,14 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: sunming
+  Date: 2016/10/15
+  Time: 17:04
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    pageContext.setAttribute("basePath", request.getContextPath());
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -12,7 +19,7 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8"/>
-    <title>Metronic | Login Options - Login Form 4</title>
+    <title>农工学院科技管理平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -55,7 +62,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="${basePath}user_login.action" method="post">
+    <form class="login-form" action="userAction_login.action" method="post">
         <div style="border:0px solid #000;width:100%;text-align:center;">
             <h3 class="form-title">科技信息管理系统</h3>
         </div>
