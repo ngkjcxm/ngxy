@@ -7,6 +7,7 @@
     <package name="horizontal" extends="struts-default">
         <action name="horizontal_*" class="horizentalAction" method="{1}">
             <result name="success">/jsp/horizontal/listUI.jsp</result>
+            <result name="listquery">/jsp/QueryStatistics/horizontalWork.jsp</result>
         </action>
     </package>
 </struts>

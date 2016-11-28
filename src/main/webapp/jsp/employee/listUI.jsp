@@ -32,7 +32,7 @@
 <!-- BEGIN HEADER -->
 <div class="page-header navbar navbar-fixed-top">
     <!--公共头部-->
-    <%@ include file="../publicHead/listUI.jsp"%>
+    <%@ include file="../publicHead/listUI.jsp" %>
     <!--公共头部End-->
 </div>
 <!-- END HEADER -->
@@ -46,7 +46,8 @@
             <h4 class="modal-title">职称</h4>
         </div>
         <div class="modal-body">
-            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example" style="height:260px;">
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example"
+                 style="height:260px;">
                 <div id="tree_2" class="tree-demo">
                     <ul>
                         <li data-jstree='{ "opened" : false }'>
@@ -110,20 +111,20 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start ">
+                <li class="start active ">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
                 </li>
-                <li class=" active open">
+                <li>
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
-                        <span class="arrow open"></span>
+                        <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="active">
+                        <li>
                             <a href="${basePath}employee_listUI.action">
                                 <i class="icon-home"></i>
                                 教工信息管理</a>
@@ -321,55 +322,55 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="#">
+                            <a href="${basePath}employee_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}horizontal_listQueryUI.action">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
+                        <!--<li>
+                        <a href="#">
+                        <i class="icon-paper-plane"></i>
+                        横向课题工作量统计
+                        </a>
+                        </li> -->
                         <li>
-                            <a href="#">
-                                <i class="icon-paper-plane"></i>
-                                横向课题工作量统计
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="${basePath}vertical_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}paper_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}workAchieve_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}patent_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}research_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}software_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>
@@ -494,208 +495,22 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div data-spy="scroll" data-target="#navbar-example2" data-offset="0"
                                  class="scrollspy-example" style="height:375px;">
-                                <div id="tree_1" class="tree-demo">
-                                    <ul>
-                                        <li data-jstree='{ "opened" : false }'>
-                                            所有学校
-                                            <ul>
-                                                <li data-jstree='{ "opened" : false }'>
-                                                    山东理工大学
-                                                    <ul>
-                                                        <li data-jstree='{ "opened" : false }'>
-                                                            计算机科学与技术学院
-                                                            <ul>
-                                                                <li data-jstree='{ "opened" : false }'>
-                                                                    领导层
-                                                                    <ul>
-                                                                        <li data-jstree='{ "type" : "file"}'>
-                                                                            <a href="/employee/employee_detail?id=33">孙成状</a>
-                                                                        </li>
-                                                                        <li data-jstree='{ "type" : "file"}'>
-                                                                            赵磊
-                                                                        </li>
-                                                                        <li data-jstree='{ "type" : "file"}'>
-                                                                            刘东峰
-                                                                        </li>
-                                                                        <li data-jstree='{ "type" : "file"}'>
-                                                                            宋吉江
-                                                                        </li>
-                                                                        <li data-jstree='{ "type" : "file"}'>
-                                                                            闸建文
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li data-jstree='{ "opened" : false }'>
-                                                                    管理机构
-                                                                    <ul>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            办公室
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    鹿宏
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    张文慧
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    肖爱梅
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            教学科
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    曲志坚
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    鞠传香
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    王举辉
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    袁静
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            学生科
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    刘灿德
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    曲东
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    尹晓盛
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    郭莹
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    刘丛丛
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    李文婷
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li data-jstree='{ "opened" : false }'>
-                                                                    教学机构
-                                                                    <ul>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            计算机科学系
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    刘晓红
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    巩秀钢
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    谢楠
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    王海鹏
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            软件工程系
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    张龙波
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    李盘靖
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    孙福振
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    赵连军
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            通信工程系
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    彭荣群
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    夏斌
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            数字媒体系
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    常征
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            计算机基础教学部
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    李业刚
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    李增祥
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li data-jstree='{ "opened" : false }'>
-                                                                            计算中心实验室
-                                                                            <ul>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    李浩
-                                                                                </li>
-                                                                                <li data-jstree='{"type" : "file"}'>
-                                                                                    于振海
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
 
-                                                        <li data-jstree='{ "opened" : false }'>
-                                                            农业工程与食品科学学院
-                                                        </li>
-                                                    </ul>
-                                                </li>
+                                <!-- BEGIN SAMPLE FORM PORTLET-->
 
-                                            </ul>
-                                            <ul>
-                                                <li data-jstree='{ "type" : "file" }'>
-                                                    山东科技大学
-                                                </li>
-                                            </ul>
-                                            <ul>
-                                                <li data-jstree='{ "type" : "file" }'>
-                                                    山东建筑大学
-                                                </li>
-                                            </ul>
-                                            <ul>
-                                                <li data-jstree='{ "type" : "file" }'>
-                                                    山东农业大学
-                                                </li>
-                                            </ul>
-
-                                        </li>
-
-                                    </ul>
-                                </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- BEGIN SAMPLE FORM PORTLET-->
+                                            <div class="portlet light ">
+                                                <div id="treeDiv"></div>
+                                            </div>
+                                            <!-- END SAMPLE FORM PORTLET-->
+                                        </div>
+                                    </div>
+                                <!-- END SAMPLE FORM PORTLET-->
                             </div>
                         </div>
                     </div>
@@ -730,7 +545,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">姓名</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.employeeName" type="text" class="form-control" placeholder="姓名" />
+                                                                <s:textfield name="employee.employeeName" type="text"
+                                                                             class="form-control" placeholder="姓名"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -739,7 +555,8 @@
                                                         <div class="form-group has-error">
                                                             <label class="control-label col-md-3">工号</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.employeeId" type="text" class="form-control" placeholder="工号" />
+                                                                <s:textfield name="employee.employeeId" type="text"
+                                                                             class="form-control" placeholder="工号"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -751,7 +568,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">性别</label>
                                                             <div class="col-md-9">
-                                                                <s:select list="#{'男':'男','女':'女'}" name="employee.sex" class="form-control"></s:select>
+                                                                <s:select list="#{'男':'男','女':'女'}" name="employee.sex"
+                                                                          class="form-control"></s:select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -760,7 +578,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">出生日期</label>
                                                             <div class="col-md-9">
-                                                                <input type="date" name="employee.birthday" class="form-control" value="<s:date name="employee.birthday" format="yyyy-MM-dd" />" />
+                                                                <input type="date" name="employee.birthday"
+                                                                       class="form-control"
+                                                                       value="<s:date name="employee.birthday" format="yyyy-MM-dd" />"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -774,7 +594,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">通讯地址</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.postalAddress" type="text" class="form-control" placeholder="通讯地址" />
+                                                                <s:textfield name="employee.postalAddress" type="text"
+                                                                             class="form-control" placeholder="通讯地址"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -782,7 +603,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">手机</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.phone" type="text" class="form-control" placeholder="手机" />
+                                                                <s:textfield name="employee.phone" type="text"
+                                                                             class="form-control" placeholder="手机"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -790,7 +612,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">办公电话</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.officePhone" type="text" class="form-control" placeholder="办公电话"/>
+                                                                <s:textfield name="employee.officePhone" type="text"
+                                                                             class="form-control" placeholder="办公电话"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -798,7 +621,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">电子邮箱</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.eMail" type="email" class="form-control" placeholder="电子邮箱" />
+                                                                <s:textfield name="employee.eMail" type="email"
+                                                                             class="form-control" placeholder="电子邮箱"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -811,7 +635,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">现任职务</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.nowPost" type="text" class="form-control" placeholder="现任职务" />
+                                                                <s:textfield name="employee.nowPost" type="text"
+                                                                             class="form-control" placeholder="现任职务"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -821,7 +646,10 @@
                                                             <label class="control-label col-md-3">职称</label>
                                                             <div class="col-md-9">
                                                                 <a id="jopTileName">
-                                                                    <s:textfield id="jopTileNameText" name="employee.jopTileName" type="text" data-target="#long"  class="form-control" placeholder="职称" />
+                                                                    <s:textfield id="jopTileNameText"
+                                                                                 name="employee.jopTileName" type="text"
+                                                                                 data-target="#long"
+                                                                                 class="form-control" placeholder="职称"/>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -832,7 +660,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">管理归属</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.academiaUnitId" type="text" class="form-control" placeholder="管理归属" />
+                                                                <s:textfield name="employee.academiaUnitId" type="text"
+                                                                             class="form-control" placeholder="管理归属"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -841,7 +670,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">学术归属</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.academiaUnitName" type="text" class="form-control" placeholder="学术归属" />
+                                                                <s:textfield name="employee.academiaUnitName"
+                                                                             type="text" class="form-control"
+                                                                             placeholder="学术归属"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -850,7 +681,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">民族</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.nation" type="text" class="form-control" placeholder="民族" />
+                                                                <s:textfield name="employee.nation" type="text"
+                                                                             class="form-control" placeholder="民族"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -859,7 +691,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">状态</label>
                                                             <div class="col-md-9">
-                                                                <s:select name="employee.status" list="#{'可用':'可用', '禁用':'禁用'}" class="form-control"></s:select>
+                                                                <s:select name="employee.status"
+                                                                          list="#{'可用':'可用', '禁用':'禁用'}"
+                                                                          class="form-control"></s:select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -868,7 +702,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">评职称时间</label>
                                                             <div class="col-md-9">
-                                                                <input type="date" name="employee.jopJudgeDate" class="form-control" value="<s:date name="employee.jopJudgeDate" format="yyyy-MM-dd" />" />
+                                                                <input type="date" name="employee.jopJudgeDate"
+                                                                       class="form-control"
+                                                                       value="<s:date name="employee.jopJudgeDate" format="yyyy-MM-dd" />"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -877,7 +713,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">全日制学位</label>
                                                             <div class="col-md-9">
-                                                                <s:select name="employee.fulltimeDegree" list="#{'博士':'博士', '硕士':'硕士'}" class="form-control"></s:select>
+                                                                <s:select name="employee.fulltimeDegree"
+                                                                          list="#{'博士':'博士', '硕士':'硕士'}"
+                                                                          class="form-control"></s:select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -886,7 +724,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">职称级别</label>
                                                             <div class="col-md-9">
-                                                                <s:select name="employee.jopTitleLeavel" list="#{'副科级':'副科级', '正科级':'正科级'}" class="form-control"></s:select>
+                                                                <s:select name="employee.jopTitleLeavel"
+                                                                          list="#{'副科级':'副科级', '正科级':'正科级'}"
+                                                                          class="form-control"></s:select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -895,7 +735,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">备注</label>
                                                             <div class="col-md-9">
-                                                                <s:textfield name="employee.remark" type="text" class="form-control" placeholder="备注" />
+                                                                <s:textfield name="employee.remark" type="text"
+                                                                             class="form-control" placeholder="备注"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -904,7 +745,7 @@
                                                 <!--/row-->
 
                                             </div>
-                                            <div class="form-actions right"style="border:0px solid #000;">
+                                            <div class="form-actions right" style="border:0px solid #000;">
                                                 <div class="row" style="border:0px solid red;">
                                                     <div class="col-md-12 " style="border:0px solid green;">
                                                         <div class="row">
@@ -936,13 +777,36 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="page-footer-inner">
-        2014 &copy; Metronic by keenthemes. <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+        2014 &copy; Metronic by keenthemes. <a
+            href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+            title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
+        Metronic!</a>
     </div>
     <div class="scroll-to-top">
         <i class="icon-arrow-up"></i>
     </div>
 </div>
 <!-- END FOOTER -->
+
+<script>
+    jQuery(document).ready(function () {
+        // 添加树
+        $.get('/employee/employee/tree.html', function (data) {
+            data = JSON.parse(data);
+            window.d = new dTree('d');
+            data.forEach(function (obj) {
+                d.add(obj.id, obj.pid, obj.text, obj.url);
+            });
+            $('#treeDiv').html(d.toString());
+        })
+    });
+
+    // 处理employee树
+    function employeeTree(name) {
+        $('#treePeople').val(name);
+    }
+</script>
+
 </body>
 <!-- END BODY -->
 </html>

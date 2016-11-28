@@ -5,7 +5,6 @@ import com.sdut.ngxykjc.work.paper.bean.Paper;
 import com.sdut.ngxykjc.work.paper.bean.PaperSearch;
 import com.sdut.ngxykjc.work.paper.dao.PaperDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 
@@ -17,7 +16,6 @@ import java.util.List;
  * PaperAction
  */
 @Controller
-@Scope("session")
 public class PaperAction extends BaseAction {
 
     private Paper paper;
@@ -27,7 +25,13 @@ public class PaperAction extends BaseAction {
 
     @Autowired
     private PaperDao paperDao;
+    public String listQueryUI(){
+        return "listquery";
+    }
 
+    public String listUI(){
+        return SUCCESS;
+    }
     /**
      * 详细信息
      */

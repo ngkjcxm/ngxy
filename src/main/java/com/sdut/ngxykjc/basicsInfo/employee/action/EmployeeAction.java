@@ -36,10 +36,6 @@ public class EmployeeAction extends BaseAction {
         return SUCCESS;
     }
 
-    public String listUI() {
-        return SUCCESS;
-    }
-
     public String save() {
         employeeService.addOrUpdate(employee);
         employee = null;
@@ -54,7 +50,13 @@ public class EmployeeAction extends BaseAction {
         employeeService = null;
         return SUCCESS;
     }
+    public String listUI() {
+        return SUCCESS;
+    }
 
+    public String listQueryUI(){
+        return "listquery";
+    }
     /**
      * 返回tree数据
      */

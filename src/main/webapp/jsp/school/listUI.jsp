@@ -27,9 +27,9 @@
 <!-- END HEAD -->
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-    <!--公共头部-->
-    <%@ include file="../publicHead/listUI.jsp"%>
-    <!--公共头部End-->
+<!--公共头部-->
+<%@ include file="../publicHead/listUI.jsp" %>
+<!--公共头部End-->
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
@@ -41,17 +41,17 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start ">
+                <li class="start active ">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
                 </li>
-                <li class="active open">
+                <li>
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
-                        <span class="arrow open"></span>
+                        <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -59,7 +59,7 @@
                                 <i class="icon-home"></i>
                                 教工信息管理</a>
                         </li>
-                        <li class="active ">
+                        <li>
                             <a href="${basePath}school_listUI.action">
                                 <i class="icon-home"></i>
                                 学校基本信息管理</a>
@@ -252,55 +252,55 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="#">
+                            <a href="${basePath}employee_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}horizontal_listQueryUI.action">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
+                        <!--<li>
+                        <a href="#">
+                        <i class="icon-paper-plane"></i>
+                        横向课题工作量统计
+                        </a>
+                        </li> -->
                         <li>
-                            <a href="#">
-                                <i class="icon-paper-plane"></i>
-                                横向课题工作量统计
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="${basePath}vertical_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}paper_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}workAchieve_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}patent_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}research_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}software_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>
@@ -525,16 +525,20 @@
                                     </div>
                                 </div>
                                 <div class="form-actions right">
-                                    <a href="javascript:form.action='school_save';form.submit()" class="btn red">追加 <i class="fa fa-plus"></i></a>
-                                    <a href="javascript:form.action='school_save';form.submit()" class="btn red">修改 <i class="fa fa-edit"></i></a>
-                                    <a href="javascript:form.action='school_delete';form.submit()" class="btn red">删除 <i class="fa fa-times"></i></a>
-                                    <a href="javascript:form.reset()" class="btn blue-hoki">重置 <i class="fa fa-file-o"></i></a>
+                                    <a href="javascript:form.action='school_save';form.submit()" class="btn red">追加 <i
+                                            class="fa fa-plus"></i></a>
+                                    <a href="javascript:form.action='school_save';form.submit()" class="btn red">修改 <i
+                                            class="fa fa-edit"></i></a>
+                                    <a href="javascript:form.action='school_delete';form.submit()" class="btn red">删除 <i
+                                            class="fa fa-times"></i></a>
+                                    <a href="javascript:form.reset()" class="btn blue-hoki">重置 <i
+                                            class="fa fa-file-o"></i></a>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <!-- END SAMPLE FORM PORTLET-->
-                 </div>
+                </div>
             </div>
         </div>
         <!-- END PAGE CONTENT-->

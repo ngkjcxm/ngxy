@@ -29,6 +29,10 @@ public class SoftwareAction extends BaseAction {
     @Autowired
     private SoftwareDao softwareDao;
 
+    public String listQueryUI(){
+        return "listquery";
+    }
+
     /**
      * 当前页
      */
@@ -99,6 +103,14 @@ public class SoftwareAction extends BaseAction {
         software = null;
         return SUCCESS;
     }
+
+    /**
+     * 显示页面
+     */
+    public String listUI(){
+        return SUCCESS;
+    }
+
 
     /*          getter&setter            */
     public long getId() {

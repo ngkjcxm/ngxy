@@ -48,11 +48,11 @@ public class EmployeeServiceimpl implements EmployeeService {
         int curId = 0;
         // 当前学院id
         int curxuid = 0;
-        // 当前工作处id
+        // 当前部门id
         int curgzcid = 0;
         // 当前学院名称
         String curXY = "";
-        // 当前工作处名称;
+        // 当前部门名称;
         String curGZC = "";
         nodes.add(new Node(curId++, -1, "请选择", ""));
         for (int i = 0; i < lists.size(); i++) {
@@ -61,7 +61,7 @@ public class EmployeeServiceimpl implements EmployeeService {
                 if (obj.getDepartmentName().equals(curGZC)) {
                     nodes.add(new Node(curId++, curgzcid, obj.getEmployeeName(), "javascript:employeeTree('" + obj.getEmployeeName() + "');"));
                 } else {
-                    // 添加工作处
+                    // 添加部门
                     curGZC = obj.getDepartmentName();
                     curgzcid = curId++;
                     nodes.add(new Node(curgzcid, curxuid, obj.getDepartmentName(), ""));
@@ -75,7 +75,7 @@ public class EmployeeServiceimpl implements EmployeeService {
                 curxuid = curId++;
                 nodes.add(new Node(curxuid, 0, obj.getAcademiaUnitName(), ""));
 
-                // 添加工作处
+                // 添加部门
                 curgzcid = curId++;
                 curGZC = obj.getDepartmentName();
                 nodes.add(new Node(curgzcid, curxuid, obj.getDepartmentName(), ""));

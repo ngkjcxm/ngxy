@@ -7,6 +7,7 @@
     <package name="vertical" extends="struts-default">
         <action name="vertical_*" class="verticalAction" method="{1}">
             <result name="success">/jsp/vertical/listUI.jsp</result>
+            <result name="listquery">/jsp/QueryStatistics/vertical.jsp</result>
         </action>
     </package>
 </struts>

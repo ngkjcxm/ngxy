@@ -29,6 +29,11 @@ public class VerticalAction extends BaseAction {
     private VerticalProject vertical;
     private long id;
 
+    public String listQueryUI(){
+        return "listquery";
+    }
+
+
     /**
      * 当前页:从1开始
      */
@@ -106,6 +111,13 @@ public class VerticalAction extends BaseAction {
     public String save() {
         verticalDao.saveOrUpdate(vertical);
         vertical = null;
+        return SUCCESS;
+    }
+
+    /**
+     * 显示页面
+     */
+    public String listUI(){
         return SUCCESS;
     }
 

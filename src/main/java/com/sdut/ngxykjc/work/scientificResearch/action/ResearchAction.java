@@ -27,6 +27,11 @@ public class ResearchAction extends BaseAction {
     @Autowired
     private ResearchDao researchDao;
 
+    public String listQueryUI(){
+        return "listquery";
+    }
+
+
     /**
      * 当前页
      */
@@ -98,6 +103,13 @@ public class ResearchAction extends BaseAction {
     public String delete() {
         researchDao.delete(research);
         research = null;
+        return SUCCESS;
+    }
+
+    /**
+     * 显示页面
+     */
+    public String listUI(){
         return SUCCESS;
     }
 

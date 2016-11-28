@@ -29,7 +29,7 @@ public class DepartmentAction extends BaseAction {
         return SUCCESS;
     }
 
-    public String listUI(){
+    public String listUI() {
         return SUCCESS;
     }
 
