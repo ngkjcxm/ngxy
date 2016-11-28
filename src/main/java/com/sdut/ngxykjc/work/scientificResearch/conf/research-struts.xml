@@ -7,7 +7,6 @@
     <package name="research" extends="struts-default">
         <action name="research_*" class="researchAction" method="{1}">
             <result name="success">/jsp/research/listUI.jsp</result>
-            <result name="listquery">/jsp/QueryStatistics/scientificResearch.jsp</result>
         </action>
     </package>
 </struts>

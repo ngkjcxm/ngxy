@@ -58,13 +58,6 @@ public class HorizentalAction extends BaseAction {
      */
     private HorizontalSearch search;
 
-    public String listUI(){
-        return SUCCESS;
-    }
-    public String listQueryUI(){
-        return "listquery";
-    }
-
     /**
      * 搜索
      */
@@ -131,7 +124,6 @@ public class HorizentalAction extends BaseAction {
     }
 
     /****************************横向课题经费************************/
-
     private HorizontalFunds funds;
     @Autowired
     private HorizontalFundsDao horizontalFundsDao;
@@ -181,7 +173,6 @@ public class HorizentalAction extends BaseAction {
             json("error");
         }
     }
-
 
     /*********************/
     public String getFundsSearch() {

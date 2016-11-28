@@ -25,10 +25,6 @@ public class PatentAction extends BaseAction {
 
     @Autowired
     private PatentDao patentDao;
-    public String listQueryUI(){
-        return "listquery";
-    }
-
 
     /**
      * 详细信息
@@ -85,10 +81,6 @@ public class PatentAction extends BaseAction {
             curpage--;
         }
         json(pageList);
-    }
-
-    public String listUI(){
-        return SUCCESS;
     }
 
     public void pre() {

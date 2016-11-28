@@ -45,7 +45,7 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start active ">
+                <li class="start ">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
@@ -80,18 +80,18 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="active open">
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
-                        <span class="arrow "></span>
+                        <span class="arrow open"></span>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="active open">
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow "></span>
+                                <span class="arrow open"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
@@ -100,7 +100,7 @@
                                         横向课题录入
                                     </a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="${basePath}horizontal_listUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题核立
@@ -256,55 +256,55 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="${basePath}employee_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}horizontal_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
-                        <!--<li>
-                        <a href="#">
-                        <i class="icon-paper-plane"></i>
-                        横向课题工作量统计
-                        </a>
-                        </li> -->
                         <li>
-                            <a href="${basePath}vertical_listQueryUI.action">
+                            <a href="#">
+                                <i class="icon-paper-plane"></i>
+                                横向课题工作量统计
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}paper_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}workAchieve_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}patent_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}research_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}software_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>
@@ -1920,11 +1920,11 @@
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                        '<td>' + o.id + '</td>' +
-                        '<td><a href="/horizontal/horizontal/detail/' + o.id + '.html">' + o.projectName + '</a> </td>' +
-                        '<td>' + o.projectHeaderName + '</td>' +
-                        '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
-                        '</tr>'
+                            '<td>' + o.id + '</td>' +
+                            '<td><a href="/horizontal/horizontal/detail/' + o.id + '.html">' + o.projectName + '</a> </td>' +
+                            '<td>' + o.projectHeaderName + '</td>' +
+                            '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
+                            '</tr>'
                 }
                 $('#tbody').html(content);
             });
@@ -1938,11 +1938,11 @@
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                        '<td>' + o.id + '</td>' +
-                        '<td><a href="/horizontal/horizontal_detail?id=' + o.id + '">' + o.projectName + '</a> </td>' +
-                        '<td>' + o.projectHeaderName + '</td>' +
-                        '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
-                        '</tr>'
+                            '<td>' + o.id + '</td>' +
+                            '<td><a href="/horizontal/horizontal_detail?id=' + o.id + '">' + o.projectName + '</a> </td>' +
+                            '<td>' + o.projectHeaderName + '</td>' +
+                            '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
+                            '</tr>'
                 }
                 $('#tbody').html(content);
             });
@@ -1972,7 +1972,6 @@
                 $('#id').val('0');
             }, 10);
         });
-
         //提交经费表单
         $('#save').click(function () {
             console.log($('#fundsForm').serialize());
@@ -2059,8 +2058,8 @@
                     $('#isInvoice').val(data.isInvoice);
                     $('#id').val(data.id);
                     var str = '<tr class="odd gradeX"><td>1</td><td><a href="#">' + data.registerPeoName + '</a></td>' +
-                        '<td><span class="label label-sm label-danger">是</span></td><td>' + data.intoFunds + '</td><td>' + data.equipmentExpenses + '</td>' +
-                        '<td>123456</td><td>9001-115148</td></tr>';
+                            '<td><span class="label label-sm label-danger">是</span></td><td>' + data.intoFunds + '</td><td>' + data.equipmentExpenses + '</td>' +
+                            '<td>123456</td><td>9001-115148</td></tr>';
                     $('#detailBody').html(str);
                 });
             });

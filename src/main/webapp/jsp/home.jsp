@@ -252,55 +252,55 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="${basePath}employee_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}horizontal_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
-                        <!--<li>
+                        <li>
                             <a href="#">
                                 <i class="icon-paper-plane"></i>
                                 横向课题工作量统计
                             </a>
-                        </li> -->
+                        </li>
                         <li>
-                            <a href="${basePath}vertical_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}paper_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}workAchieve_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}patent_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}research_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}software_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>

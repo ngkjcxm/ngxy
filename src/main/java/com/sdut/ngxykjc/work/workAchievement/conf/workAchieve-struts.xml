@@ -7,7 +7,6 @@
     <package name="workAchieve" extends="struts-default">
         <action name="workAchieve_*" class="workAchieveAction" method="{1}">
             <result name="success">/jsp/workAchieve/listUI.jsp</result>
-            <result name="listquery">/jsp/QueryStatistics/workSicentific.jsp</result>
         </action>
     </package>
 </struts>

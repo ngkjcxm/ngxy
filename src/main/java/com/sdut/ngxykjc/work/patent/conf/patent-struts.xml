@@ -7,7 +7,6 @@
     <package name="patent" extends="struts-default">
         <action name="patent_*" class="patentAction" method="{1}">
             <result name="success">/jsp/patent/listUI.jsp</result>
-            <result name="listquery">/jsp/QueryStatistics/patent.jsp</result>
         </action>
     </package>
 </struts>

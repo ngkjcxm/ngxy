@@ -28,12 +28,6 @@ public class WorkAchieveAction extends BaseAction {
 
     private long id;
 
-
-    public String listQueryUI(){
-        return "listquery";
-    }
-
-
     /**
      * 搜索到的所有结果
      */
@@ -134,13 +128,6 @@ public class WorkAchieveAction extends BaseAction {
      */
     public String detail() {
         workAchieve = (WorkAchieve) workAchieveDao.getById(WorkAchieve.class, id);
-        return SUCCESS;
-    }
-
-    /**
-     * 显示页面
-     */
-    public String listUI(){
         return SUCCESS;
     }
 

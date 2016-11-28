@@ -1,9 +1,9 @@
 <%--
-      Created by IntelliJ IDEA.
-      User: sunmig
-      Date: 2016/11/13
-      Time: 15:38
-      To change this template use File | Settings | File Templates.
+  Created by IntelliJ IDEA.
+  User: sunmig
+  Date: 2016/11/13
+  Time: 15:38
+  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -27,7 +27,7 @@
 <!-- BEGIN HEADER -->
 <div class="page-header navbar navbar-fixed-top">
     <!--公共头部-->
-    <%@ include file="../publicHead/listUI.jsp" %>
+    <%@ include file="../publicHead/listUI.jsp"%>
     <!--公共头部End-->
 </div>
 <!-- END HEADER -->
@@ -40,19 +40,19 @@
         <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
         <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <div class="page-sidebar navbar-collapse collapse">
-            <!-- BEGIN SIDEBAR MENU -->
+             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start active ">
+                <li class="start ">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
                 </li>
-                <li>
+                <li >
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
-                        <span class="arrow "></span>
+                        <span class="arrow"></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -77,11 +77,11 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="active open">
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
-                        <span class="arrow "></span>
+                        <span class="arrow open"></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -111,11 +111,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active open">
                             <a href="#">
                                 <i class="icon-flag"></i>
                                 <span class="title">纵向课题相关</span>
-                                <span class="arrow "></span>
+                                <span class="arrow open"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
@@ -124,7 +124,7 @@
                                         纵向课题录入
                                     </a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="${basePath}vertical_listUI.action">
                                         <i class="icon-rocket"></i>
                                         纵向课题核立
@@ -253,55 +253,55 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="${basePath}employee_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}horizontal_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
-                        <!--<li>
-                        <a href="#">
-                        <i class="icon-paper-plane"></i>
-                        横向课题工作量统计
-                        </a>
-                        </li> -->
                         <li>
-                            <a href="${basePath}vertical_listQueryUI.action">
+                            <a href="#">
+                                <i class="icon-paper-plane"></i>
+                                横向课题工作量统计
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}paper_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}workAchieve_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}patent_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}research_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}software_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>
@@ -436,7 +436,7 @@
                                     <h3 class="form-section font-red-sunglo">纵向课题信息查找</h3>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table id="user" class="table table-bordered " style="text-align:center;">
+                                            <table id="user" class="table table-bordered  " style="text-align:center;">
                                                 <tbody>
                                                 <tr>
                                                     <td style="width:30%;font-size:15px;text-align:center;">
@@ -444,8 +444,7 @@
                                                     </td>
                                                     <td style="width:70%">
                                                         <div>
-                                                            <input name="search.registrationDate" type="date"
-                                                                   class="form-control">
+                                                            <input name="search.registrationDate" type="date" class="form-control">
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -478,8 +477,7 @@
                                                         项目名称
                                                     </td>
                                                     <td style="width:15%">
-                                                        <input type="text" name="search.VerticalName"
-                                                               class="form-control" placeholder="项目名称">
+                                                        <input type="text" name="search.VerticalName" class="form-control" placeholder="项目名称">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -487,8 +485,7 @@
                                                         项目负责人
                                                     </td>
                                                     <td style="width:15%">
-                                                        <input name="search.VerticalHeaderName" type="text"
-                                                               class="form-control" placeholder="项目负责人">
+                                                        <input name="search.VerticalHeaderName" type="text" class="form-control" placeholder="项目负责人">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -503,8 +500,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="font-size:15px;text-align:center;" colspan="2">
-                                                        <button type="submit" class="btn btn-primary btn-block">搜索
-                                                        </button>
+                                                        <button type="submit" class="btn btn-primary btn-block">搜索</button>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -548,8 +544,8 @@
                                                                         ${o.verticalHeaderName}
                                                                 </td>
                                                                 <td>
-            <span class="label label-sm label-success">
-                    ${o.endTopicExamineResult} </span>
+																<span class="label label-sm label-success">
+                                                                        ${o.endTopicExamineResult} </span>
                                                                 </td>
                                                             </tr>
                                                         </c:forEach>
@@ -583,7 +579,7 @@
                                     <h3 class="form-section font-red-sunglo">经费审核</h3>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table id="user" class="table table-bordered " style="text-align:center;">
+                                            <table id="user" class="table table-bordered  " style="text-align:center;">
                                                 <tbody>
                                                 <tr>
                                                     <td style="width:30%;font-size:15px;text-align:center;">
@@ -633,8 +629,8 @@
                                                                     第一次到款 </a>
                                                             </td>
                                                             <td>
-        <span class="label label-sm label-success">
-        已审核 </span>
+																<span class="label label-sm label-success">
+																已审核 </span>
                                                             </td>
                                                         </tr>
                                                         <tr class="odd gradeX">
@@ -647,8 +643,8 @@
                                                                     第二次到款 </a>
                                                             </td>
                                                             <td>
-        <span class="label label-sm label-danger">
-        未审核 </span>
+																<span class="label label-sm label-danger">
+																未审核 </span>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -686,7 +682,7 @@
                                     <h3 class="form-section font-red-sunglo">经费预算</h3>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table id="user" class="table table-bordered " style="text-align:center;">
+                                            <table id="user" class="table table-bordered  " style="text-align:center;">
                                                 <tbody>
                                                 <tr>
                                                     <td style="width:30%;font-size:15px;text-align:center;">
@@ -752,8 +748,8 @@
                                                                     111111 </a>
                                                             </td>
                                                             <td>
-        <span class="label label-sm label-success">
-        已预算 </span>
+																<span class="label label-sm label-success">
+																已预算 </span>
                                                             </td>
                                                         </tr>
                                                         <tr class="odd gradeX">
@@ -766,8 +762,8 @@
                                                                     222222 </a>
                                                             </td>
                                                             <td>
-        <span class="label label-sm label-danger">
-        未预算 </span>
+																<span class="label label-sm label-danger">
+																未预算 </span>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -799,9 +795,8 @@
 
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form action="/vertical/vertical/save.html" method="post"
-                                              class="form-horizontal">
-                                            <s:hidden name="vertical.id"/>
+                                        <form action="/vertical/vertical/save.html" method="post" class="form-horizontal">
+                                            <s:hidden name="vertical.id" />
                                             <div class="form-body">
                                                 <h3 class="form-section font-red-sunglo">纵向课题录入</h3>
 
@@ -811,7 +806,7 @@
                                                             <label class="control-label col-md-4 font-red-sunglo">项目名称</label>
                                                             <div class="col-md-8">
                                                                 <s:textfield type="text" name="vertical.verticalName"
-                                                                             class="form-control" placeholder="项目名称"/>
+                                                                       class="form-control" placeholder="项目名称" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -820,9 +815,8 @@
                                                         <div class="form-group ">
                                                             <label class="control-label col-md-4 font-red-sunglo">项目编号</label>
                                                             <div class="col-md-8">
-                                                                <s:textfield type="text" name="vertical.projectId"
-                                                                             class="form-control"
-                                                                             placeholder="项目编号"/>
+                                                                <s:textfield type="text" name="vertical.projectId" class="form-control"
+                                                                       placeholder="项目编号" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -835,9 +829,9 @@
                                                             <label class="control-label col-md-4 font-red-sunglo">项目负责人单位</label>
                                                             <div class="col-md-8">
                                                                 <s:select name="vertical.unitName"
-                                                                          class="select2_category  form-control"
-                                                                          list="#{'农业工程与食品科学学院', '农业工程与食品科学学院'}"
-                                                                          tabindex="1">
+                                                                        class="select2_category  form-control"
+                                                                        list="#{'农业工程与食品科学学院', '农业工程与食品科学学院'}"
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -847,9 +841,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 font-red-sunglo">项目负责人</label>
                                                             <div class="col-md-8">
-                                                                <s:textfield type="text"
-                                                                             name="vertical.verticalHeaderName"
-                                                                             class="form-control" placeholder="项目负责人"/>
+                                                                <s:textfield type="text" name="vertical.verticalHeaderName"
+                                                                       class="form-control" placeholder="项目负责人" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -871,10 +864,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 font-red-sunglo">参与类型</label>
                                                             <div class="col-md-8">
-                                                                <s:select list="#{'主持':'主持', '副主持':'副主持'}"
-                                                                          name="vertical.projectType"
-                                                                          class="select2_category form-control"
-                                                                          tabindex="1">
+                                                                <s:select list="#{'主持':'主持', '副主持':'副主持'}" name="vertical.projectType"
+                                                                        class="select2_category form-control"
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -888,9 +880,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4">开始时间</label>
                                                             <div class="col-md-8">
-                                                                <input name="vertical.starDate" type="date"
-                                                                       class="form-control"
-                                                                       value="<s:date name="vertical.starDate" format="yyyy-MM-dd"/>"/>
+                                                                <input name="vertical.starDate" type="date" class="form-control"
+                                                                       value="<s:date name="vertical.starDate" format="yyyy-MM-dd" />"/>
                                                             </div>
 
                                                         </div>
@@ -899,9 +890,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4">结束时间</label>
                                                             <div class="col-md-8">
-                                                                <input name="vertical.endDate" type="date"
-                                                                       class="form-control"
-                                                                       value="<s:date name="vertical.endDate" format="yyyy-MM-dd"/>"/>
+                                                                <input name="vertical.endDate" type="date" class="form-control"
+                                                                       value="<s:date name="vertical.endDate" format="yyyy-MM-dd" />"/>
                                                             </div>
 
                                                         </div>
@@ -911,9 +901,9 @@
                                                             <label class="control-label col-md-4">学科分类</label>
                                                             <div class="col-md-8">
                                                                 <s:select name='vertical.subjectType'
-                                                                          class="select2_category form-control"
+                                                                        class="select2_category form-control"
                                                                           list="#{'110数学':'110数学', '130力学', '130力学'}"
-                                                                          tabindex="1">
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -949,9 +939,9 @@
                                                             <label class="control-label col-md-4">组织形式</label>
                                                             <div class="col-md-8">
                                                                 <s:select name="vertical.organizationForm"
-                                                                          class="select2_category form-control"
-                                                                          list="#{'牵头单位':'牵头单位','合作单位':'合作单位'}"
-                                                                          tabindex="1">
+                                                                        class="select2_category form-control"
+                                                                        list="#{'牵头单位':'牵头单位','合作单位':'合作单位'}"
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -975,11 +965,9 @@
                                                             <label class="control-label col-md-4">项目社会经济目标</label>
                                                             <div class="col-md-8">
                                                                 <a data-target="#long" data-toggle="modal">
-                                                                    <s:textfield name="vertical.socialTarget"
-                                                                                 id="SocityEconomy"
-                                                                                 type="text" data-target="#long"
-                                                                                 class="form-control"
-                                                                                 placeholder="项目社会经济目标"/>
+                                                                    <s:textfield name="vertical.socialTarget" id="SocityEconomy"
+                                                                           type="text" data-target="#long"
+                                                                           class="form-control" placeholder="项目社会经济目标" />
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -989,11 +977,9 @@
                                                             <label class="control-label col-md-4">服务国民经济行业</label>
                                                             <div class="col-md-8">
                                                                 <a data-target="#long2" data-toggle="modal">
-                                                                    <s:textfield name="vertical.industry"
-                                                                                 id="NationalEconomy"
-                                                                                 type="text" data-target="#long2"
-                                                                                 class="form-control"
-                                                                                 placeholder="服务国民经济行业"/>
+                                                                    <s:textfield name="vertical.industry" id="NationalEconomy"
+                                                                           type="text" data-target="#long2"
+                                                                           class="form-control" placeholder="服务国民经济行业" />
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -1003,7 +989,7 @@
                                                             <label class="control-label col-md-4">课题基金号</label>
                                                             <div class="col-md-8">
                                                                 <s:textfield name="vertical.fundAccount" type="text"
-                                                                             class="form-control" placeholder="课题基金号"/>
+                                                                       class="form-control" placeholder="课题基金号" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1012,8 +998,8 @@
                                                             <label class="control-label col-md-4">审核时间</label>
                                                             <div class="col-md-8">
                                                                 <input name="vertical.examineDate" type="date"
-                                                                       value="<s:date name="vertical.examineDate" format="yyyy-MM-dd"/>"
-                                                                       class="form-control"/>
+                                                                             value="<s:date name="vertical.examineDate" format="yyyy-MM-dd"  />"
+                                                                       class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1022,7 +1008,7 @@
                                                             <label class="control-label col-md-4">审核人</label>
                                                             <div class="col-md-8">
                                                                 <s:textfield name="vertical.examinePeoName" type="text"
-                                                                             class="form-control" placeholder="审核人"/>
+                                                                       class="form-control" placeholder="审核人" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1032,8 +1018,8 @@
                                                             <label class="control-label col-md-4">立项时间</label>
                                                             <div class="col-md-8">
                                                                 <input type="date" name="vertical.projectSetDate"
-                                                                       value="<s:date name="vertical.projectSetDate" format="yyyy-MM-dd"/>"
-                                                                       class="form-control"/>
+                                                                       value="<s:date name="vertical.projectSetDate" format="yyyy-MM-dd"  />"
+                                                                       class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1042,8 +1028,8 @@
                                                             <label class="control-label col-md-4">结题审核时间</label>
                                                             <div class="col-md-8">
                                                                 <input name="vertical.endTopicExamineDate" type="date"
-                                                                       value="<s:date name="vertical.endTopicExamineDate" format="yyyy-MM-dd"/>"
-                                                                       class="form-control"/>
+                                                                       value="<s:date name="vertical.endTopicExamineDate" format="yyyy-MM-dd" />"
+                                                                       class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1052,8 +1038,8 @@
                                                             <label class="control-label col-md-4">登记人</label>
                                                             <div class="col-md-8">
                                                                 <s:textfield type="text" class="form-control"
-                                                                             name="vertical.registrationName"
-                                                                             placeholder="登记人"/>
+                                                                       name="vertical.registrationName"
+                                                                       placeholder="登记人" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1063,7 +1049,7 @@
                                                             <div class="col-md-8">
                                                                 <input type="date" name="vertical.registrationDate"
                                                                        value="<s:date name="vertical.registrationDate" format="yyyy-MM-dd"/>"
-                                                                       class="form-control"/>
+                                                                       class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1072,9 +1058,9 @@
                                                             <label class="control-label col-md-4">审核结论</label>
                                                             <div class="col-md-8">
                                                                 <s:select name="vertical.examineResult"
-                                                                          class="select2_category form-control"
+                                                                        class="select2_category form-control"
                                                                           list="#{'未通过':'未通过', '通过':'通过'}"
-                                                                          tabindex="1">
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -1084,9 +1070,9 @@
                                                             <label class="control-label col-md-4">立项结论</label>
                                                             <div class="col-md-8">
                                                                 <s:select name="vertical.projectSetResult"
-                                                                          class="select2_category form-control"
+                                                                        class="select2_category form-control"
                                                                           list="#{'未通过':'未通过', '通过':'通过'}"
-                                                                          tabindex="1">
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -1096,9 +1082,9 @@
                                                             <label class="control-label col-md-4">申请结题</label>
                                                             <div class="col-md-8">
                                                                 <s:select name="vertical.applicationEndTopic"
-                                                                          class="select2_category form-control"
+                                                                        class="select2_category form-control"
                                                                           list="#{'未通过':'未通过', '通过':'通过'}"
-                                                                          tabindex="1">
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -1108,9 +1094,9 @@
                                                             <label class="control-label col-md-4">结题审核</label>
                                                             <div class="col-md-8">
                                                                 <s:select name="vertical.endTopicExamineResult"
-                                                                          class="select2_category form-control"
-                                                                          list="#{'未通过':'未通过', '通过':'通过'}"
-                                                                          tabindex="1">
+                                                                        class="select2_category form-control"
+                                                                        list="#{'未通过':'未通过', '通过':'通过'}"
+                                                                        tabindex="1">
                                                                 </s:select>
                                                             </div>
                                                         </div>
@@ -1516,8 +1502,8 @@
                                                         </td>
 
                                                         <td>
-        <span class="label label-sm label-danger">
-        否</span>
+																<span class="label label-sm label-danger">
+																否</span>
                                                         </td>
                                                         <td>
                                                             9001-115148
@@ -1548,8 +1534,8 @@
                                                         </td>
 
                                                         <td>
-        <span class="label label-sm label-success">
-        是</span>
+																<span class="label label-sm label-success">
+																是</span>
                                                         </td>
                                                         <td>
                                                             9001-115148
@@ -2249,17 +2235,17 @@
         // 分页
         $('#pre').click(function () {
             $.get('/vertical/vertical_pre', function (data) {
-                if (data == '-1') return;
+                if(data == '-1') return;
                 data = JSON.parse(data);
                 var content = '';
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                        '<td>' + o.id + '</td>' +
-                        '<td><a href="/vertical/vertical/detail/' + o.id + '.html">' + o.VerticalName + '</a> </td>' +
-                        '<td>' + o.VerticalHeaderName + '</td>' +
-                        '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
-                        '</tr>'
+                            '<td>' + o.id + '</td>' +
+                            '<td><a href="/vertical/vertical/detail/' + o.id + '.html">' + o.VerticalName + '</a> </td>' +
+                            '<td>' + o.VerticalHeaderName + '</td>' +
+                            '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
+                            '</tr>'
                 }
                 $('#tbody').html(content);
             });
@@ -2267,17 +2253,17 @@
 
         $('#next').click(function () {
             $.get('/vertical/vertical_next', function (data) {
-                if (data == '-1') return;
+                if(data == '-1') return;
                 data = JSON.parse(data);
                 var content = '';
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                        '<td>' + o.id + '</td>' +
-                        '<td><a href="/vertical/vertical/detail/' + o.id + '.html">' + o.VerticalName + '</a> </td>' +
-                        '<td>' + o.VerticalHeaderName + '</td>' +
-                        '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
-                        '</tr>'
+                            '<td>' + o.id + '</td>' +
+                            '<td><a href="/vertical/vertical/detail/' + o.id + '.html">' + o.VerticalName + '</a> </td>' +
+                            '<td>' + o.VerticalHeaderName + '</td>' +
+                            '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
+                            '</tr>'
                 }
                 $('#tbody').html(content);
             });

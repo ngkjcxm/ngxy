@@ -9,7 +9,6 @@
     <package name="employee" extends="struts-default">
         <action name="employee_*" class="employeeAction" method="{1}" >
             <result name="success">/jsp/employee/listUI.jsp</result>
-            <result name="listquery">/jsp/QueryStatistics/employee.jsp</result>
         </action>
     </package>
 
