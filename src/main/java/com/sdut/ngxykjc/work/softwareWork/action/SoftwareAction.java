@@ -1,9 +1,6 @@
 package com.sdut.ngxykjc.work.softwareWork.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
-import com.sdut.ngxykjc.work.scientificResearch.bean.ResearchSearch;
-import com.sdut.ngxykjc.work.scientificResearch.bean.ScientificResearch;
-import com.sdut.ngxykjc.work.scientificResearch.dao.ResearchDao;
 import com.sdut.ngxykjc.work.softwareWork.bean.SoftwareSearch;
 import com.sdut.ngxykjc.work.softwareWork.bean.SoftwareWork;
 import com.sdut.ngxykjc.work.softwareWork.dao.SoftwareDao;
@@ -45,6 +42,16 @@ public class SoftwareAction extends BaseAction {
         return SUCCESS;
     }
 
+    public String msearch() {
+        search();
+        return SUCCESS;
+    }
+
+    public String usearch() {
+        search();
+        return "user";
+    }
+
     public void next() {
         curpage++;
         int first = curpage + (curpage - 1) * pageCount;
@@ -82,10 +89,24 @@ public class SoftwareAction extends BaseAction {
         return SUCCESS;
     }
 
+    public String udetail() {
+        software = (SoftwareWork) softwareDao.getById(SoftwareWork.class, id);
+        return "user";
+    }
+
     /**
      * 保存
      */
     public String save() {
+        softwareDao.saveOrUpdate(software);
+        software = null;
+        return "user";
+    }
+
+    /**
+     * 审核
+     */
+    public String check() {
         softwareDao.saveOrUpdate(software);
         software = null;
         return SUCCESS;

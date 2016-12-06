@@ -1,7 +1,6 @@
 package com.sdut.ngxykjc.work.scientificResearch.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
-import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalProject;
 import com.sdut.ngxykjc.work.scientificResearch.bean.ResearchSearch;
 import com.sdut.ngxykjc.work.scientificResearch.bean.ScientificResearch;
 import com.sdut.ngxykjc.work.scientificResearch.dao.ResearchDao;
@@ -36,13 +35,21 @@ public class ResearchAction extends BaseAction {
      */
     private int pageCount = 5;
 
+    public String msearch() {
+        search();
+        return SUCCESS;
+    }
+
+    public String usearch() {
+        search();
+        return "user";
+    }
+
     public String search() {
         curpage = 1;
         int first = curpage + (curpage - 1) * pageCount;
         List<ScientificResearch> lists = researchDao.selectPage(ScientificResearch.class, search, first, pageCount);
         pageList = lists;
-        System.out.println(pageList);
-        System.out.println(search);
         return SUCCESS;
     }
 
@@ -83,10 +90,24 @@ public class ResearchAction extends BaseAction {
         return SUCCESS;
     }
 
+    public String udetail() {
+        research = (ScientificResearch) researchDao.getById(ScientificResearch.class, id);
+        return "user";
+    }
+
     /**
      * 保存
      */
     public String save() {
+        researchDao.saveOrUpdate(research);
+        research = null;
+        return "user";
+    }
+
+    /**
+     * 审核
+     */
+    public String check() {
         researchDao.saveOrUpdate(research);
         research = null;
         return SUCCESS;

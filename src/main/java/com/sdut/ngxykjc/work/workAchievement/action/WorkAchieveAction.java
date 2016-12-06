@@ -1,8 +1,6 @@
 package com.sdut.ngxykjc.work.workAchievement.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
-import com.sdut.ngxykjc.work.HorizontalProject.bean.Horizontal;
-import com.sdut.ngxykjc.work.HorizontalProject.bean.HorizontalSearch;
 import com.sdut.ngxykjc.work.workAchievement.bean.WorkAchieve;
 import com.sdut.ngxykjc.work.workAchievement.bean.WorkArchieveSearch;
 import com.sdut.ngxykjc.work.workAchievement.dao.WorkAchieveDao;
@@ -61,7 +59,17 @@ public class WorkAchieveAction extends BaseAction {
     /**
      * 搜索
      */
-    public String search() {
+    public String msearch() {
+        search();
+        return SUCCESS;
+    }
+
+    public String usearch() {
+        search();
+        return "user";
+    }
+
+    public void search() {
         list = workAchieveDao.search(search);
         pageCount = (int) Math.ceil(list.size() / perPage);
         if (list.size() > perPage) {
@@ -69,7 +77,6 @@ public class WorkAchieveAction extends BaseAction {
         } else {
             pageList = list;
         }
-        return SUCCESS;
     }
 
     /**
@@ -112,6 +119,12 @@ public class WorkAchieveAction extends BaseAction {
     public String save() {
         workAchieveDao.saveOrUpdate(workAchieve);
         workAchieve = null;
+        return "user";
+    }
+
+    public String check() {
+        workAchieveDao.saveOrUpdate(workAchieve);
+        workAchieve = null;
         return SUCCESS;
     }
 
@@ -129,6 +142,11 @@ public class WorkAchieveAction extends BaseAction {
     public String detail() {
         workAchieve = (WorkAchieve) workAchieveDao.getById(WorkAchieve.class, id);
         return SUCCESS;
+    }
+
+    public String udetail() {
+        workAchieve = (WorkAchieve) workAchieveDao.getById(WorkAchieve.class, id);
+        return "user";
     }
 
     /* setter & getter */

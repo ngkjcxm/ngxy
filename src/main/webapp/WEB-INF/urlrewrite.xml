@@ -13,4 +13,8 @@
         <from>^/([A-Za-z0-9]+)/([A-Za-z0-9]+)/detail/([0-9]+)\.html</from>
         <to type="forward">/$1/$2_detail?id=$3</to>
     </rule>
+    <rule>
+        <from>^/([A-Za-z0-9]+)/([A-Za-z0-9]+)/udetail/([0-9]+)\.html</from>
+        <to type="forward">/$1/$2_udetail?id=$3</to>
+    </rule>
 </urlrewrite>   

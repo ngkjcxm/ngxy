@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
  */
 
 @Controller
-@Scope("prototype")
+@Scope("session")
 public class UserAction extends BaseAction {
 
     @Autowired
@@ -28,24 +28,25 @@ public class UserAction extends BaseAction {
     public String login() {
         // 如果登录成功
         if (userService.login(user)) {
-            return view("home");
+            return SUCCESS;
         }
-        return view("loginError");
+        return ERROR;
     }
-
-    public String home(){
-        return view("home");
-    }
-
 
     /**
      * 退出
      */
     public String logout() {
         userService.logout();
-        return view("index");
+        return SUCCESS;
     }
 
+    /**
+     * 保存
+     */
+    public String save() {
+        return null;
+    }
 
     /********************修改密码方法***********************/
     private String oldPwd;
@@ -57,9 +58,9 @@ public class UserAction extends BaseAction {
     public String change() {
         // 如果修改成功
         if (userService.changePassword(oldPwd, newPwd)) {
-            return view("loginError");
+            return ERROR;
         }
-        return view("loginOK");
+        return SUCCESS;
     }
 
     /**********************getter&setter**************************/

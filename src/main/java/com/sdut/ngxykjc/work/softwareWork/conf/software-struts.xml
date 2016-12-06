@@ -7,6 +7,7 @@
     <package name="software" extends="struts-default">
         <action name="software_*" class="softwareAction" method="{1}">
             <result name="success">/jsp/software/listUI.jsp</result>
+            <result name="user">/jsp/software/software.jsp</result>
         </action>
     </package>
 </struts>

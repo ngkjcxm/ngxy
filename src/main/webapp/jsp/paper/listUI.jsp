@@ -958,7 +958,7 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light ">
                         <div class="portlet-body form">
-                            <form role="form" action="/paper/paper/search.html" method="post">
+                            <form role="form" action="/paper/paper/msearch.html" method="post">
                                 <div class="form-body">
                                     <h3 class="form-section font-red-sunglo">审核信息查找</h3>
                                     <div class="row">
@@ -984,7 +984,7 @@
                                                         审核情况
                                                     </td>
                                                     <td style="width:15%">
-                                                        <select name="search.state">
+                                                        <select name="search.state" class="form-control">
                                                             <option value="所有" checked>所有</option>
                                                             <option value="通过">已通过</option>
                                                             <option value="待审核">待审核</option>
@@ -1657,7 +1657,7 @@
                                                         <div class="row">
                                                             <div class="col-md-offset-3 col-md-9">
                                                                 <button type="submit" class="btn green">导出Excel</button>
-                                                                <a href="javascript:form.action='/paper/paper/save.html';form.submit()"
+                                                                <a href="javascript:form.action='/paper/paper/check.html';form.submit()"
                                                                    class="btn green">提交</a>
                                                                 <a href="javascript:form.action='/paper/paper/delete.html';form.submit()"
                                                                    class="btn red">删除</a>
@@ -1755,11 +1755,11 @@
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                            '<td>' + o.id + '</td>' +
-                            '<td><a href="/paper/paper/detail/' + o.id + '.html">' + o.paperName + '</a> </td>' +
-                            '<td>' + o.author1Name + '</td>' +
-                            '<td><span class="label label-sm label-success">' + o.examineResult + '</span></td>' +
-                            '</tr>'
+                        '<td>' + o.id + '</td>' +
+                        '<td><a href="/paper/paper/detail/' + o.id + '.html">' + o.paperName + '</a> </td>' +
+                        '<td>' + o.author1Name + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.examineResult + '</span></td>' +
+                        '</tr>'
                 }
                 $('#tbody').html(content);
             });
@@ -1774,11 +1774,11 @@
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                            '<td>' + o.id + '</td>' +
-                            '<td><a href="/paper/paper/detail/' + o.id + '.html">' + o.paperName + '</a> </td>' +
-                            '<td>' + o.author1Name + '</td>' +
-                            '<td><span class="label label-sm label-success">' + o.examineResult + '</span></td>' +
-                            '</tr>'
+                        '<td>' + o.id + '</td>' +
+                        '<td><a href="/paper/paper/detail/' + o.id + '.html">' + o.paperName + '</a> </td>' +
+                        '<td>' + o.author1Name + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.examineResult + '</span></td>' +
+                        '</tr>'
                 }
                 $('#tbody').html(content);
             });

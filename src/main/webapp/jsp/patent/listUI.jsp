@@ -956,7 +956,7 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light ">
                         <div class="portlet-body form">
-                            <form role="form" method="post" action="/patent/patent/search.html">
+                            <form role="form" method="post" action="/patent/patent/msearch.html">
                                 <div class="form-body">
                                     <h3 class="form-section font-red-sunglo">审核信息查找</h3>
                                     <div class="row">
@@ -1400,7 +1400,7 @@
                                                         <div class="row">
                                                             <div class="col-md-offset-3 col-md-9">
                                                                 <a class="btn yellow">附件上传</a>
-                                                                <a href="javascript:form.action='/patent/patent/save.html';form.submit()"
+                                                                <a href="javascript:form.action='/patent/patent/check.html';form.submit()"
                                                                    class="btn green">提交</a>
                                                                 <a href="javascript:form.action='/patent/patent/delete.html';form.submit()"
                                                                    class="btn red">删除</a>

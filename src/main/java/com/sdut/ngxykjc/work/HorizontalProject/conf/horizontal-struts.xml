@@ -4,7 +4,7 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    <package name="horizontal" extends="struts-default">
+    <package name="horizontal" extends="basePackage">
         <action name="horizontal_*" class="horizentalAction" method="{1}">
             <result name="success">/jsp/horizontal/listUI.jsp</result>
         </action>

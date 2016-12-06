@@ -1,9 +1,11 @@
 package com.sdut.ngxykjc.work.paper.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.paper.bean.Paper;
 import com.sdut.ngxykjc.work.paper.bean.PaperSearch;
 import com.sdut.ngxykjc.work.paper.dao.PaperDao;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -37,9 +39,27 @@ public class PaperAction extends BaseAction {
     }
 
     /**
+     * 详细信息
+     */
+    public String udetail() {
+        paper = (Paper) paperDao.getById(Paper.class, id);
+        return "user";
+    }
+
+    /**
      * 更新或保存
      */
     public String save() {
+        paperDao.saveOrUpdate(paper);
+        paper = null;
+        return "user";
+    }
+
+    /**
+     * 审批
+     */
+    @RequiresPermissions(UserPermissions.PAPER)
+    public String check() {
         paperDao.saveOrUpdate(paper);
         paper = null;
         return SUCCESS;
@@ -54,6 +74,15 @@ public class PaperAction extends BaseAction {
         return SUCCESS;
     }
 
+    /**
+     * 删除
+     */
+    public String udelete() {
+        paperDao.delete(paper);
+        paper = null;
+        return "user";
+    }
+
 
     /**
      * 当前页
@@ -64,13 +93,21 @@ public class PaperAction extends BaseAction {
      */
     private int pageCount = 5;
 
-    public String search() {
+    public String msearch() {
+        search();
+        return SUCCESS;
+    }
+
+    public String usearch() {
+        search();
+        return "user";
+    }
+
+    public void search() {
         curpage = 1;
         int first = curpage + (curpage - 1) * pageCount;
         List<Paper> lists = paperDao.selectPage(Paper.class, search, first, pageCount);
         pageList = lists;
-        //System.out.println(pageList);
-        return SUCCESS;
     }
 
     public void next() {

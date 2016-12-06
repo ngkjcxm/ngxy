@@ -2,8 +2,9 @@ package com.gcl.test.service;
 
 import com.gcl.test.BaseJunitTest;
 import com.sdut.ngxykjc.User.bean.User;
+import com.sdut.ngxykjc.User.dao.UserDao;
 import com.sdut.ngxykjc.User.service.UserService;
-import com.sdut.ngxykjc.base.util.UserRole;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,15 +18,22 @@ public class UserServiceTest extends BaseJunitTest {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserDao userDao;
+
     @Test
-    public void testRegister(){
+    public void testRegister() {
         User user = new User();
-        user.setUsername("liept_admin");
-        user.setPassword("liept_admin");
+        user.setUsername("gcl");
+        user.setPassword("gcl");
         user.setAvatar("avatar");
         user.setRegisterDate(new Date());
-        user.setRole(UserRole.SIMPLE);
 
         userService.register(user);
+    }
+
+    @Test
+    public void getPermissions() {
+        System.out.println(userDao.getPermissions("gcl"));
     }
 }

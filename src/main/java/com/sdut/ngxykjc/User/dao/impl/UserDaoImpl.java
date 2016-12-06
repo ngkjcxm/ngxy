@@ -3,7 +3,9 @@ package com.sdut.ngxykjc.User.dao.impl;
 import com.sdut.ngxykjc.User.bean.User;
 import com.sdut.ngxykjc.User.dao.UserDao;
 import com.sdut.ngxykjc.base.dao.impl.BaseDaoImpl;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 
 import java.util.HashSet;
 import java.util.List;
@@ -17,10 +19,37 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     @Override
     public Set<String> getPermissions(String username) {
         return getHibernateTemplate().executeWithNativeSession(session -> {
-            List<String> list = session
-                    .createSQLQuery("SELECT permissions FROM permissions p WHERE secuser_id = (SELECT id FROM secuser WHERE username = :username)")
+            List<User> list = session
+                    .createSQLQuery("SELECT * FROM user WHERE username = :username")
+                    .addEntity(User.class)
                     .setString("username", username).list();
-            return new HashSet<String>(list);
+            User user = list.get(0);
+            HashSet set = new HashSet<String>();
+            if (StringUtils.hasLength(user.getHorizontalPermission())) {
+                set.add(UserPermissions.HORIZONTAL);
+            }
+            if (StringUtils.hasLength(user.getVerticalPermission())) {
+                set.add(UserPermissions.VERTICAL);
+            }
+            if (StringUtils.hasLength(user.getPatentPermission())) {
+                set.add(UserPermissions.PATENT);
+            }
+            if (StringUtils.hasLength(user.getPaperPermission())) {
+                set.add(UserPermissions.PAPER);
+            }
+            if (StringUtils.hasLength(user.getScientficSearchPermission())) {
+                set.add(UserPermissions.SCIENTIFIC_RESEARCH);
+            }
+            if (StringUtils.hasLength(user.getSoftwarePermission())) {
+                set.add(UserPermissions.SOFTWARE);
+            }
+            if (StringUtils.hasLength(user.getWorkAchievePermission())) {
+                set.add(UserPermissions.WORK_ACHIEVE);
+            }
+            if (StringUtils.hasLength(user.getQueryPermission())) {
+                set.add(UserPermissions.QUERY);
+            }
+            return set;
         });
     }
 

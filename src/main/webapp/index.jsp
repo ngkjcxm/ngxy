@@ -19,7 +19,8 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+          type="text/css"/>
     <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
     <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -44,7 +45,8 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="http://qgxy.sdut.edu.cn/" style="text-decoration:none;">
-        <img src="assets/admin/layout/img/logo-big2.png" alt=""/><div style="font-size:10px;margin-top:5px;">山东理工大学农工学院</div>
+        <img src="assets/admin/layout/img/logo-big2.png" alt=""/>
+        <div style="font-size:10px;margin-top:5px;">山东理工大学农工学院</div>
     </a>
 </div>
 <!-- END LOGO -->
@@ -55,7 +57,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="${basePath}user_login.action" method="post">
+    <form class="login-form" action="/user/user/login.html" method="post">
         <div style="border:0px solid #000;width:100%;text-align:center;">
             <h3 class="form-title">科技信息管理系统</h3>
         </div>
@@ -64,14 +66,16 @@
             <label class="control-label visible-ie8 visible-ie9">Username</label>
             <div class="input-icon">
                 <i class="fa fa-user"></i>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="用户名" name="user.username"/>
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="用户名"
+                       name="user.username"/>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Password</label>
             <div class="input-icon">
                 <i class="fa fa-lock"></i>
-                <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="密&nbsp;&nbsp;&nbsp;&nbsp;码" name="user.password"/>
+                <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
+                       placeholder="密&nbsp;&nbsp;&nbsp;&nbsp;码" name="user.password"/>
             </div>
         </div>
         <div class="form-actions">
@@ -117,21 +121,21 @@
 <script src="assets/admin/pages/scripts/login-soft.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
         Login.init();
         Demo.init();
         // init background slide images
         $.backstretch([
-                    "assets/admin/pages/media/bg/1.jpg",
-                    "assets/admin/pages/media/bg/2.jpg",
-                    "assets/admin/pages/media/bg/3.jpg",
-                    "assets/admin/pages/media/bg/4.jpg"
-                ], {
-                    fade: 1000,
-                    duration: 8000
-                }
+                "assets/admin/pages/media/bg/1.jpg",
+                "assets/admin/pages/media/bg/2.jpg",
+                "assets/admin/pages/media/bg/3.jpg",
+                "assets/admin/pages/media/bg/4.jpg"
+            ], {
+                fade: 1000,
+                duration: 8000
+            }
         );
     });
 </script>

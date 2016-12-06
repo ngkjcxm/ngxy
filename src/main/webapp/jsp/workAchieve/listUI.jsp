@@ -434,7 +434,7 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light ">
                         <div class="portlet-body form">
-                            <form role="form" action="/workAchieve/workAchieve/search.html" method="post">
+                            <form role="form" action="/workAchieve/workAchieve/msearch.html" method="post">
                                 <div class="form-body">
                                     <h3 class="form-section font-red-sunglo">审核信息查找</h3>
                                     <div class="row">

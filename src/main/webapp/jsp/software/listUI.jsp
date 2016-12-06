@@ -24,7 +24,8 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+          type="text/css">
     <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -33,7 +34,8 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link rel="stylesheet" type="text/css" href="/assets/global/plugins/jstree/dist/themes/default/style.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
     <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link href="/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"/>
@@ -62,14 +64,16 @@
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse">
         </a>
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN PAGE ACTIONS -->
         <!-- DOC: Remove "hide" class to enable the page header actions -->
         <div class="page-actions">
             <div class="btn-group">
-                <button type="button" class="btn red-haze btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <button type="button" class="btn red-haze btn-sm dropdown-toggle" data-toggle="dropdown"
+                        data-hover="dropdown" data-close-others="true">
                     <span class="hidden-sm hidden-xs">Actions&nbsp;</span><i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
@@ -121,8 +125,10 @@
                     </li>
                     <!-- BEGIN NOTIFICATION DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <li class="dropdown dropdown-extended dropdown-notification dropdown-dark"
+                        id="header_notification_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
                             <i class="icon-bell"></i>
                             <span class="badge badge-success">
 						7 </span>
@@ -133,7 +139,8 @@
                                 <a href="extra_profile.html">view all</a>
                             </li>
                             <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                <ul class="dropdown-menu-list scroller" style="height: 250px;"
+                                    data-handle-color="#637283">
                                     <li>
                                         <a href="javascript:;">
                                             <span class="time">just now</span>
@@ -234,7 +241,8 @@
                     <!-- BEGIN INBOX DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
                             <i class="icon-envelope-open"></i>
                             <span class="badge badge-danger">
 						4 </span>
@@ -245,7 +253,8 @@
                                 <a href="inbox.html">view all</a>
                             </li>
                             <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                <ul class="dropdown-menu-list scroller" style="height: 275px;"
+                                    data-handle-color="#637283">
                                     <li>
                                         <a href="inbox.html?a=view">
 										<span class="photo">
@@ -326,7 +335,8 @@
                     <!-- BEGIN TODO DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-extended dropdown-tasks dropdown-dark" id="header_task_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
                             <i class="icon-calendar"></i>
                             <span class="badge badge-primary">
 						3 </span>
@@ -337,7 +347,8 @@
                                 <a href="page_todo.html">view all</a>
                             </li>
                             <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                <ul class="dropdown-menu-list scroller" style="height: 275px;"
+                                    data-handle-color="#637283">
                                     <li>
                                         <a href="javascript:;">
 										<span class="task">
@@ -345,7 +356,9 @@
 										<span class="percent">30%</span>
 										</span>
                                             <span class="progress">
-										<span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete</span></span>
+										<span style="width: 40%;" class="progress-bar progress-bar-success"
+                                              aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span
+                                                class="sr-only">40% Complete</span></span>
 										</span>
                                         </a>
                                     </li>
@@ -356,7 +369,9 @@
 										<span class="percent">65%</span>
 										</span>
                                             <span class="progress">
-										<span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">65% Complete</span></span>
+										<span style="width: 65%;" class="progress-bar progress-bar-danger"
+                                              aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span
+                                                class="sr-only">65% Complete</span></span>
 										</span>
                                         </a>
                                     </li>
@@ -367,7 +382,9 @@
 										<span class="percent">98%</span>
 										</span>
                                             <span class="progress">
-										<span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">98% Complete</span></span>
+										<span style="width: 98%;" class="progress-bar progress-bar-success"
+                                              aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span
+                                                class="sr-only">98% Complete</span></span>
 										</span>
                                         </a>
                                     </li>
@@ -378,7 +395,9 @@
 										<span class="percent">10%</span>
 										</span>
                                             <span class="progress">
-										<span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">10% Complete</span></span>
+										<span style="width: 10%;" class="progress-bar progress-bar-warning"
+                                              aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span
+                                                class="sr-only">10% Complete</span></span>
 										</span>
                                         </a>
                                     </li>
@@ -389,7 +408,9 @@
 										<span class="percent">58%</span>
 										</span>
                                             <span class="progress">
-										<span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">58% Complete</span></span>
+										<span style="width: 58%;" class="progress-bar progress-bar-info"
+                                              aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"><span
+                                                class="sr-only">58% Complete</span></span>
 										</span>
                                         </a>
                                     </li>
@@ -400,7 +421,9 @@
 										<span class="percent">85%</span>
 										</span>
                                             <span class="progress">
-										<span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">85% Complete</span></span>
+										<span style="width: 85%;" class="progress-bar progress-bar-success"
+                                              aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span
+                                                class="sr-only">85% Complete</span></span>
 										</span>
                                         </a>
                                     </li>
@@ -411,7 +434,9 @@
 										<span class="percent">38%</span>
 										</span>
                                             <span class="progress progress-striped">
-										<span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">38% Complete</span></span>
+										<span style="width: 38%;" class="progress-bar progress-bar-important"
+                                              aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span
+                                                class="sr-only">38% Complete</span></span>
 										</span>
                                         </a>
                                     </li>
@@ -423,7 +448,8 @@
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-user dropdown-dark">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
 						<span class="username username-hide-on-mobile">
 						Nick </span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
@@ -496,14 +522,14 @@
                         <span class="title">首页</span>
                     </a>
                 </li>
-                <li >
+                <li>
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub-menu">
-                        <li >
+                        <li>
                             <a href="#">
                                 <i class="icon-home"></i>
                                 学校信息管理
@@ -584,14 +610,14 @@
                         <span class="arrow open"></span>
                     </a>
                     <ul class="sub-menu">
-                        <li >
+                        <li>
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li >
+                                <li>
                                     <a href="login_add.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
@@ -659,7 +685,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li >
+                        <li>
                             <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">著作成果相关</span>
@@ -672,7 +698,7 @@
                                         著作成果导入
                                     </a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="#">
                                         <i class="icon-rocket"></i>
                                         著作成果审核
@@ -701,7 +727,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li >
+                        <li>
                             <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">科研奖励相关</span>
@@ -714,7 +740,7 @@
                                         科研奖励导入
                                     </a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="#">
                                         <i class="icon-rocket"></i>
                                         科研奖励审核
@@ -874,7 +900,8 @@
     <div class="page-content-wrapper">
         <div class="page-content">
             <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -929,21 +956,23 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light ">
                         <div class="portlet-body form">
-                            <form role="form" action="/software/software/search.html" method="post">
+                            <form role="form" action="/software/software/msearch.html" method="post">
                                 <div class="form-body">
                                     <h3 class="form-section font-red-sunglo">审核信息查找</h3>
-                                    <div class="row" >
+                                    <div class="row">
                                         <div class="col-md-12">
-                                            <table id="user" class="table table-bordered  " style="text-align:center;" >
+                                            <table id="user" class="table table-bordered  " style="text-align:center;">
                                                 <tbody>
                                                 <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;" >
+                                                    <td style="width:30%;font-size:15px;text-align:center;">
                                                         发证年度
                                                     </td>
                                                     <td style="width:70%">
                                                         <div>
-                                                            <div class="input-group date form_year col-md-12"  data-date="" data-date-format="yyyy">
-                                                                <input type="month" name="search.date" class="form-control">
+                                                            <div class="input-group date form_year col-md-12"
+                                                                 data-date="" data-date-format="yyyy">
+                                                                <input type="month" name="search.date"
+                                                                       class="form-control">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -954,7 +983,8 @@
                                                         审核情况
                                                     </td>
                                                     <td style="width:15%">
-                                                        <select name="search.state" class="select2_category form-control">
+                                                        <select name="search.state"
+                                                                class="select2_category form-control">
                                                             <option value="所有" checked>所有</option>
                                                             <option value="通过">已通过</option>
                                                             <option value="待审核">待审核</option>
@@ -967,7 +997,8 @@
                                                         著作权人
                                                     </td>
                                                     <td style="width:15%">
-                                                        <input type="text" name="search.name" class="form-control" placeholder="著作权人">
+                                                        <input type="text" name="search.name" class="form-control"
+                                                               placeholder="著作权人">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -975,25 +1006,29 @@
                                                         归属单位
                                                     </td>
                                                     <td style="width:15%">
-                                                        <select name="search.belong" class="select2_category form-control">
+                                                        <select name="search.belong"
+                                                                class="select2_category form-control">
                                                             <option value="" checked></option>
                                                             <option value="农业工程与食品科学学院">农业工程与食品科学学院</option>
                                                         </select>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><button class="btn btn-block btn-primary">搜索</button></td>
+                                                    <td colspan="2">
+                                                        <button class="btn btn-block btn-primary">搜索</button>
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-                                    <div  style="height:480px;">
-                                        <div class="row" >
+                                    <div style="height:480px;">
+                                        <div class="row">
                                             <div class="col-md-12 col-sm-12">
                                                 <!-- BEGIN EXAMPLE TABLE PORTLET-->
                                                 <div class="portlet-body">
-                                                    <table class="table table-striped table-bordered table-hover" id="sample_2" style="text-align:center;">
+                                                    <table class="table table-striped table-bordered table-hover"
+                                                           id="sample_2" style="text-align:center;">
                                                         <thead>
                                                         <tr>
                                                             <th style="text-align:center;">
@@ -1054,7 +1089,7 @@
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
                                         <form name="form" method="post" class="form-horizontal">
-                                            <s:hidden name="research.id" />
+                                            <s:hidden name="research.id"/>
                                             <div class="form-body">
                                                 <h3 class="form-section font-red-sunglo">软件成果录入</h3>
                                                 <div class="row">
@@ -1062,7 +1097,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 ">软件名称</label>
                                                             <div class="col-md-8">
-                                                                <s:textfield name="software.softwareName" type="text" class="form-control" placeholder="软件名称"/>
+                                                                <s:textfield name="software.softwareName" type="text"
+                                                                             class="form-control" placeholder="软件名称"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1073,7 +1109,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">著作权人</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.author1Name" type="text" class="form-control" placeholder="著作权人"/>
+                                                                <s:textfield name="software.author1Name" type="text"
+                                                                             class="form-control" placeholder="著作权人"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1082,7 +1119,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4">登记号</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.registerId" type="text" class="form-control" placeholder="登记号"/>
+                                                                <s:textfield name="software.registerId" type="text"
+                                                                             class="form-control" placeholder="登记号"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1096,8 +1134,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">首位完成人单位</label>
                                                             <div class="col-md-6">
-                                                                <s:select name="software.academicUnit1Name" class="select2_category form-control"
-                                                                    list="#{
+                                                                <s:select name="software.academicUnit1Name"
+                                                                          class="select2_category form-control"
+                                                                          list="#{
                                                                     '农业工程与食品科学学院':'农业工程与食品科学学院'
                                                                     }"/>
                                                             </div>
@@ -1108,7 +1147,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">首位完成人</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.author1Name" type="text" class="form-control" placeholder="首位完成人" disabled="true"/>
+                                                                <s:textfield name="software.author1Name" type="text"
+                                                                             class="form-control" placeholder="首位完成人"
+                                                                             disabled="true"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1123,8 +1164,11 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">开发完成日期</label>
                                                             <div class="col-md-6">
-                                                                <div class="input-group date form_day col-md-13"  data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input name="software.finishDate" value="<s:date name="software.finishDate" format="yyyy-MM-dd"/>" type="date" size="16" class="form-control">
+                                                                <div class="input-group date form_day col-md-13"
+                                                                     data-date="" data-date-format="yyyy/mm/dd">
+                                                                    <input name="software.finishDate"
+                                                                           value="<s:date name="software.finishDate" format="yyyy-MM-dd"/>"
+                                                                           type="date" size="16" class="form-control">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1134,8 +1178,11 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">首次发表日期</label>
                                                             <div class="col-md-6">
-                                                                <div class="input-group date form_day2 col-md-13"  data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input name="software.fistPublishDate" value="<s:date format="yyyy-MM-dd" name="software.fistPublishDate"/>" type="date" size="16" class="form-control">
+                                                                <div class="input-group date form_day2 col-md-13"
+                                                                     data-date="" data-date-format="yyyy/mm/dd">
+                                                                    <input name="software.fistPublishDate"
+                                                                           value="<s:date format="yyyy-MM-dd" name="software.fistPublishDate"/>"
+                                                                           type="date" size="16" class="form-control">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1150,7 +1197,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">证书号</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.deplomaId" type="text" class="form-control" placeholder="证书号"/>
+                                                                <s:textfield name="software.deplomaId" type="text"
+                                                                             class="form-control" placeholder="证书号"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1160,7 +1208,9 @@
                                                             <label class="control-label col-md-4">发证日期</label>
                                                             <div class="col-md-6">
                                                                 <div class="input-group date form_day2 col-md-13">
-                                                                    <input name="software.issueDate" value="<s:date format="yyyy-MM-dd" name="software.issueDate"/>" type="date" size="16" class="form-control"/>
+                                                                    <input name="software.issueDate"
+                                                                           value="<s:date format="yyyy-MM-dd" name="software.issueDate"/>"
+                                                                           type="date" size="16" class="form-control"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1175,8 +1225,11 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">津贴发放年度</label>
                                                             <div class="col-md-6">
-                                                                <div class="input-group date form_year col-md-13"  data-date="">
-                                                                    <input name="software.allowanceYear" value="<s:date name="software.allowanceYear" format="yyyy-MM-dd"/>" type="date" class="form-control"/>
+                                                                <div class="input-group date form_year col-md-13"
+                                                                     data-date="">
+                                                                    <input name="software.allowanceYear"
+                                                                           value="<s:date name="software.allowanceYear" format="yyyy-MM-dd"/>"
+                                                                           type="date" class="form-control"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1186,7 +1239,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">登记人</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.registerPeoName" type="text" class="form-control" placeholder="登记人"/>
+                                                                <s:textfield name="software.registerPeoName" type="text"
+                                                                             class="form-control" placeholder="登记人"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1200,7 +1254,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">其他完成人</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.otherAutherName" type="text" class="form-control" placeholder="其他完成人"/>
+                                                                <s:textfield name="software.otherAutherName" type="text"
+                                                                             class="form-control" placeholder="其他完成人"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1209,8 +1264,11 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">登记时间</label>
                                                             <div class="col-md-6">
-                                                                <div class="input-group date form_day2 col-md-13"  data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input value="<s:date name="software.registerDate" format="yyyy-MM-dd"/>" name="software.registerDate" type="date" class="form-control"/>
+                                                                <div class="input-group date form_day2 col-md-13"
+                                                                     data-date="" data-date-format="yyyy/mm/dd">
+                                                                    <input value="<s:date name="software.registerDate" format="yyyy-MM-dd"/>"
+                                                                           name="software.registerDate" type="date"
+                                                                           class="form-control"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1224,7 +1282,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">审核人</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.examinePeoName" type="text" class="form-control" placeholder="审核人" />
+                                                                <s:textfield name="software.examinePeoName" type="text"
+                                                                             class="form-control" placeholder="审核人"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1233,7 +1292,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">著作权证书附件</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="software.copyrightDepplomaEnclosuer" type="text" class="form-control" placeholder="著作权证书附件"/>
+                                                                <s:textfield name="software.copyrightDepplomaEnclosuer"
+                                                                             type="text" class="form-control"
+                                                                             placeholder="著作权证书附件"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1247,8 +1308,9 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">审核结论</label>
                                                             <div class="col-md-6">
-                                                                <s:select name="software.examineStatus" class="select2_category form-control"
-                                                                        list="#{
+                                                                <s:select name="software.examineStatus"
+                                                                          class="select2_category form-control"
+                                                                          list="#{
                                                                     '通过':'通过',
                                                                     '未通过':'未通过',
                                                                     '待审核':'待审核'
@@ -1263,7 +1325,9 @@
                                                             <label class="control-label col-md-4 ">审核时间</label>
                                                             <div class="col-md-6">
                                                                 <div class="input-group date form_day2 col-md-13">
-                                                                    <input name="software.examineDate" value="<s:date format="yyyy-MM-dd" name="software.examineDate"/>" type="date" size="16" class="form-control">
+                                                                    <input name="software.examineDate"
+                                                                           value="<s:date format="yyyy-MM-dd" name="software.examineDate"/>"
+                                                                           type="date" size="16" class="form-control">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1278,20 +1342,23 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 ">备注</label>
                                                             <div class="col-md-8">
-                                                                <s:textfield name="software.remark" type="text" class="form-control" placeholder="备注"/>
+                                                                <s:textfield name="software.remark" type="text"
+                                                                             class="form-control" placeholder="备注"/>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--/row-->
                                             </div>
-                                            <div class="form-actions right"style="border:0px solid #000;">
+                                            <div class="form-actions right" style="border:0px solid #000;">
                                                 <div class="row" style="border:0px solid red;">
                                                     <div class="col-md-12 " style="border:0px solid green;">
                                                         <div class="row">
                                                             <div class="col-md-offset-3 col-md-9">
-                                                                <a href="javascript:form.action='/software/software/save.html';form.submit()"class="btn green">提交</a>
-                                                                <a href="javascript:form.action='/software/software/delete.html';form.submit()" class="btn red">删除</a>
+                                                                <a href="javascript:form.action='/software/software/check.html';form.submit()"
+                                                                   class="btn green">提交</a>
+                                                                <a href="javascript:form.action='/software/software/delete.html';form.submit()"
+                                                                   class="btn red">删除</a>
                                                                 <button type="submit" class="btn default">重置</button>
                                                             </div>
                                                         </div>
@@ -1324,7 +1391,10 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer navbar-fixed-bottom">
     <div class="page-footer-inner">
-        2014 &copy; Metronic by keenthemes. <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+        2014 &copy; Metronic by keenthemes. <a
+            href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+            title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
+        Metronic!</a>
     </div>
     <div class="scroll-to-top">
         <i class="icon-arrow-up"></i>
@@ -1342,7 +1412,8 @@
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
 <script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
@@ -1352,8 +1423,10 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 
 <script type="text/javascript" src="/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript"
+        src="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<script type="text/javascript"
+        src="/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="/assets/admin/layout4/scripts/layout.js" type="text/javascript"></script>
@@ -1361,7 +1434,7 @@
 <script src="/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/assets/admin/pages/scripts/components-pickers.js"></script>
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         // initiate layout and plugins
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
@@ -1373,16 +1446,16 @@
         // 分页
         $('#pre').click(function () {
             $.get('/software/software/pre.html', function (data) {
-                if(data == '-1') return;
+                if (data == '-1') return;
                 data = JSON.parse(data);
                 var content = '';
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                            '<td>' + o.id + '</td>' +
-                            '<td><a href="/software/software/detail/' + o.id + '.html">' + o.softwareName + '</a> </td>' +
-                            '<td>' + o.examineStatus + '</td>' +
-                            '</tr>'
+                        '<td>' + o.id + '</td>' +
+                        '<td><a href="/software/software/detail/' + o.id + '.html">' + o.softwareName + '</a> </td>' +
+                        '<td>' + o.examineStatus + '</td>' +
+                        '</tr>'
                 }
                 $('#tbody').html(content);
             });
@@ -1390,16 +1463,16 @@
 
         $('#next').click(function () {
             $.get('/software/software/next.html', function (data) {
-                if(data == '-1') return;
+                if (data == '-1') return;
                 data = JSON.parse(data);
                 var content = '';
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                            '<td>' + o.id + '</td>' +
-                            '<td><a href="/software/software/detail/' + o.id + '.html">' + o.softwareName + '</a> </td>' +
-                            '<td>' + o.examineStatus + '</td>' +
-                            '</tr>'
+                        '<td>' + o.id + '</td>' +
+                        '<td><a href="/software/software/detail/' + o.id + '.html">' + o.softwareName + '</a> </td>' +
+                        '<td>' + o.examineStatus + '</td>' +
+                        '</tr>'
                 }
                 $('#tbody').html(content);
             });

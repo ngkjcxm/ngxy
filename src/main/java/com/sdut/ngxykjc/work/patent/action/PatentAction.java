@@ -1,7 +1,6 @@
 package com.sdut.ngxykjc.work.patent.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
-import com.sdut.ngxykjc.work.paper.bean.Paper;
 import com.sdut.ngxykjc.work.patent.bean.Patent;
 import com.sdut.ngxykjc.work.patent.bean.PatentSearch;
 import com.sdut.ngxykjc.work.patent.dao.PatentDao;
@@ -33,11 +32,20 @@ public class PatentAction extends BaseAction {
         patent = (Patent) patentDao.getById(Patent.class, id);
         return SUCCESS;
     }
+    public String udetail() {
+        patent = (Patent) patentDao.getById(Patent.class, id);
+        return "user";
+    }
 
     /**
      * 更新或保存
      */
     public String save() {
+        patentDao.saveOrUpdate(patent);
+        patent = null;
+        return "user";
+    }
+    public String check() {
         patentDao.saveOrUpdate(patent);
         patent = null;
         return SUCCESS;
@@ -62,13 +70,21 @@ public class PatentAction extends BaseAction {
      */
     private int pageCount = 5;
 
-    public String search() {
+    public String msearch(){
+        search();
+        return SUCCESS;
+    }
+
+    public String usearch(){
+        search();
+        return "user";
+    }
+
+    public void search() {
         curpage = 1;
         int first = curpage + (curpage - 1) * pageCount;
         List<Patent> lists = patentDao.selectPage(Patent.class, search, first, pageCount);
         pageList = lists;
-        //System.out.println(pageList);
-        return SUCCESS;
     }
 
     public void next() {

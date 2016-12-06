@@ -9,22 +9,22 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.devMode" value="true"/>
-    <constant name="struts.devMode" value="true"/>
 
     <package name="basePackage" extends="struts-default">
 
         <global-results>
-            <result name="runtimeException">/WEB-INF/jsp/error.jsp</result>
+            <result name="unLogin">/jsp/loginError.jsp</result>
+            <result name="unauthorized">/jsp/loginError.jsp</result>
         </global-results>
 
         <!-- 异常处理:用于处理shiro抛出的异常 -->
         <global-exception-mappings>
             <!-- 未登录 -->
             <exception-mapping exception="org.apache.shiro.authz.UnauthenticatedException"
-                               result="login"/>
+                               result="unLogin"/>
             <!-- 没有权限访问 -->
             <exception-mapping exception="org.apache.shiro.authz.UnauthorizedException"
-                               result="login"/>
+                               result="unauthorized"/>
         </global-exception-mappings>
     </package>
 

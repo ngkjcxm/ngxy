@@ -23,7 +23,7 @@
         <property name="authenticationQuery"
                   value="SELECT password FROM user WHERE username = ?"/>
         <property name="userRolesQuery"
-                  value="SELECT role from secuser WHERE username = ?"/>
+                  value="SELECT username from user WHERE username = ?"/>
         <property name="permissionsQuery"
                   value="SELECT permission FROM permission WHERE username = ?"/>
     </bean>

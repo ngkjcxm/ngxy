@@ -433,7 +433,7 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light ">
                         <div class="portlet-body form">
-                            <form role="form" action="/research/research/search.html" method="post">
+                            <form role="form" action="/research/research/msearch.html" method="post">
                                 <div class="form-body">
                                     <h3 class="form-section font-red-sunglo">审核信息查找</h3>
                                     <div class="row">
@@ -864,7 +864,7 @@
                                                     <div class="col-md-12 " style="border:0px solid green;">
                                                         <div class="row">
                                                             <div class="col-md-offset-3 col-md-9">
-                                                                <a href="javascript:form.action='/research/research/save.html';form.submit()"
+                                                                <a href="javascript:form.action='/research/research/check.html';form.submit()"
                                                                    class="btn green">提交</a>
                                                                 <a href="javascript:form.action='/research/research/delete.html';form.submit()"
                                                                    class="btn red">删除</a>

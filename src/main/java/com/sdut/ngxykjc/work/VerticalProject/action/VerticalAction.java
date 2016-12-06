@@ -1,9 +1,11 @@
 package com.sdut.ngxykjc.work.VerticalProject.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalProject;
 import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalSearch;
 import com.sdut.ngxykjc.work.VerticalProject.dao.VerticalDao;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -108,6 +110,20 @@ public class VerticalAction extends BaseAction {
         vertical = null;
         return SUCCESS;
     }
+
+
+    /**
+     * 审核
+     */
+    @RequiresPermissions(UserPermissions.VERTICAL)
+    public String check() {
+        verticalDao.saveOrUpdate(vertical);
+        vertical = null;
+        return SUCCESS;
+    }
+
+
+
 
     /*          getter&setter            */
     public VerticalProject getVertical() {

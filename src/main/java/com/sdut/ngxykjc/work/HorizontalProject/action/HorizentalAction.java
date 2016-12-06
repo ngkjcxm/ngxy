@@ -1,12 +1,14 @@
 package com.sdut.ngxykjc.work.HorizontalProject.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.HorizontalProject.bean.FundsListsItem;
 import com.sdut.ngxykjc.work.HorizontalProject.bean.Horizontal;
 import com.sdut.ngxykjc.work.HorizontalProject.bean.HorizontalFunds;
 import com.sdut.ngxykjc.work.HorizontalProject.bean.HorizontalSearch;
 import com.sdut.ngxykjc.work.HorizontalProject.dao.HorizontalFundsDao;
 import com.sdut.ngxykjc.work.HorizontalProject.service.HorizontalService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -111,6 +113,16 @@ public class HorizentalAction extends BaseAction {
      */
     public String detail() {
         horizontal = horizontalService.get(id);
+        return SUCCESS;
+    }
+
+    /**
+     * 审批
+     */
+    @RequiresPermissions(UserPermissions.HORIZONTAL)
+    public String check() {
+        horizontalService.saveOrUpdate(horizontal);
+        horizontal = null;
         return SUCCESS;
     }
 
