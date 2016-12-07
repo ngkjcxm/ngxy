@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -22,6 +23,9 @@ public class PatentAction extends BaseAction {
     private PatentSearch search;
     private List<Patent> pageList;
 
+    // 先保存一个fileName，防止未上传文件时把已有的文件名覆盖
+    private String uploadFileName;
+
     @Autowired
     private PatentDao patentDao;
 
@@ -30,24 +34,37 @@ public class PatentAction extends BaseAction {
      */
     public String detail() {
         patent = (Patent) patentDao.getById(Patent.class, id);
+        uploadFileName = patent.getPatentDiplomaFileName();
         return SUCCESS;
     }
+
     public String udetail() {
         patent = (Patent) patentDao.getById(Patent.class, id);
+        uploadFileName = patent.getPatentDiplomaFileName();
         return "user";
     }
 
     /**
      * 更新或保存
      */
-    public String save() {
-        patentDao.saveOrUpdate(patent);
-        patent = null;
+    public String save() throws Exception {
+        baseSave();
         return "user";
     }
-    public String check() {
+
+    private void baseSave() throws Exception {
+        File file = patent.getPatentDiploma();
+        if (file != null) {
+            patentDao.saveFile(file, patent.getPatentDiplomaFileName(), uploadFileName);
+        } else {
+            patent.setPatentDiplomaFileName(uploadFileName);
+        }
         patentDao.saveOrUpdate(patent);
         patent = null;
+    }
+
+    public String check() throws Exception {
+        baseSave();
         return SUCCESS;
     }
 
@@ -70,12 +87,12 @@ public class PatentAction extends BaseAction {
      */
     private int pageCount = 5;
 
-    public String msearch(){
+    public String msearch() {
         search();
         return SUCCESS;
     }
 
-    public String usearch(){
+    public String usearch() {
         search();
         return "user";
     }

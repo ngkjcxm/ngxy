@@ -6,6 +6,9 @@
 <struts>
     <package name="patent" extends="struts-default">
         <action name="patent_*" class="patentAction" method="{1}">
+            <interceptor-ref name="defaultStack">
+                <param name="fileUpload.maximumSize">500000000</param>
+            </interceptor-ref>
             <result name="success">/jsp/patent/listUI.jsp</result>
             <result name="user">/jsp/patent/patent.jsp</result>
         </action>

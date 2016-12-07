@@ -1,6 +1,7 @@
 package com.sdut.ngxykjc.work.patent.bean;
 
 import javax.persistence.*;
+import java.io.File;
 import java.util.Date;
 
 /**
@@ -18,7 +19,7 @@ public class Patent {
     private long id;
 
     /**
-     *  专利编号
+     * 专利编号
      */
     private String patentId;
 
@@ -73,12 +74,12 @@ public class Patent {
     private String academicUnitName;
 
     /**
-     *  其他发明人或设计人编号
+     * 其他发明人或设计人编号
      */
     private String otherPeoId;
 
     /**
-     *  其他发明人或设计人
+     * 其他发明人或设计人
      */
     private String otherPeoName;
 
@@ -137,7 +138,13 @@ public class Patent {
     /**
      * 专利证书名称
      */
-    private String patentDiplomaName;
+    private String patentDiplomaFileName;
+
+    /**
+     * 不持久化
+     */
+    @Transient
+    private File patentDiploma;
 
     /**
      * 登记时间
@@ -392,12 +399,12 @@ public class Patent {
         this.patentDiplomaEnclosure = patentDiplomaEnclosure;
     }
 
-    public String getPatentDiplomaName() {
-        return patentDiplomaName;
+    public String getPatentDiplomaFileName() {
+        return patentDiplomaFileName;
     }
 
-    public void setPatentDiplomaName(String patentDiplomaName) {
-        this.patentDiplomaName = patentDiplomaName;
+    public void setPatentDiplomaFileName(String patentDiplomaFileName) {
+        this.patentDiplomaFileName = patentDiplomaFileName;
     }
 
     public Date getRegisterDate() {
@@ -488,6 +495,14 @@ public class Patent {
         this.remark = remark;
     }
 
+    public File getPatentDiploma() {
+        return patentDiploma;
+    }
+
+    public void setPatentDiploma(File patentDiploma) {
+        this.patentDiploma = patentDiploma;
+    }
+
     @Override
     public String toString() {
         return "patent{" +
@@ -515,7 +530,7 @@ public class Patent {
                 ", authorizedYear='" + authorizedYear + '\'' +
                 ", grantYear='" + grantYear + '\'' +
                 ", patentDiplomaEnclosure='" + patentDiplomaEnclosure + '\'' +
-                ", patentDiplomaName='" + patentDiplomaName + '\'' +
+                ", patentDiplomaName='" + patentDiplomaFileName + '\'' +
                 ", registerDate=" + registerDate +
                 ", registerPeoId='" + registerPeoId + '\'' +
                 ", registerPeoName='" + registerPeoName + '\'' +

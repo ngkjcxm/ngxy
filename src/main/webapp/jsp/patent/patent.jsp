@@ -471,7 +471,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                 <div class="portlet-body form">
                                     <!-- BEGIN FORM-->
-                                    <form name="form" method="post" class="form-horizontal">
+                                    <form name="form" method="post" class="form-horizontal"
+                                          enctype="multipart/form-data">
                                         <s:hidden name="patent.id"/>
                                         <div class="form-body">
                                             <h3 class="form-section font-red-sunglo">专利成果录入</h3>
@@ -676,13 +677,24 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <!--/row-->
                                             <!--/row-->
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="control-label col-md-3 ">专利证书附件</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="专利证书附件">
+                                                        <label class="control-label col-md-6 ">专利证书附件</label>
+                                                        <div class="col-md-6">
+                                                            <s:file type="file" class="form-control"
+                                                                    name="patent.patentDiploma"
+                                                                    placeholder="专利证书附件"/>
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4 ">已上传附件</label>
+                                                        <div class="col-md-6">
+                                                            <s:textfield disabled="true" type="text" class="form-control"
+                                                                    name="patent.patentDiplomaFileName"
+                                                                    placeholder="已上传文件"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -759,7 +771,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-md-12 " style="border:0px solid green;">
                                                     <div class="row">
                                                         <div class="col-md-offset-3 col-md-9">
-                                                            <a class="btn yellow">附件上传</a>
                                                             <a href="javascript:form.action='/patent/patent/save.html';form.submit()"
                                                                class="btn green">提交</a>
                                                             <a href="javascript:form.action='/patent/patent/delete.html';form.submit()"

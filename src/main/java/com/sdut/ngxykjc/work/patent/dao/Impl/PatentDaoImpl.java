@@ -1,7 +1,7 @@
 package com.sdut.ngxykjc.work.patent.dao.Impl;
 
 import com.sdut.ngxykjc.base.dao.impl.BaseDaoImpl;
-import com.sdut.ngxykjc.work.paper.bean.PaperSearch;
+import com.sdut.ngxykjc.base.util.FilePathUtil;
 import com.sdut.ngxykjc.work.patent.bean.Patent;
 import com.sdut.ngxykjc.work.patent.bean.PatentSearch;
 import com.sdut.ngxykjc.work.patent.dao.PatentDao;
@@ -10,6 +10,10 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.channels.FileChannel;
 import java.util.List;
 
 /**
@@ -40,5 +44,36 @@ public class PatentDaoImpl extends BaseDaoImpl implements PatentDao {
             }
             return criteria.setFirstResult(first).setMaxResults(count).list();
         });
+    }
+
+    @Override
+    public void saveFile(File file, String fileName, String oldName) throws Exception {
+        System.out.println("file name:" + fileName);
+        System.out.println("file length:" + file.length());
+        FileInputStream fis = new FileInputStream(file);
+        FileChannel fileChannel = fis.getChannel();
+
+        String realPath = FilePathUtil.getUploadFileBasePath("patent");
+        File dir = new File(realPath);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+        String filePath = realPath + fileName;
+        File outFile = new File(filePath);
+        if (!outFile.exists()) {
+            outFile.createNewFile();
+        }
+        FileChannel outChannel = new FileOutputStream(outFile).getChannel();
+        outChannel.transferFrom(fileChannel, 0, fileChannel.size());
+        outChannel.close();
+        fileChannel.close();
+
+        // 删除源文件（如果有）
+        if (oldName != null) {
+            file = new File(realPath + oldName);
+            if (file.exists()) {
+                file.delete();
+            }
+        }
     }
 }
