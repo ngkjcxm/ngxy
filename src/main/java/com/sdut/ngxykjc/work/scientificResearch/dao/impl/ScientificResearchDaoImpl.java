@@ -44,12 +44,10 @@ public class ScientificResearchDaoImpl extends BaseDaoImpl implements Scientific
         ResearchSearch ss = (ResearchSearch) search;
         return getHibernateTemplate().executeWithNativeSession(session -> {
             Criteria criteria = session.createCriteria(clazz);
-            if(StringUtils.hasLength(ss.getUnitName())){
-                criteria.add(Restrictions.like("unitName",ss.getUnitName()));
+            if (StringUtils.hasLength(ss.getUnitName())) {
+                criteria.add(Restrictions.like("unitName", ss.getUnitName()));
             }
             return criteria.list();
         });
     }
-
-
 }

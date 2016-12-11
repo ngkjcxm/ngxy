@@ -1,9 +1,12 @@
 package com.sdut.ngxykjc.work.softwareWork.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.softwareWork.bean.SoftwareSearch;
 import com.sdut.ngxykjc.work.softwareWork.bean.SoftwareWork;
 import com.sdut.ngxykjc.work.softwareWork.dao.SoftwareDao;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -26,29 +29,38 @@ public class SoftwareAction extends BaseAction {
     @Autowired
     private SoftwareDao softwareDao;
 
-    public String listQueryUI(){
-        return "listquery";
-    }
-
     /**
      * 当前页
      */
-    private int curpage = 1;
+    private int curpage = 0;
     /**
      * 一页总条数
      */
     private int pageCount = 5;
 
     public String search() {
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = 0;
+        pageCount = 0;
         List<SoftwareWork> lists = softwareDao.selectPage(SoftwareWork.class, search, first, pageCount);
         pageList = lists;
         return SUCCESS;
     }
 
+    @RequiresAuthentication
+    public String msearch() {
+        search();
+        return SUCCESS;
+    }
+
+    @RequiresAuthentication
+    public String usearch() {
+        search();
+        return "user";
+    }
+
     public void next() {
         curpage++;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<SoftwareWork> lists = softwareDao.selectPage(SoftwareWork.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;
@@ -59,33 +71,52 @@ public class SoftwareAction extends BaseAction {
     }
 
     public void pre() {
-        if ((curpage - 1) <= 0) {
+        if (curpage == 0) {
             json(pageList);
             return;
         }
 
         curpage--;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<SoftwareWork> lists = softwareDao.selectPage(SoftwareWork.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;
         }
 
         json(pageList);
+
     }
 
     /**
      * 详细信息
      */
+    @RequiresAuthentication
     public String detail() {
         software = (SoftwareWork) softwareDao.getById(SoftwareWork.class, id);
         return SUCCESS;
     }
 
+    @RequiresAuthentication
+    public String udetail() {
+        software = (SoftwareWork) softwareDao.getById(SoftwareWork.class, id);
+        return "user";
+    }
+
     /**
      * 保存
      */
+    @RequiresAuthentication
     public String save() {
+        softwareDao.saveOrUpdate(software);
+        software = null;
+        return "user";
+    }
+
+    /**
+     * 审核
+     */
+    @RequiresPermissions(UserPermissions.SOFTWARE)
+    public String check() {
         softwareDao.saveOrUpdate(software);
         software = null;
         return SUCCESS;
@@ -94,19 +125,12 @@ public class SoftwareAction extends BaseAction {
     /**
      * 删除
      */
+    @RequiresAuthentication
     public String delete() {
         softwareDao.delete(software);
         software = null;
         return SUCCESS;
     }
-
-    /**
-     * 显示页面
-     */
-    public String listUI(){
-        return SUCCESS;
-    }
-
 
     /*          getter&setter            */
     public long getId() {

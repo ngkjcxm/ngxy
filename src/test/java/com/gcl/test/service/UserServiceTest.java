@@ -23,9 +23,12 @@ public class UserServiceTest extends BaseJunitTest {
     @Test
     public void testRegister() {
         User user = new User();
-        user.setUsername("sun");
-        user.setPassword("sun");
+        user.setUsername("admin");
+        user.setPassword("admin");
         user.setAvatar("avatar");
+        user.setRole("manager");
+        user.setHorizontalPermission("true");
+        user.setVerticalPermission("true");
         user.setRegisterDate(new Date());
 
         userService.register(user);

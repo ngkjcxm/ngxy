@@ -445,7 +445,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="portlet-body form">
                                     <!-- BEGIN FORM-->
                                     <form name="form" class="form-horizontal" method="post">
-                                        <s:hidden name="research.id"/>
+                                        <s:hidden name="scientificResearchReward.id"/>
                                         <div class="form-body">
                                             <h3 class="form-section font-red-sunglo">科研成果信息录入</h3>
                                             <div class="row">
@@ -453,7 +453,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3 font-red-sunglo">奖励名称</label>
                                                         <div class="col-md-8">
-                                                            <s:textfield name="research.researchName" type="text"
+                                                            <s:textfield name="scientificResearchReward.researchName" type="text"
                                                                          class="form-control" placeholder="奖励名称"/>
                                                         </div>
                                                     </div>
@@ -465,7 +465,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">证书编号</label>
                                                         <div class="col-md-6">
-                                                            <s:textfield name="research.researchId" type="text"
+                                                            <s:textfield name="scientificResearchReward.researchId" type="text"
                                                                          class="form-control" placeholder="证书编号"/>
                                                         </div>
                                                     </div>
@@ -475,7 +475,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 font-red-sunglo">授奖部门</label>
                                                         <div class="col-md-6">
-                                                            <s:select name="research.awardDepartment"
+                                                            <s:select name="scientificResearchReward.awardDepartment"
                                                                       class="select2_category form-control"
                                                                       list="#{
                                                                     '国务院':'国务院',
@@ -500,7 +500,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">首位完成人单位</label>
                                                         <div class="col-md-6">
-                                                            <s:select name="research.unitName"
+                                                            <s:select name="scientificResearchReward.unitName"
                                                                       class="select2_category form-control"
                                                                       list="#{
                                                                     '农业工程与食品科学学院':'农业工程与食品科学学院'
@@ -514,7 +514,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 font-red-sunglo">首位完成人</label>
                                                         <div class="col-md-6">
-                                                            <s:textfield name="research.completePeoName" type="text"
+                                                            <s:textfield name="scientificResearchReward.completePeoName" type="text"
                                                                          class="form-control" placeholder="首位完成人"/>
                                                         </div>
                                                     </div>
@@ -530,8 +530,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <label class="control-label col-md-6 font-red-sunglo">获奖日期</label>
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_year col-md-12">
-                                                                <input name="research.awardYear"
-                                                                       value="<s:date name="research.awardYear" format="yyyy-MM-dd" />"
+                                                                <input name="scientificResearchReward.awardYear"
+                                                                       value="<s:date name="scientificResearchReward.awardYear" format="yyyy-MM-dd" />"
                                                                        type="date" class="form-control"/>
                                                             </div>
                                                         </div>
@@ -542,7 +542,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 font-red-sunglo">获奖类别</label>
                                                         <div class="col-md-6">
-                                                            <s:select name="research.awardType"
+                                                            <s:select name="scientificResearchReward.awardType"
                                                                       class="select2_category form-control"
                                                                       list="#{
                                                                     '国家最高科学技术奖':'国家最高科学技术奖',
@@ -580,7 +580,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">奖励级别</label>
                                                         <div class="col-md-6">
-                                                            <s:select name="research.rewardGrade"
+                                                            <s:select name="scientificResearchReward.rewardGrade"
                                                                       class="select2_category form-control"
                                                                       list="#{
                                                                     '特等奖':'特等奖',
@@ -600,8 +600,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_year2 col-md-13"
                                                                  data-date="" data-date-format="yyyy">
-                                                                <input type="date" name="research.allowance"
-                                                                       value="<s:date name="research.allowance" format="yyyy-MM-dd"/>"
+                                                                <input type="date" name="scientificResearchReward.allowance"
+                                                                       value="<s:date name="scientificResearchReward.allowance" format="yyyy-MM-dd"/>"
                                                                        class="form-control"/>
                                                             </div>
                                                         </div>
@@ -617,7 +617,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">单位排名</label>
                                                         <div class="col-md-6">
-                                                            <s:select name="research.unitOrder"
+                                                            <s:select name="scientificResearchReward.unitOrder"
                                                                       class="select2_category form-control"
                                                                       list="#{
                                                                           '第一单位':'第一单位',
@@ -640,7 +640,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">备注</label>
                                                         <div class="col-md-6">
-                                                            <s:textfield name="research.remark" type="text"
+                                                            <s:textfield name="scientificResearchReward.remark" type="text"
                                                                          class="form-control" placeholder="备注"/>
                                                         </div>
                                                     </div>
@@ -655,7 +655,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">其他完成人</label>
                                                         <div class="col-md-6">
-                                                            <s:textfield name="research.otherMemberName" type="text"
+                                                            <s:textfield name="scientificResearchReward.otherMemberName" type="text"
                                                                          class="form-control" placeholder="其他完成人<"/>
                                                         </div>
                                                     </div>
@@ -665,7 +665,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">登记人</label>
                                                         <div class="col-md-6">
-                                                            <s:textfield name="research.registerPeoName" type="text"
+                                                            <s:textfield name="scientificResearchReward.registerPeoName" type="text"
                                                                          class="form-control" placeholder="登记人"/>
                                                         </div>
                                                     </div>
@@ -682,8 +682,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_day2 col-md-13"
                                                                  data-date="" data-date-format="yyyy/mm/dd">
-                                                                <input name="research.registerDate"
-                                                                       value="<s:date name="research.registerDate"/>"
+                                                                <input name="scientificResearchReward.registerDate"
+                                                                       value="<s:date name="scientificResearchReward.registerDate"/>"
                                                                        type="date" size="16" class="form-control"/>
                                                             </div>
                                                         </div>
@@ -694,7 +694,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">单位证书附件</label>
                                                         <div class="col-md-6">
-                                                            <s:textfield name="research.unitDiplomaAnnexesName"
+                                                            <s:textfield name="scientificResearchReward.unitDiplomaAnnexesName"
                                                                          type="text" class="form-control"
                                                                          placeholder="单位证书附件"/>
                                                         </div>
@@ -710,7 +710,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">审核结论</label>
                                                         <div class="col-md-6">
-                                                            <s:select name="research.examineResult"
+                                                            <s:select name="scientificResearchReward.examineResult"
                                                                       class="select2_category form-control"
                                                                       data-placeholder="Choose a Category"
                                                                       list="#{
@@ -729,8 +729,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_day2 col-md-13"
                                                                  data-date="" data-date-format="yyyy/mm/dd">
-                                                                <input name="research.examineDate"
-                                                                       value="<s:date name="research.examineDate" format="yyyy-MM-dd"/>"
+                                                                <input name="scientificResearchReward.examineDate"
+                                                                       value="<s:date name="scientificResearchReward.examineDate" format="yyyy-MM-dd"/>"
                                                                        type="date" size="16" class="form-control">
                                                             </div>
                                                         </div>

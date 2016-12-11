@@ -11,6 +11,7 @@
         <action name="user_*" class="userAction" method="{1}">
             <result name="success">/jsp/home.jsp</result>
             <result name="error">/jsp/loginError.jsp</result>
+            <result name="index">/jsp/index.jsp</result>
             <result name="user">/jsp/adminJurisdiction/listUI.jsp</result>
         </action>
     </package>

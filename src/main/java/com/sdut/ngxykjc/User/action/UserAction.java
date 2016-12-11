@@ -3,6 +3,7 @@ package com.sdut.ngxykjc.User.action;
 import com.sdut.ngxykjc.User.bean.User;
 import com.sdut.ngxykjc.User.service.UserService;
 import com.sdut.ngxykjc.base.action.BaseAction;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -40,23 +41,26 @@ public class UserAction extends BaseAction {
      */
     public String logout() {
         userService.logout();
-        return SUCCESS;
+        return "index";
     }
 
     /**
      * 保存
      */
+    @RequiresAuthentication
     public String save() {
         userService.save(user);
         user = null;
         return "user";
     }
 
+    @RequiresAuthentication
     public String detail() {
         user = userService.getUser(id);
         return "user";
     }
 
+    @RequiresAuthentication
     public String delete() {
         if (user != null) {
             userService.delete(user);
@@ -76,6 +80,7 @@ public class UserAction extends BaseAction {
     /**
      * 修改密码
      */
+    @RequiresAuthentication
     public String change() {
         // 如果修改成功
         if (userService.changePassword(oldPwd, newPwd)) {

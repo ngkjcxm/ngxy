@@ -1,11 +1,12 @@
 package com.sdut.ngxykjc.work.scientificResearch.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
-import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalProject;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.scientificResearch.bean.ResearchSearch;
-import com.sdut.ngxykjc.work.scientificResearch.bean.ScientificResearch;
 import com.sdut.ngxykjc.work.scientificResearch.bean.ScientificResearchReward;
 import com.sdut.ngxykjc.work.scientificResearch.service.ScientificResearchService;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,6 @@ public class ResearchAction extends BaseAction {
 
     private long id;
     private ResearchSearch search;
-    private ScientificResearchReward research;
     private List<ScientificResearchReward> pageList;
     private ScientificResearchReward scientificResearchReward;
 
@@ -32,34 +32,56 @@ public class ResearchAction extends BaseAction {
     /**
      * 当前页
      */
-    private int curpage = 1;
+    private int curpage = 0;
     /**
      * 一页总条数
      */
     private int pageCount = 5;
 
-    public String search(){
-        System.out.println(search);
-        curpage = 1;
-        int first = curpage + (pageCount - 1) * pageCount;
+    @RequiresAuthentication
+    public String search() {
+        curpage = 0;
+        int first = curpage * pageCount;
         List<ScientificResearchReward> list = scientificResearchService.selectPage(ScientificResearchReward.class, search, first, pageCount);
         pageList = list;
-        System.out.println(pageList);
         return SUCCESS;
+    }
+
+    @RequiresAuthentication
+    public String usearch() {
+        curpage = 0;
+        int first = curpage * pageCount;
+        List<ScientificResearchReward> list = scientificResearchService.selectPage(ScientificResearchReward.class, search, first, pageCount);
+        pageList = list;
+        return "user";
     }
 
     /**
      * 详细信息
      */
+    @RequiresAuthentication
     public String detail() {
         scientificResearchReward = (ScientificResearchReward) scientificResearchService.getById(ScientificResearchReward.class, id);
         return SUCCESS;
     }
 
+    @RequiresAuthentication
+    public String udetail() {
+        scientificResearchReward = (ScientificResearchReward) scientificResearchService.getById(ScientificResearchReward.class, id);
+        return "user";
+    }
+
     /**
      * 保存
      */
+    @RequiresAuthentication
     public String save() {
+        scientificResearchService.saveOrUpdate(scientificResearchReward);
+        return "user";
+    }
+
+    @RequiresPermissions(UserPermissions.SCIENTIFIC_RESEARCH)
+    public String check() {
         scientificResearchService.saveOrUpdate(scientificResearchReward);
         return SUCCESS;
     }
@@ -67,14 +89,23 @@ public class ResearchAction extends BaseAction {
     /**
      * 删除
      */
+    @RequiresAuthentication
     public String delete() {
         scientificResearchService.delete(scientificResearchReward);
-        research = null;
+        scientificResearchReward = null;
         return SUCCESS;
     }
 
+    @RequiresAuthentication
+    public String udelete() {
+        scientificResearchService.delete(scientificResearchReward);
+        scientificResearchService = null;
+        return "user";
+    }
+
     //导出
-    public void searchScientific(){
+    @RequiresAuthentication
+    public void searchScientific() {
         System.out.println(search);
         List<ScientificResearchReward> list = scientificResearchService.searchScientific(ScientificResearchReward.class, search);
         System.out.println(list);
@@ -83,21 +114,19 @@ public class ResearchAction extends BaseAction {
 
 
     //跳转页面
-    public String listUI(){
+    public String listUI() {
         return SUCCESS;
     }
 
-    public String listQueryUI(){
+    public String listQueryUI() {
         return "listquery";
     }
 
 
-
     //分页
-
     public void next() {
         curpage++;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<ScientificResearchReward> lists = scientificResearchService.selectPage(ScientificResearchReward.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;
@@ -108,12 +137,12 @@ public class ResearchAction extends BaseAction {
     }
 
     public void pre() {
-        if ((curpage - 1) <= 0) {
+        if (curpage == 0) {
             json(pageList);
             return;
         }
         curpage--;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<ScientificResearchReward> lists = scientificResearchService.selectPage(ScientificResearchReward.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;

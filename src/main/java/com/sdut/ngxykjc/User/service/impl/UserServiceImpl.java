@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
             return true;
         } catch (Exception e) {
             // 登录失败，返回false
-            return true;
+            return false;
         }
     }
 

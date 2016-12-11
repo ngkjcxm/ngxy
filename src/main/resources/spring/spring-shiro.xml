@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 
@@ -23,7 +20,7 @@
         <property name="authenticationQuery"
                   value="SELECT password FROM user WHERE username = ?"/>
         <property name="userRolesQuery"
-                  value="SELECT username from user WHERE username = ?"/>
+                  value="SELECT role from user WHERE username = ?"/>
         <property name="permissionsQuery"
                   value="SELECT permission FROM permission WHERE username = ?"/>
     </bean>
@@ -52,5 +49,4 @@
         <!-- Shiro的核心安全接口，这个属性是必须的 -->
         <property name="securityManager" ref="securityManager"/>
     </bean>
-
 </beans>

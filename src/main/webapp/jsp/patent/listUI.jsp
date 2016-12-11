@@ -1348,7 +1348,7 @@
                                                         <div class="row">
                                                             <div class="col-md-offset-3 col-md-9">
                                                                 <a class="btn yellow">附件上传</a>
-                                                                <a href="javascript:form.action='/patent/patent/save.html';form.submit()"
+                                                                <a href="javascript:form.action='/patent/patent/check.html';form.submit()"
                                                                    class="btn green">提交</a>
                                                                 <a href="javascript:form.action='/patent/patent/delete.html';form.submit()"
                                                                    class="btn red">删除</a>

@@ -1,10 +1,6 @@
 package com.sdut.ngxykjc.work.workAchievement.dao.impl;
 
 import com.sdut.ngxykjc.base.dao.impl.BaseDaoImpl;
-import com.sdut.ngxykjc.work.HorizontalProject.bean.Horizontal;
-import com.sdut.ngxykjc.work.HorizontalProject.bean.HorizontalSearch;
-import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalProject;
-import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalSearch;
 import com.sdut.ngxykjc.work.workAchievement.bean.WorkAchieve;
 import com.sdut.ngxykjc.work.workAchievement.bean.WorkArchieveSearch;
 import com.sdut.ngxykjc.work.workAchievement.dao.WorkAchieveDao;
@@ -91,7 +87,7 @@ public class WorkAchieveDaoImpl extends BaseDaoImpl implements WorkAchieveDao {
         WorkArchieveSearch ws = (WorkArchieveSearch) search;
         return getHibernateTemplate().executeWithNativeSession(session -> {
             Criteria criteria = session.createCriteria(clazz);
-            if(StringUtils.hasLength(ws.getWorkName())){
+            if (StringUtils.hasLength(ws.getWorkName())) {
                 criteria.add(Restrictions.like("workName", ws.getWorkName()));
             }
             return criteria.list();
@@ -100,5 +96,20 @@ public class WorkAchieveDaoImpl extends BaseDaoImpl implements WorkAchieveDao {
 
     private List<WorkAchieve> getAll() {
         return (List<WorkAchieve>) getBySql(WorkAchieve.class, "SELECT * FROM workachieve");
+    }
+
+    @Override
+    public List<WorkAchieve> selectPage(Class glazz, Object s, int first, int count) {
+        WorkArchieveSearch search = (WorkArchieveSearch) s;
+        return getHibernateTemplate().executeWithNativeSession(session -> {
+            Criteria criteria = session.createCriteria(glazz);
+            if (StringUtils.hasLength(search.getWorkName())) {
+                criteria.add(Restrictions.like("workName", search.getWorkName()));
+            }
+            if (StringUtils.hasLength(search.getState()) && !"所有".equals(search.getState())) {
+                criteria.add(Restrictions.like("examineResult", search.getState()));
+            }
+            return criteria.setFirstResult(first).setMaxResults(count).list();
+        });
     }
 }

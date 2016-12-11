@@ -1,10 +1,13 @@
 package com.sdut.ngxykjc.work.HorizontalProject.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.HorizontalProject.bean.*;
 import com.sdut.ngxykjc.work.HorizontalProject.dao.HorizontalFundsDao;
 import com.sdut.ngxykjc.work.HorizontalProject.service.HorizontalFundsService;
 import com.sdut.ngxykjc.work.HorizontalProject.service.HorizontalService;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -57,16 +60,18 @@ public class HorizentalAction extends BaseAction {
      */
     private HorizontalSearch search;
 
-    public String listUI(){
+    public String listUI() {
         return SUCCESS;
     }
-    public String listQueryUI(){
+
+    public String listQueryUI() {
         return "listquery";
     }
 
     /**
      * 搜索
      */
+    @RequiresAuthentication
     public String search() {
         list = horizontalService.search(search);
         pageCount = (int) Math.ceil(list.size() / perPage);
@@ -81,6 +86,7 @@ public class HorizentalAction extends BaseAction {
     /**
      * 上一页
      */
+    @RequiresAuthentication
     public void pre() {
         if (curPage == 1) {
             json("-1");
@@ -93,6 +99,7 @@ public class HorizentalAction extends BaseAction {
     /**
      * 下一页
      */
+    @RequiresAuthentication
     public void next() {
         if (curPage >= pageCount) {
             json("-1");
@@ -115,6 +122,7 @@ public class HorizentalAction extends BaseAction {
     /**
      * 详细信息
      */
+    @RequiresAuthentication
     public String detail() {
         horizontal = horizontalService.get(id);
         return SUCCESS;
@@ -123,7 +131,15 @@ public class HorizentalAction extends BaseAction {
     /**
      * 更新或保存
      */
+    @RequiresAuthentication
     public String save() {
+        horizontalService.saveOrUpdate(horizontal);
+        horizontal = null;
+        return SUCCESS;
+    }
+
+    @RequiresPermissions(UserPermissions.HORIZONTAL)
+    public String check() {
         horizontalService.saveOrUpdate(horizontal);
         horizontal = null;
         return SUCCESS;
@@ -132,15 +148,15 @@ public class HorizentalAction extends BaseAction {
     /**
      * 删除
      */
-    public String delete(){
-        if(horizontal != null){
+    @RequiresAuthentication
+    public String delete() {
+        if (horizontal != null) {
             horizontalService.delete(horizontal);
         }
         return SUCCESS;
     }
 
     /****************************横向课题经费************************/
-
     @Autowired
     private HorizontalFundsService horizontalFundsService;
     private HorizontalFunds funds;
@@ -176,6 +192,7 @@ public class HorizentalAction extends BaseAction {
         json(listsItems);
     }
 
+    @RequiresPermissions(UserPermissions.HORIZONTAL)
     public void checkFunds() {
         if (horizontal != null && funds != null) {
             funds.setExamineResult("已通过");
@@ -195,15 +212,14 @@ public class HorizentalAction extends BaseAction {
         }
     }
 
-   public void searchFundsSearch(){
+    public void searchFundsSearch() {
+        System.out.println("yes");
+        System.out.println(horizontalFundsSearch);
+        List<HorizontalFunds> fundss = horizontalFundsService.searchFundsSearch(HorizontalFunds.class, horizontalFundsSearch);
+        System.out.println(fundss);
+        json(fundss);
 
-       System.out.println("yes");
-       System.out.println(horizontalFundsSearch);
-       List<HorizontalFunds> fundss = horizontalFundsService.searchFundsSearch(HorizontalFunds.class, horizontalFundsSearch);
-       System.out.println(fundss);
-       json(fundss);
-
-   }
+    }
 
 
     /*********************/

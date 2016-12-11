@@ -1,15 +1,17 @@
 package com.sdut.ngxykjc.work.workAchievement.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
-import com.sdut.ngxykjc.work.HorizontalProject.bean.Horizontal;
-import com.sdut.ngxykjc.work.HorizontalProject.bean.HorizontalSearch;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.workAchievement.bean.WorkAchieve;
 import com.sdut.ngxykjc.work.workAchievement.bean.WorkArchieveSearch;
 import com.sdut.ngxykjc.work.workAchievement.dao.WorkAchieveDao;
 import com.sdut.ngxykjc.work.workAchievement.service.WorkAchieveSearchService;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +36,7 @@ public class WorkAchieveAction extends BaseAction {
     private long id;
 
 
-    public String listQueryUI(){
+    public String listQueryUI() {
         return "listquery";
     }
 
@@ -52,17 +54,12 @@ public class WorkAchieveAction extends BaseAction {
     /**
      * 当前页:从1开始
      */
-    private int curPage = 1;
+    private int curpage = 0;
 
     /**
      * 总页数
      */
-    private int pageCount;
-
-    /**
-     * 一页行数
-     */
-    private int perPage = 5;
+    private int pageCount = 5;
 
     /**
      * 搜索条件
@@ -72,55 +69,66 @@ public class WorkAchieveAction extends BaseAction {
     /**
      * 搜索
      */
+    @RequiresAuthentication
     public String search() {
-        list = workAchieveDao.search(search);
-        pageCount = (int) Math.ceil(list.size() / perPage);
-        if (list.size() > perPage) {
-            pageList = list.subList(0, perPage);
-        } else {
-            pageList = list;
-        }
+        int first = 0;
+        curpage = 0;
+        List<WorkAchieve> lists = workAchieveDao.selectPage(WorkAchieve.class, search, first, pageCount);
+        pageList = lists;
         return SUCCESS;
     }
 
-    /**
-     * 上一页
-     */
-    public void pre() {
-        if (curPage == 1) {
-            json("-1");
-            return;
-        }
-        curPage--;
-        page();
+    public String msearch() {
+        search();
+        return SUCCESS;
     }
 
-    /**
-     * 下一页
-     */
+    public String usearch() {
+        search();
+        return "user";
+    }
+
+    @RequiresAuthentication
     public void next() {
-        if (curPage >= pageCount) {
-            json("-1");
-            return;
+        curpage++;
+        int first = curpage * pageCount;
+        List<WorkAchieve> lists = workAchieveDao.selectPage(WorkAchieve.class, search, first, pageCount);
+        if (!CollectionUtils.isEmpty(lists)) {
+            pageList = lists;
+        } else {
+            curpage--;
         }
-        curPage++;
-        page();
+        json(pageList);
     }
 
-    /**
-     * 分页
-     */
-    public void page() {
-        int begin = (curPage - 1) * perPage;
-        int end = curPage * perPage;
-        pageList = list.subList(begin, end);
+    @RequiresAuthentication
+    public void pre() {
+        if (curpage == 0) {
+            json(pageList);
+            return;
+        }
+
+        curpage--;
+        int first = curpage * pageCount;
+        List<WorkAchieve> lists = workAchieveDao.selectPage(WorkAchieve.class, search, first, pageCount);
+        if (!CollectionUtils.isEmpty(lists)) {
+            pageList = lists;
+        }
         json(pageList);
     }
 
     /**
      * 添加或修改
      */
+    @RequiresAuthentication
     public String save() {
+        workAchieveDao.saveOrUpdate(workAchieve);
+        workAchieve = null;
+        return "user";
+    }
+
+    @RequiresPermissions(UserPermissions.WORK_ACHIEVE)
+    public String check() {
         workAchieveDao.saveOrUpdate(workAchieve);
         workAchieve = null;
         return SUCCESS;
@@ -129,34 +137,47 @@ public class WorkAchieveAction extends BaseAction {
     /**
      * 删除
      */
+    @RequiresAuthentication
     public String delete() {
         workAchieveDao.delete(workAchieve);
         return SUCCESS;
     }
 
+    @RequiresAuthentication
+    public String udelete() {
+        workAchieveDao.delete(workAchieve);
+        return "user";
+    }
+
     /**
      * 详细信息
      */
+    @RequiresAuthentication
     public String detail() {
         workAchieve = (WorkAchieve) workAchieveDao.getById(WorkAchieve.class, id);
         return SUCCESS;
     }
 
+    @RequiresAuthentication
+    public String udetail() {
+        workAchieve = (WorkAchieve) workAchieveDao.getById(WorkAchieve.class, id);
+        return "user";
+    }
+
     /**
      * 显示页面
      */
-    public String listUI(){
+    @RequiresAuthentication
+    public String listUI() {
         return SUCCESS;
     }
 
-
-    public void searchWork(){
+    @RequiresPermissions(UserPermissions.QUERY)
+    public void searchWork() {
         List<WorkAchieve> list = workAchieveSearchService.searchWork(WorkAchieve.class, search);
         System.out.println(list);
         json(list);
     }
-
-
 
     /* setter & getter */
     public WorkAchieve getWorkAchieve() {
@@ -198,7 +219,4 @@ public class WorkAchieveAction extends BaseAction {
     public void setWorkAchieveDao(WorkAchieveDao workAchieveDao) {
         this.workAchieveDao = workAchieveDao;
     }
-
-
-
 }

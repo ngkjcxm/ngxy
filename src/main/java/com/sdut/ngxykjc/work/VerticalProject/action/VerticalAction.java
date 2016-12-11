@@ -1,6 +1,7 @@
 package com.sdut.ngxykjc.work.VerticalProject.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.HorizontalProject.bean.FundsListsItem;
 import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalFunds;
 import com.sdut.ngxykjc.work.VerticalProject.bean.VerticalProject;
@@ -9,6 +10,8 @@ import com.sdut.ngxykjc.work.VerticalProject.dao.VerticalDao;
 import com.sdut.ngxykjc.work.VerticalProject.dao.VerticalFundsDao;
 import com.sdut.ngxykjc.work.VerticalProject.service.VerticalFundsService;
 import com.sdut.ngxykjc.work.VerticalProject.service.VerticalSearchService;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -60,6 +63,7 @@ public class VerticalAction extends BaseAction {
     /**
      * 搜索
      */
+    @RequiresAuthentication
     public String search() {
         list = verticalDao.search(search);
         pageCount = (int) Math.ceil(list.size() / perPage);
@@ -108,6 +112,7 @@ public class VerticalAction extends BaseAction {
     /**
      * 详细信息
      */
+    @RequiresAuthentication
     public String detail() {
         vertical = (VerticalProject) verticalDao.getById(VerticalProject.class, id);
         return SUCCESS;
@@ -116,6 +121,7 @@ public class VerticalAction extends BaseAction {
     /**
      * 保存
      */
+    @RequiresAuthentication
     public String save() {
         verticalDao.saveOrUpdate(vertical);
         vertical = null;
@@ -125,10 +131,12 @@ public class VerticalAction extends BaseAction {
     /**
      * 显示页面
      */
+    @RequiresAuthentication
     public String listUI() {
         return SUCCESS;
     }
 
+    @RequiresPermissions(UserPermissions.VERTICAL)
     public void searchVertical() {
 
         System.out.println("--" + search);
@@ -148,6 +156,7 @@ public class VerticalAction extends BaseAction {
     private String fundsSearch;
     //private VorizontalFundsSearch horizontalFundsSearch;
 
+    @RequiresAuthentication
     public void saveF() {
         if (vertical == null) {
             json("error");
@@ -157,21 +166,25 @@ public class VerticalAction extends BaseAction {
         }
     }
 
+    @RequiresAuthentication
     public void fundsList() {
         List<FundsListsItem> listsItems = verticalFundsDao.fundsList(id);
         json(listsItems);
     }
 
+    @RequiresAuthentication
     public void fundsDetail() {
         funds = (VerticalFunds) verticalFundsDao.getById(VerticalFunds.class, fundsId);
         json(funds);
     }
 
+    @RequiresAuthentication
     public void searchF() {
         List<FundsListsItem> listsItems = verticalFundsDao.fundsList(id, fundsSearch);
         json(listsItems);
     }
 
+    @RequiresPermissions(UserPermissions.VERTICAL)
     public void checkFunds() {
         if (vertical != null && funds != null) {
             funds.setExamineResult("已通过");
@@ -182,6 +195,7 @@ public class VerticalAction extends BaseAction {
         }
     }
 
+    @RequiresAuthentication
     public void deleteFunds() {
         if (vertical != null && funds != null) {
             verticalFundsDao.delete(funds);

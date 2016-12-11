@@ -830,7 +830,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="input-group date form_day2 col-md-13"
                                                                      data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input name="research.examineDate"
+                                                                    <input name="scientificResearchReward.examineDate"
                                                                            value="<s:date name="scientificResearchReward.examineDate" format="yyyy-MM-dd"/>"
                                                                            type="date" size="16" class="form-control">
                                                                 </div>
@@ -844,7 +844,7 @@
                                                     <div class="col-md-12 " style="border:0px solid green;">
                                                         <div class="row">
                                                             <div class="col-md-offset-3 col-md-9">
-                                                                <a href="javascript:form.action='/research/research/save.html';form.submit()"
+                                                                <a href="javascript:form.action='/research/research/check.html';form.submit()"
                                                                    class="btn green">提交</a>
                                                                 <a href="javascript:form.action='/research/research/delete.html';form.submit()"
                                                                    class="btn red">删除</a>

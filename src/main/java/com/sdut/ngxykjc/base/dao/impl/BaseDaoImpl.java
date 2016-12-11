@@ -3,8 +3,8 @@ package com.sdut.ngxykjc.base.dao.impl;
 import com.sdut.ngxykjc.base.dao.BaseDao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Created by 郭昌仑 on 2016/10/17.
  */
+@Transactional
 public abstract class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
 
     @Override
@@ -28,6 +29,8 @@ public abstract class BaseDaoImpl extends HibernateDaoSupport implements BaseDao
 
     @Override
     public List<?> getByHql(String hql) {
+        HibernateTemplate template = getHibernateTemplate();
+        System.out.println("remplate------------------:" + template);
         return (List<?>) getHibernateTemplate().executeWithNativeSession(session -> {
             return session.createQuery(hql).list();
         });
@@ -55,7 +58,7 @@ public abstract class BaseDaoImpl extends HibernateDaoSupport implements BaseDao
      * 分页查询
      */
     @Override
-    public List<?> selectPage(Class clazz, Object search,int first, int count){
+    public List<?> selectPage(Class clazz, Object search, int first, int count) {
         return null;
     }
 

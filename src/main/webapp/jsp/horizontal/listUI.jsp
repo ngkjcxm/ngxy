@@ -550,7 +550,7 @@
 
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form action="/horizontal/horizontal/save.html" method="post"
+                                        <form action="/horizontal/horizontal/check.html" method="post"
                                               class="form-horizontal">
                                             <s:hidden name="horizontal.id"/>
                                             <div class="form-body">

@@ -494,7 +494,7 @@
                                     <i class="icon-lock"></i> Lock Screen </a>
                             </li>
                             <li>
-                                <a href="userAction_logout.action">
+                                <a href="/user/user/logout.html">
                                     <i class="icon-key"></i> Log Out </a>
                             </li>
                         </ul>

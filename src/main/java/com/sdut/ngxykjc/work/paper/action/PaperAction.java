@@ -6,8 +6,10 @@ import com.sdut.ngxykjc.work.paper.bean.Paper;
 import com.sdut.ngxykjc.work.paper.bean.PaperSearch;
 import com.sdut.ngxykjc.work.paper.dao.PaperDao;
 import com.sdut.ngxykjc.work.paper.service.PaperService;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 
@@ -19,6 +21,7 @@ import java.util.List;
  * PaperAction
  */
 @Controller
+@Scope("session")
 public class PaperAction extends BaseAction {
 
     private Paper paper;
@@ -31,21 +34,24 @@ public class PaperAction extends BaseAction {
 
     @Autowired
     private PaperDao paperDao;
-    public String listQueryUI(){
+
+    public String listQueryUI() {
         return "listquery";
     }
 
     /**
      * 跳转页面
+     *
      * @return
      */
-    public String listUI(){
+    public String listUI() {
         return SUCCESS;
     }
 
     /**
      * 详细信息
      */
+    @RequiresAuthentication
     public String detail() {
         paper = (Paper) paperDao.getById(Paper.class, id);
         return SUCCESS;
@@ -55,14 +61,17 @@ public class PaperAction extends BaseAction {
      * 详细信息
      * forUser
      */
+    @RequiresAuthentication
     public String udetail() {
         paper = (Paper) paperDao.getById(Paper.class, id);
+        System.out.println("------------------------------------");
         return "user";
     }
 
     /**
      * 更新或保存
      */
+    @RequiresAuthentication
     public String save() {
         paperDao.saveOrUpdate(paper);
         paper = null;
@@ -82,6 +91,7 @@ public class PaperAction extends BaseAction {
     /**
      * 删除
      */
+    @RequiresAuthentication
     public String delete() {
         paperDao.delete(paper);
         paper = null;
@@ -92,6 +102,7 @@ public class PaperAction extends BaseAction {
      * 删除
      * forUser
      */
+    @RequiresAuthentication
     public String udelete() {
         paperDao.delete(paper);
         paper = null;
@@ -101,26 +112,28 @@ public class PaperAction extends BaseAction {
     /**
      * 当前页
      */
-    private int curpage = 1;
+    private int curpage = 0;
 
     /**
      * 一页总条数
      */
     private int pageCount = 5;
 
+    @RequiresAuthentication
     public String msearch() {
         search();
         return SUCCESS;
     }
 
+    @RequiresAuthentication
     public String usearch() {
         search();
         return "user";
     }
 
     public String search() {
-        curpage = 1;
-        int first = curpage + (curpage - 1) * pageCount;
+        curpage = 0;
+        int first = curpage * pageCount;
         List<Paper> lists = paperDao.selectPage(Paper.class, search, first, pageCount);
         pageList = lists;
         //System.out.println(pageList);
@@ -129,7 +142,7 @@ public class PaperAction extends BaseAction {
 
     public void next() {
         curpage++;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<Paper> lists = paperDao.selectPage(Paper.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;
@@ -140,12 +153,12 @@ public class PaperAction extends BaseAction {
     }
 
     public void pre() {
-        if ((curpage - 1) <= 0) {
+        if (curpage == 0) {
             json(pageList);
             return;
         }
         curpage--;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<Paper> lists = paperDao.selectPage(Paper.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;
@@ -153,13 +166,12 @@ public class PaperAction extends BaseAction {
         json(pageList);
     }
 
-    public void searchPaper(){
-        System.out.println(search);
+    @RequiresPermissions(UserPermissions.QUERY)
+    public void searchPaper() {
         List<Paper> list = paperService.searchPaper(Paper.class, search);
         System.out.println(list);
         json(list);
     }
-
 
     /********** Setter&Getter **************/
     public Paper getPaper() {

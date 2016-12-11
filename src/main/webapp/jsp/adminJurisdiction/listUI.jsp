@@ -514,9 +514,7 @@
                                                 <s:textfield type="text" name="user.remark" class="form-control"/>
                                             </div>
                                         </div>
-
                                     </div>
-
                                 </div>
                                 <div class="form-actions right">
                                     <button type="reset" class="btn red">追加 <i

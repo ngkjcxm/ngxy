@@ -1,12 +1,13 @@
 package com.sdut.ngxykjc.work.patent.action;
 
 import com.sdut.ngxykjc.base.action.BaseAction;
-import com.sdut.ngxykjc.work.paper.bean.Paper;
-import com.sdut.ngxykjc.work.paper.service.PaperService;
+import com.sdut.ngxykjc.base.util.UserPermissions;
 import com.sdut.ngxykjc.work.patent.bean.Patent;
 import com.sdut.ngxykjc.work.patent.bean.PatentSearch;
 import com.sdut.ngxykjc.work.patent.dao.PatentDao;
 import com.sdut.ngxykjc.work.patent.service.PatentSearchService;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -30,14 +31,15 @@ public class PatentAction extends BaseAction {
 
     @Autowired
     private PatentDao patentDao;
-    public String listQueryUI(){
+
+    public String listQueryUI() {
         return "listquery";
     }
-
 
     /**
      * 详细信息
      */
+    @RequiresAuthentication
     public String detail() {
         patent = (Patent) patentDao.getById(Patent.class, id);
         return SUCCESS;
@@ -46,7 +48,15 @@ public class PatentAction extends BaseAction {
     /**
      * 更新或保存
      */
+    @RequiresAuthentication
     public String save() {
+        patentDao.saveOrUpdate(patent);
+        patent = null;
+        return SUCCESS;
+    }
+
+    @RequiresPermissions(UserPermissions.PATENT)
+    public String check() {
         patentDao.saveOrUpdate(patent);
         patent = null;
         return SUCCESS;
@@ -55,13 +65,12 @@ public class PatentAction extends BaseAction {
     /**
      * 删除
      */
+    @RequiresAuthentication
     public String delete() {
         patentDao.delete(patent);
         patent = null;
         return SUCCESS;
     }
-
-
 
 
     /**
@@ -73,6 +82,7 @@ public class PatentAction extends BaseAction {
      */
     private int pageCount = 5;
 
+    @RequiresAuthentication
     public String search() {
         curpage = 1;
         int first = curpage + (curpage - 1) * pageCount;
@@ -94,7 +104,7 @@ public class PatentAction extends BaseAction {
         json(pageList);
     }
 
-    public String listUI(){
+    public String listUI() {
         return SUCCESS;
     }
 
@@ -113,7 +123,8 @@ public class PatentAction extends BaseAction {
         json(pageList);
     }
 
-    public void searchPatent(){
+    @RequiresPermissions(UserPermissions.QUERY)
+    public void searchPatent() {
         System.out.println("-->" + search);
         List<Patent> list = patentSearchService.patentSearch(Patent.class, search);
         System.out.println(list);

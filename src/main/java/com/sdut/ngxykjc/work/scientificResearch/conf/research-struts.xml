@@ -4,9 +4,10 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    <package name="research" extends="struts-default">
+    <package name="research" extends="basePackage">
         <action name="research_*" class="researchAction" method="{1}">
             <result name="success">/jsp/research/listUI.jsp</result>
+            <result name="user">/jsp/research/scientific.jsp</result>
             <result name="listquery">/jsp/QueryStatistics/scientificResearch.jsp</result>
         </action>
     </package>

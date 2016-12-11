@@ -4,9 +4,10 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    <package name="workAchieve" extends="struts-default">
+    <package name="workAchieve" extends="basePackage">
         <action name="workAchieve_*" class="workAchieveAction" method="{1}">
             <result name="success">/jsp/workAchieve/listUI.jsp</result>
+            <result name="user">/jsp/workAchieve/work.jsp</result>
             <result name="listquery">/jsp/QueryStatistics/workSicentific.jsp</result>
         </action>
     </package>

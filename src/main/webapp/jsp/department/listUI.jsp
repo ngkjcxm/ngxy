@@ -27,9 +27,9 @@
 <!-- END HEAD -->
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-<!--公共头部-->
-<%@ include file="../publicHead/listUI.jsp" %>
-<!--公共头部End-->
+    <!--公共头部-->
+    <%@ include file="../publicHead/listUI.jsp"%>
+    <!--公共头部End-->
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
@@ -41,17 +41,17 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start active ">
+                <li class="start ">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
                 </li>
-                <li>
+                <li class="active open">
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
-                        <span class="arrow "></span>
+                        <span class="arrow open"></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -69,7 +69,7 @@
                                 <i class="icon-home"></i>
                                 单位基本信息管理</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="${basePath}department_listUI.action">
                                 <i class="icon-home"></i>
                                 部门基本信息管理</a>
@@ -252,55 +252,55 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="${basePath}employee_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}horizontal_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
-                        <!--<li>
-                        <a href="#">
-                        <i class="icon-paper-plane"></i>
-                        横向课题工作量统计
-                        </a>
-                        </li> -->
                         <li>
-                            <a href="${basePath}vertical_listQueryUI.action">
+                            <a href="#">
+                                <i class="icon-paper-plane"></i>
+                                横向课题工作量统计
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}paper_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}workAchieve_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}patent_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}research_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="${basePath}software_listQueryUI.action">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>
@@ -409,112 +409,131 @@
                                 <i class="fa fa-search"></i>查找
                             </div>
                             <div class="tools">
-                                <a href="javascript:;" class="collapse"></a>
+                                <a href="javascript:;" class="collapse">
+                                </a>
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-11">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control ">
-                                            <span class="input-group-btn">
-												<button class="btn red" type="button"><a style="color:#fff;"><i
-                                                        class="fa fa-search"></i></a>模糊查询</button>
-											</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div id="tree_1" class="tree-demo">
+                                <ul>
+                                    <li data-jstree='{ "opened" : false }'>
+                                        所有学校
+                                        <ul>
+                                            <li data-jstree='{ "opened" : false }'>
+                                                山东理工大学
+                                                <ul>
+                                                    <li data-jstree='{ "opened" : false }'>
+                                                        计算机科学与技术学院
+                                                        <ul>
+                                                            <li data-jstree='{ "type" : "file" }'>
+                                                                <a href="/department/department_detail?id=1">财务部</a>
+                                                            </li>
+                                                            <li data-jstree='{ "type" : "file" }'>
+                                                                教学科
+                                                            </li>
+                                                        </ul>
+                                                    </li>
 
-                            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0"
-                                 class="scrollspy-example" style="height:375px;">
+                                                    <li data-jstree='{ "type" : "file" }'>
+                                                        理学院
+                                                    </li>
+                                                </ul>
+                                            </li>
 
-                                <!-- BEGIN SAMPLE FORM PORTLET-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <!-- BEGIN SAMPLE FORM PORTLET-->
-                                        <div class="portlet light ">
-                                            <div id="treeDiv"></div>
-                                        </div>
-                                        <!-- END SAMPLE FORM PORTLET-->
-                                    </div>
-                                </div>
-                                <!-- END SAMPLE FORM PORTLET-->
+                                        </ul>
+                                        <ul>
+                                            <li data-jstree='{ "type" : "file" }'>
+                                                山东科技大学
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li data-jstree='{ "type" : "file" }'>
+                                                山东建筑大学
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li data-jstree='{ "type" : "file" }'>
+                                                山东农业大学
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet box red">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-graduation-cap"></i> 部门基本信息
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet box red">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-graduation-cap"></i> 部门基本信息
+                                </div>
+                                <div class="tools">
+                                    <a href="" class="collapse">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="tools">
-                                <a href="" class="collapse">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portlet-body form">
-                            <form name="form" method="post" class="form-horizontal">
-                                <s:hidden name="department.id"/>
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">部门编号</label>
-                                        <div class="col-md-4">
-                                            <s:textfield name="department.departmentId" class="form-control"/>
+                            <div class="portlet-body form">
+                                <form name="form" method="post" class="form-horizontal">
+                                    <s:hidden name="department.id"/>
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">部门编号</label>
+                                            <div class="col-md-4">
+                                                <s:textfield name="department.departmentId" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">部门名称</label>
+                                            <div class="col-md-4">
+                                                <s:textfield name="department.departmentName" class="form-control"/>
+                                            </div>
                                         </div>
-                                        <label class="control-label col-md-2" for="inputError">部门名称</label>
-                                        <div class="col-md-4">
-                                            <s:textfield name="department.departmentName" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">单位编号</label>
+                                            <div class="col-md-4">
+                                                <s:textfield name="department.unitId" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">单位名称</label>
+                                            <div class="col-md-4">
+                                                <s:textfield name="department.unitName" class="form-control"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">单位编号</label>
-                                        <div class="col-md-4">
-                                            <s:textfield name="department.unitId" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">行政级别</label>
+                                            <div class="col-md-4">
+                                                <s:textfield name="department.administrativeLevel" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">部门简称</label>
+                                            <div class="col-md-4">
+                                                <s:textfield name="department.departmentSimName" class="form-control"/>
+                                            </div>
                                         </div>
-                                        <label class="control-label col-md-2" for="inputError">单位名称</label>
-                                        <div class="col-md-4">
-                                            <s:textfield name="department.unitName" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">部门类型</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="department.departmentType"
+                                                             class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">业务职责</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="department.departmentDuty"
+                                                             class="form-control"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">行政级别</label>
-                                        <div class="col-md-4">
-                                            <s:textfield name="department.administrativeLevel" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">办公地点</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="department.departmentLocal"
+                                                             class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">业务邮箱</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="department.mailFox" class="form-control"/>
+                                            </div>
                                         </div>
-                                        <label class="control-label col-md-2" for="inputError">部门简称</label>
-                                        <div class="col-md-4">
-                                            <s:textfield name="department.departmentSimName" class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">部门类型</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="department.departmentType"
-                                                         class="form-control"/>
-                                        </div>
-                                        <label class="control-label col-md-2" for="inputError">业务职责</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="department.departmentDuty"
-                                                         class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">办公地点</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="department.departmentLocal"
-                                                         class="form-control"/>
-                                        </div>
-                                        <label class="control-label col-md-2" for="inputError">业务邮箱</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="department.mailFox" class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
+                                        <div class="form-group">
                                         <label class="control-label col-md-2" for="inputWarning">电话</label>
                                         <div class="col-md-4">
                                             <s:textfield type="text" name="department.phone" class="form-control"/>
@@ -524,62 +543,45 @@
                                             <s:textfield type="text" name="department.fax" class="form-control"/>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">备注</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="department.remark" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">备注</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="department.remark" class="form-control"/>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-actions right">
-                                    <!-- blue-hoki-->
-                                    <a href="javascript:form.action='department_save';form.submit()" class="btn red">追加
-                                        <i class="fa fa-plus"></i></a>
-                                    <a href="javascript:form.action='department_save';form.submit()" class="btn red">修改
-                                        <i class="fa fa-edit"></i></a>
-                                    <a href="javascript:form.action='department_delete';form.submit()" class="btn red">删除
-                                        <i class="fa fa-times"></i></a>
-                                    <a href="javascript:form.reset()" class="btn blue-hoki">重置 <i
-                                            class="fa fa-file-o"></i></a>
-                                </div>
-                            </form>
-                        </div>
+                                    <div class="form-actions right">
+                                        <!-- blue-hoki-->
+                                        <a href="javascript:form.action='department_save';form.submit()" class="btn red">追加 <i class="fa fa-plus"></i></a>
+                                        <a href="javascript:form.action='department_save';form.submit()" class="btn red">修改 <i class="fa fa-edit"></i></a>
+                                        <a href="javascript:form.action='department_delete';form.submit()" class="btn red">删除 <i class="fa fa-times"></i></a>
+                                        <a href="javascript:form.reset()" class="btn blue-hoki">重置 <i class="fa fa-file-o"></i></a>
+                                    </div>
+                                </form>
+                            </div>
                     </div>
-                </div>
-                <!-- END SAMPLE FORM PORTLET-->
             </div>
+            <!-- END SAMPLE FORM PORTLET-->
         </div>
     </div>
-    <!-- END PAGE CONTENT-->
+</div>
+<!-- END PAGE CONTENT-->
 
-    <!-- END CONTAINER -->
-    <!-- BEGIN FOOTER -->
-    <div class="page-footer navbar-fixed-bottom">
-        <div class="page-footer-inner">
-            2014 &copy; Metronic by keenthemes. <a
-                href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
-                title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
-            Metronic!</a>
-        </div>
-        <div class="scroll-to-top">
-            <i class="icon-arrow-up"></i>
-        </div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer navbar-fixed-bottom">
+    <div class="page-footer-inner">
+        2014 &copy; Metronic by keenthemes. <a
+            href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+            title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
+        Metronic!</a>
     </div>
-    <!-- END FOOTER -->
-    <script>
-        jQuery(document).ready(function () {
-            // 添加树
-            $.get('/department/department/treeForDepartment.html', function (data) {
-                data = JSON.parse(data);
-                window.d = new dTree('d');
-                data.forEach(function (obj) {
-                    d.add(obj.id, obj.pid, obj.text, obj.url);
-                });
-                $('#treeDiv').html(d.toString());
-            })
-        });
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+</div>
+<!-- END FOOTER -->
 
-    </script>
 </body>
 <!-- END BODY -->
 </html>
