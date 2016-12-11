@@ -1,14 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: gcl
-  Date: 2016/10/15
-  Time: 17:04
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+    pageContext.setAttribute("basePath", request.getContextPath());
 %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -62,7 +55,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="userAction_login.action" method="post">
+    <form class="login-form" action="${basePath}/user/user_login.action" method="post" enctype="application/x-www-form-urlencoded">
         <div style="border:0px solid #000;width:100%;text-align:center;">
             <h3 class="form-title">科技信息管理系统</h3>
         </div>

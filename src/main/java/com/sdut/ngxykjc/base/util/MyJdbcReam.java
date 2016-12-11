@@ -1,5 +1,6 @@
 package com.sdut.ngxykjc.base.util;
 
+import com.sdut.ngxykjc.User.dao.UserDao;
 import org.apache.shiro.realm.jdbc.JdbcRealm;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,11 +17,11 @@ import java.util.Set;
  */
 public class MyJdbcReam extends JdbcRealm {
 
-   /* @Autowired
+    @Autowired
     private UserDao userDao;
 
     @Override
     protected Set<String> getPermissions(Connection conn, String username, Collection<String> roleNames) throws SQLException {
         return userDao.getPermissions(username);
-    }*/
+    }
 }

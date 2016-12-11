@@ -9,6 +9,10 @@
 
     <!-- 扫描service -->
     <context:component-scan base-package="com.sdut.ngxykjc.User.service"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.school.service"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.department.service"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.employee.service"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.unit.service"/>
 
     <!-- Gson -->
     <bean class="com.google.gson.Gson"/>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN"
+        "http://tuckey.org/res/dtds/urlrewrite2.5.dtd">
+
+<!--伪静态页面配置文件-->
+
+<urlrewrite>
+    <rule>
+        <from>^/([A-Za-z0-9]+)/([A-Za-z0-9]+)/([A-Za-z0-9]+)\.html</from>
+        <to type="forward">/$1/$2_$3</to>
+    </rule>
+    <rule>
+        <from>^/([A-Za-z0-9]+)/([A-Za-z0-9]+)/detail/([0-9]+)\.html</from>
+        <to type="forward">/$1/$2_detail?id=$3</to>
+    </rule>
+</urlrewrite>   

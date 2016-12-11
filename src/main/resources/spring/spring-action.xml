@@ -12,5 +12,11 @@
 
     <!-- 扫描struts包 -->
     <context:component-scan base-package="com.sdut.ngxykjc.User.action"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.school.action"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.department.action"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.employee.action"/>
+    <context:component-scan base-package="com.sdut.ngxykjc.basicsInfo.unit.action"/>
+    <!--扫描work包下的action和dao和service-->
+    <context:component-scan base-package="com.sdut.ngxykjc.work"/>
 
 </beans>
