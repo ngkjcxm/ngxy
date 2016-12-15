@@ -65,6 +65,7 @@ public class VerticalAction extends BaseAction {
      */
     @RequiresAuthentication
     public String search() {
+        curPage = 1;
         list = verticalDao.search(search);
         pageCount = (int) Math.ceil(list.size() / perPage);
         if (list.size() > perPage) {
@@ -73,6 +74,19 @@ public class VerticalAction extends BaseAction {
             pageList = list;
         }
         return SUCCESS;
+    }
+
+    @RequiresAuthentication
+    public void usearch() {
+        curPage = 1;
+        list = verticalDao.search(search);
+        pageCount = (int) Math.ceil(list.size() / perPage);
+        if (list.size() > perPage) {
+            pageList = list.subList(0, perPage);
+        } else {
+            pageList = list;
+        }
+        json(pageList);
     }
 
     /**
@@ -123,6 +137,20 @@ public class VerticalAction extends BaseAction {
      */
     @RequiresAuthentication
     public String save() {
+        verticalDao.saveOrUpdate(vertical);
+        vertical = null;
+        return "user";
+    }
+
+    @RequiresPermissions(UserPermissions.VERTICAL)
+    public String delete() {
+        verticalDao.delete(vertical);
+        vertical = null;
+        return SUCCESS;
+    }
+
+    @RequiresPermissions(UserPermissions.VERTICAL)
+    public String check() {
         verticalDao.saveOrUpdate(vertical);
         vertical = null;
         return SUCCESS;

@@ -6,18 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.4
-Version: 3.2.0
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
@@ -33,24 +24,29 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+          type="text/css">
+    <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+          type="text/css">
+    <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
-    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-summernote/summernote.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-summernote/summernote.css">
+    <link rel="stylesheet" type="text/css"
+          href="/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
     <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
-    <link href="../../assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="/assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="/assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -66,7 +62,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="container">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="index.html"><img src="../../assets/admin/layout3/img/logo-default.png" alt="logo" class="logo-default"></a>
+                <a href="index.html"><img src="/assets/admin/layout3/img/logo-default.png" alt="logo"
+                                          class="logo-default"></a>
             </div>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -76,8 +73,10 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="top-menu">
                 <ul class="nav navbar-nav pull-right">
                     <!-- BEGIN NOTIFICATION DROPDOWN -->
-                    <li class="dropdown dropdown-extended dropdown-dark dropdown-notification" id="header_notification_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <li class="dropdown dropdown-extended dropdown-dark dropdown-notification"
+                        id="header_notification_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
                             <i class="icon-bell"></i>
 
                         </a>
@@ -85,7 +84,8 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- END NOTIFICATION DROPDOWN -->
                     <!-- BEGIN TODO DROPDOWN -->
                     <li class="dropdown dropdown-extended dropdown-dark dropdown-tasks" id="header_task_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
                             <i class="icon-calendar"></i>
                         </a>
                     </li>
@@ -98,8 +98,9 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- END INBOX DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <li class="dropdown dropdown-user dropdown-dark">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img alt="" class="img-circle" src="../../assets/admin/layout3/img/avatar9.jpg">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+                            <img alt="" class="img-circle" src="/assets/admin/layout3/img/avatar9.jpg">
                             <span class="username username-hide-mobile">Nick</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
@@ -164,7 +165,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         <a href="index.html">主页</a>
                     </li>
                     <li class="menu-dropdown classic-menu-dropdown ">
-                        <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
+                        <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown"
+                           href="javascript:;">
                             基础数据管理 <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu pull-left">
@@ -176,7 +178,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         </ul>
                     </li>
                     <li class="menu-dropdown classic-menu-dropdown ">
-                        <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
+                        <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown"
+                           href="javascript:;">
                             日常工作 <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu pull-left">
@@ -219,7 +222,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         </ul>
                     </li>
                     <li class="menu-dropdown classic-menu-dropdown ">
-                        <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
+                        <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown"
+                           href="javascript:;">
                             个人查询统计 <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu pull-left">
@@ -298,21 +302,26 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="portlet-body">
                             <div class="table-toolbar">
                                 <div class="row">
-                                    <form role="form">
+                                    <form role="form" id="searchForm">
                                         <div class="form-body">
-                                            <div class="row col-md-12" >
+                                            <div class="row col-md-12">
                                                 <div class="col-md-12">
-                                                    <table id="user" class="table table-bordered  " style="text-align:center;" >
+                                                    <table id="user" class="table table-bordered  "
+                                                           style="text-align:center;">
                                                         <tbody>
                                                         <tr>
-                                                            <td style="width:30%;font-size:15px;text-align:center;" >
+                                                            <td style="width:30%;font-size:15px;text-align:center;">
                                                                 登记年度
                                                             </td>
                                                             <td style="width:70%">
-                                                                <div class="input-group date form_year col-md-13"  data-date="" data-date-format="yyyy">
-                                                                    <input type="text" size="16" class="form-control">
+                                                                <div class="input-group date form_year col-md-13"
+                                                                     data-date="" data-date-format="yyyy-mm-dd">
+                                                                    <input name="search.registrationDate" type="text"
+                                                                           size="16" class="form-control">
                                                                     <span class="input-group-btn">
-																		<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+																		<button class="btn default date-set"
+                                                                                type="button"><i
+                                                                                class="fa fa-calendar"></i></button>
 																		</span>
                                                                 </div>
                                                             </td>
@@ -322,10 +331,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 到款年度
                                                             </td>
                                                             <td style="width:15%">
-                                                                <div class="input-group date form_year col-md-13"  data-date="" data-date-format="yyyy">
+                                                                <div class="input-group date form_year col-md-13"
+                                                                     data-date="" data-date-format="yyyy">
                                                                     <input type="text" size="16" class="form-control">
                                                                     <span class="input-group-btn">
-																		<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+																		<button class="btn default date-set"
+                                                                                type="button"><i
+                                                                                class="fa fa-calendar"></i></button>
 																		</span>
                                                                 </div>
                                                             </td>
@@ -335,11 +347,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 审核情况
                                                             </td>
                                                             <td style="width:15%">
-                                                                <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                    <option value="Category 1" checked>所有</option>
-                                                                    <option value="Category 2">已结题</option>
-                                                                    <option value="Category 3">待结题</option>
-                                                                    <option value="Category 4">未通过</option>
+                                                                <select class="form-control" name="search.state">
+                                                                    <option value="所有" checked>所有</option>
+                                                                    <option value="已审核">已审核</option>
+                                                                    <option value="未审请审核">未审请审核</option>
+                                                                    <option value="等待结题审核">等待结题审核</option>
+                                                                    <option value="已结题">已结题</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -348,31 +361,30 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 项目名称
                                                             </td>
                                                             <td style="width:15%">
-                                                                <input type="text" class="form-control" placeholder="项目名称">
+                                                                <input type="text" name="search.VerticalName"
+                                                                       class="form-control" placeholder="项目名称">
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td style="width:30%;font-size:15px;text-align:center;">
-                                                                归属单位
+                                                                项目负责人
                                                             </td>
                                                             <td style="width:15%">
-                                                                <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-
-                                                                    <option value="Category 2" checked>农业工程与食品科学学院</option>
-
-                                                                </select>
+                                                                <input name="search.VerticalHeaderName" type="text"
+                                                                       class="form-control" placeholder="项目负责人">
                                                             </td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
                                             </div>
-                                            <div  style="height:320px;">
-                                                <div class="row col-md-12" >
+                                            <div style="height:320px;">
+                                                <div class="row col-md-12">
                                                     <div class="col-md-12 col-sm-12">
                                                         <!-- BEGIN EXAMPLE TABLE PORTLET-->
                                                         <div class="portlet-body">
-                                                            <table class="table table-striped table-bordered table-hover" id="sample_2" style="text-align:center;">
+                                                            <table class="table table-striped table-bordered table-hover"
+                                                                   id="sample_2" style="text-align:center;">
                                                                 <thead>
                                                                 <tr>
                                                                     <th style="text-align:center;">
@@ -386,92 +398,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     </th>
                                                                 </tr>
                                                                 </thead>
-                                                                <tbody>
+                                                                <tbody id="tbody">
 
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        1
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#5F" >
-                                                                            111111 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-success">
-																		已结题 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        2
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            222222 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-danger">
-																		待结题</span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        3
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            333333 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-danger">
-																		待结题 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        4
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            444444 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-default">
-																		未通过 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        5
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            555555 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-success">
-																		已结题 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        6
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            666666 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-success">
-																		已结题 </span>
-                                                                    </td>
-                                                                </tr>
                                                                 </tbody>
                                                             </table>
 
@@ -479,31 +407,28 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <!-- END EXAMPLE TABLE PORTLET-->
                                                         <div style="float:right;">
                                                             <ul class="pagination">
-                                                                <li><a href="#">&laquo;</a></li>
-                                                                <li><a href="#">1</a></li>
-                                                                <li><a href="#">2</a></li>
-                                                                <li><a href="#">3</a></li>
-                                                                <li><a href="#">4</a></li>
-                                                                <li><a href="#">5</a></li>
-                                                                <li><a href="#">&raquo;</a></li>
+                                                                <ul class="pagination">
+                                                                    <li id="pre"><a>上一页</a></li>
+                                                                    <li id="next"><a>下一页</a></li>
+                                                                </ul>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-actions right"style="border:0px solid #000;">
-                                            <div class="row" style="border:0px solid red;">
-                                                <div class="col-md-6 " style="border:0px solid green;">
-                                                    <div class="row">
-                                                        <div class="col-md-offset-11 col-md-4">
-                                                            <button type="submit" class="btn green"> <a href="#5F" style="color:#ffffff;text-decoration: none;">进行查询</a></button>
-                                                        </div>
+                                    </form>
+                                    <div class="form-actions right" style="border:0px solid #000;">
+                                        <div class="row" style="border:0px solid red;">
+                                            <div class="col-md-6 " style="border:0px solid green;">
+                                                <div class="row">
+                                                    <div class="col-md-offset-11 col-md-4">
+                                                        <button id="search" class="btn green">进行查询</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -521,7 +446,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                 <div class="portlet-body form">
                                     <!-- BEGIN FORM-->
-                                    <form action="#" class="form-horizontal">
+                                    <form action="/vertical/vertical/save.html" class="form-horizontal" method="post">
                                         <div class="form-body">
                                             <!--锚点链接 -->
                                             <a name="5F" style="color:#ffffff;text-decoration: none;"> </a>
@@ -532,7 +457,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">项目名称</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="项目名称">
+                                                            <input type="text" name="vertical.verticalName"
+                                                                   class="form-control" placeholder="项目名称">
 
                                                         </div>
                                                     </div>
@@ -542,7 +468,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group ">
                                                         <label class="control-label col-md-4 font-red-sunglo">项目编号</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="项目编号">
+                                                            <input type="text" name="vertical.projectId"
+                                                                   class="form-control" placeholder="项目编号">
 
                                                         </div>
                                                     </div>
@@ -555,9 +482,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">项目负责人单位</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked>农业工程与食品科学学院</option>
-                                                            </select>
+                                                            <s:textfield id="peopleUnit" type="text"
+                                                                         name="vertical.unitName"
+                                                                         class="form-control"
+                                                                         placeholder="项目负责人"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -566,7 +494,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 font-red-sunglo">项目负责人</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="项目负责人">
+                                                            <input name="vertical.verticalHeaderName" type="text"
+                                                                   class="form-control" placeholder="项目负责人">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -579,7 +508,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">批准金额(万元)</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="批准金额(万元)">
+                                                            <input name="vertical.approvalFunds" type="text"
+                                                                   class="form-control"
+                                                                   placeholder="批准金额(万元)">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -588,10 +519,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 font-red-sunglo">参与类型</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked>主持</option>
-                                                                <option value="Category 2">副主持</option>
-                                                            </select>
+                                                            <s:select list="#{'主持':'主持', '副主持':'副主持'}"
+                                                                      name="vertical.projectType"
+                                                                      class="select2_category form-control"
+                                                                      tabindex="1">
+                                                            </s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -606,10 +538,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">开始时间</label>
                                                         <div class="col-md-6">
-                                                            <div class="input-group date form_month col-md-13"  data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                            <div class="input-group date form_month col-md-13"
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="vertical.starDate" type="text" size="16"
+                                                                       class="form-control">
                                                                 <span class="input-group-btn">
-																<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+																<button class="btn default date-set" type="button"><i
+                                                                        class="fa fa-calendar"></i></button>
 																</span>
                                                             </div>
                                                         </div>
@@ -620,10 +555,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">结束时间</label>
                                                         <div class="col-md-6">
-                                                            <div class="input-group date form_month col-md-13"  data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                            <div class="input-group date form_month col-md-13"
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="vertical.endDate" type="text" size="16"
+                                                                       class="form-control">
                                                                 <span class="input-group-btn">
-																<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+																<button class="btn default date-set" type="button"><i
+                                                                        class="fa fa-calendar"></i></button>
 																</span>
                                                             </div>
                                                         </div>
@@ -639,11 +577,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">学科分类</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1"></option>
-                                                                <option value="Category 1">110数学</option>
-                                                                <option value="Category 1">130力学</option>
-                                                            </select>
+                                                            <s:select name='vertical.subjectType'
+                                                                      class="select2_category form-control"
+                                                                      list="#{'110数学':'110数学', '130力学', '130力学'}"
+                                                                      tabindex="1">
+                                                            </s:select>
                                                         </div>
 
                                                     </div>
@@ -653,7 +591,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4">活动类型</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                            <select name="vertical.activityType"
+                                                                    class="select2_category form-control"
+                                                                    tabindex="1">
                                                                 <option value="Category 1" checked>实验发展</option>
                                                             </select>
                                                         </div>
@@ -669,8 +609,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">项目来源</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked>省、市、自治区科技项目</option>
+                                                            <select name="vertical.projectSource"
+                                                                    class="select2_category form-control"
+                                                                    data-placeholder="Choose a Category"
+                                                                    tabindex="1">
+                                                                <option value="Category 1" checked>省、市、自治区科技项目
+                                                                </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -680,11 +624,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">组织形式</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked></option>
-                                                                <option value="Category 1" checked>牵头单位</option>
-                                                                <option value="Category 1" checked>合作单位</option>
-                                                            </select>
+                                                            <s:select name="vertical.organizationForm"
+                                                                      class="select2_category form-control"
+                                                                      list="#{'牵头单位':'牵头单位','合作单位':'合作单位'}"
+                                                                      tabindex="1">
+                                                            </s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -698,8 +642,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">合作形式</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked>与国内研究机构合作</option>
+                                                            <select name="vertical.collectiveForm"
+                                                                    class="select2_category form-control"
+                                                                    data-placeholder="Choose a Category"
+                                                                    tabindex="1">
+                                                                <option value="Category 1" checked>与国内研究机构合作
+                                                                </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -709,7 +657,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">项目社会经济目标</label>
                                                         <div class="col-md-6">
-                                                            <input type="email" class="form-control" placeholder="项目社会经济目标">
+                                                            <s:textfield name="vertical.socialTarget"
+                                                                         id="SocityEconomy"
+                                                                         type="text" data-target="#long"
+                                                                         class="form-control"
+                                                                         placeholder="项目社会经济目标"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -723,7 +675,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">服务国民经济目标</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="服务国民经济目标">
+                                                            <s:textfield name="vertical.industry"
+                                                                         id="NationalEconomy"
+                                                                         type="text" data-target="#long2"
+                                                                         class="form-control"
+                                                                         placeholder="服务国民经济行业"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -732,7 +688,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">课题基金号</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="课题基金号">
+                                                            <s:textfield name="vertical.fundAccount" type="text"
+                                                                         class="form-control" placeholder="课题基金号"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -745,10 +702,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">审核时间</label>
                                                         <div class="col-md-6">
-                                                            <div class="input-group date form_month col-md-13"  data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                            <div class="input-group date form_month col-md-13"
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="vertical.examineDate" type="text" size="16"
+                                                                       class="form-control">
                                                                 <span class="input-group-btn">
-																<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+																<button class="btn default date-set" type="button"><i
+                                                                        class="fa fa-calendar"></i></button>
 																</span>
                                                             </div>
                                                         </div>
@@ -759,7 +719,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">审核人</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="审核人">
+                                                            <s:textfield name="vertical.examinePeoName" type="text"
+                                                                         class="form-control" placeholder="审核人"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -772,10 +733,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">立项时间</label>
                                                         <div class="col-md-6">
-                                                            <div class="input-group date form_month col-md-13"  data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                            <div class="input-group date form_month col-md-13"
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="vertical.projectSetDate" type="text"
+                                                                       size="16" class="form-control">
                                                                 <span class="input-group-btn">
-																<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+																<button class="btn default date-set" type="button"><i
+                                                                        class="fa fa-calendar"></i></button>
 																</span>
                                                             </div>
                                                         </div>
@@ -786,10 +750,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">结题审核时间</label>
                                                         <div class="col-md-6">
-                                                            <div class="input-group date form_month col-md-13"  data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                            <div class="input-group date form_month col-md-13"
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="vertical.endTopicExamineDate" type="text"
+                                                                       size="16" class="form-control">
                                                                 <span class="input-group-btn">
-																<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+																<button class="btn default date-set" type="button"><i
+                                                                        class="fa fa-calendar"></i></button>
 																</span>
                                                             </div>
                                                         </div>
@@ -804,11 +771,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">审核结论</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1" >
-                                                                <option value="Category 1" checked ></option>
-                                                                <option value="Category 1" checked>未通过</option>
-                                                                <option value="Category 1" checked>通过</option>
-                                                            </select>
+                                                            <s:select name="vertical.examineResult"
+                                                                      class="select2_category form-control"
+                                                                      list="#{'未通过':'未通过', '通过':'通过'}"
+                                                                      tabindex="1">
+                                                            </s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -817,11 +784,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">立项结论</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1" >
-                                                                <option value="Category 1" checked ></option>
-                                                                <option value="Category 1" checked>未通过</option>
-                                                                <option value="Category 1" checked>通过</option>
-                                                            </select>
+                                                            <s:select name="vertical.projectSetResult"
+                                                                      class="select2_category form-control"
+                                                                      list="#{'未通过':'未通过', '通过':'通过'}"
+                                                                      tabindex="1">
+                                                            </s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -834,11 +801,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">申请结题</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1" >
-                                                                <option value="Category 1" checked ></option>
-                                                                <option value="Category 1" checked>未通过</option>
-                                                                <option value="Category 1" checked>通过</option>
-                                                            </select>
+                                                            <s:select name="vertical.applicationEndTopic"
+                                                                      class="select2_category form-control"
+                                                                      list="#{'未通过':'未通过', '通过':'通过'}"
+                                                                      tabindex="1">
+                                                            </s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -847,11 +814,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">结题审核</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1" >
-                                                                <option value="Category 1" checked ></option>
-                                                                <option value="Category 1" checked>未通过</option>
-                                                                <option value="Category 1" checked>通过</option>
-                                                            </select>
+                                                            <s:select name="vertical.endTopicExamineResult"
+                                                                      class="select2_category form-control"
+                                                                      list="#{'未通过':'未通过', '通过':'通过'}"
+                                                                      tabindex="1">
+                                                            </s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -859,22 +826,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
                                             <!--/row-->
                                         </div>
-                                        <div class="form-actions right"style="border:0px solid #000;">
+                                        <div class="form-actions right" style="border:0px solid #000;">
                                             <div class="row" style="border:0px solid red;">
                                                 <div class="col-md-12 " style="border:0px solid green;">
                                                     <div class="row">
                                                         <div class="col-md-offset-3 col-md-9">
-                                                            <button type="submit" class="btn blue">录入到位经费</button>
-                                                            <button type="submit" class="btn blue">录入到位工作量</button>
-                                                            <button type="submit" class="btn yellow">附件上传</button>
-                                                            <button type="submit" class="btn green">修改</button>
+                                                            <button type="submit" class="btn green">提交</button>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
-
                                     </form>
                                     <!-- END FORM-->
                                 </div>
@@ -953,7 +915,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="container">
-        2014 &copy; Metronic by keenthemes. <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+        2014 &copy; Metronic by keenthemes. <a
+            href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+            title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
+        Metronic!</a>
     </div>
 </div>
 <div class="scroll-to-top">
@@ -963,38 +928,41 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-<script src="../../assets/global/plugins/respond.min.js"></script>
-<script src="../../assets/global/plugins/excanvas.min.js"></script>
+<script src="/assets/global/plugins/respond.min.js"></script>
+<script src="/assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
-<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="../../assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-<script type="text/javascript" src="../../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-<script src="../../assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script src="/assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+<script type="text/javascript"
+        src="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<script type="text/javascript"
+        src="/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
-<script src="../../assets/admin/pages/scripts/components-editors.js"></script>
-<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+<script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="/assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+<script src="/assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="/assets/admin/pages/scripts/components-editors.js"></script>
+<script src="/assets/admin/pages/scripts/components-pickers.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         // initiate layout and plugins
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
@@ -1002,6 +970,56 @@ License: You must have a valid license purchased only from themeforest(the above
         ComponentsEditors.init();
         ComponentsPickers.init();
 
+        // 查找
+        $('#search').click(function () {
+            $.post('/vertical/vertical/usearch.html', $('#searchForm').serialize(), function (data) {
+                data = JSON.parse(data);
+                var content = '';
+                for (var i = 0; i < data.length; i++) {
+                    var o = data[i];
+                    content += '<tr class="odd gradeX">' +
+                        '<td>' + o.id + '</td>' +
+                        '<td>' + o.VerticalName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
+                        '</tr>'
+                }
+                $('#tbody').html(content);
+            });
+        });
+        // 分页
+        $('#pre').click(function () {
+            $.get('/vertical/vertical_pre', function (data) {
+                if (data == '-1') return;
+                data = JSON.parse(data);
+                var content = '';
+                for (var i = 0; i < data.length; i++) {
+                    var o = data[i];
+                    content += '<tr class="odd gradeX">' +
+                        '<td>' + o.id + '</td>' +
+                        '<td>' + o.VerticalName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
+                        '</tr>'
+                }
+                $('#tbody').html(content);
+            });
+        });
+
+        $('#next').click(function () {
+            $.get('/vertical/vertical_next', function (data) {
+                if (data == '-1') return;
+                data = JSON.parse(data);
+                var content = '';
+                for (var i = 0; i < data.length; i++) {
+                    var o = data[i];
+                    content += '<tr class="odd gradeX">' +
+                        '<td>' + o.id + '</td>' +
+                        '<td>' + o.VerticalName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
+                        '</tr>'
+                }
+                $('#tbody').html(content);
+            });
+        });
     });
 </script>
 <!-- END JAVASCRIPTS -->

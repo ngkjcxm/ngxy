@@ -73,6 +73,7 @@ public class HorizentalAction extends BaseAction {
      */
     @RequiresAuthentication
     public String search() {
+        curPage = 1;
         list = horizontalService.search(search);
         pageCount = (int) Math.ceil(list.size() / perPage);
         if (list.size() > perPage) {
@@ -81,6 +82,18 @@ public class HorizentalAction extends BaseAction {
             pageList = list;
         }
         return SUCCESS;
+    }
+
+    public void usearch() {
+        curPage = 1;
+        list = horizontalService.search(search);
+        pageCount = (int) Math.ceil(list.size() / perPage);
+        if (list.size() > perPage) {
+            pageList = list.subList(0, perPage);
+        } else {
+            pageList = list;
+        }
+        json(pageList);
     }
 
     /**
@@ -135,7 +148,7 @@ public class HorizentalAction extends BaseAction {
     public String save() {
         horizontalService.saveOrUpdate(horizontal);
         horizontal = null;
-        return SUCCESS;
+        return "user";
     }
 
     @RequiresPermissions(UserPermissions.HORIZONTAL)

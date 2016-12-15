@@ -665,7 +665,7 @@
                                                             <div class="col-md-8">
                                                                 <s:textfield type="text" name="horizontal.effectiveMin"
                                                                              class="form-control"
-                                                                             placeholder="办公电话"/>
+                                                                             placeholder="有效期限"/>
                                                             </div>
                                                         </div>
                                                     </div>

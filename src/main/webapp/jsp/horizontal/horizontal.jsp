@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -24,29 +26,30 @@
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
           type="text/css">
-    <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+    <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
           type="text/css">
-    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link rel="stylesheet" type="text/css"
-          href="../../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+          href="/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
     <link rel="stylesheet" type="text/css"
-          href="../../assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-summernote/summernote.css">
+          href="/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-summernote/summernote.css">
     <link rel="stylesheet" type="text/css"
-          href="../../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+          href="/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
     <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
-    <link href="../../assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="/assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="/assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="/dtree/dtree.css"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -60,7 +63,7 @@
         <div class="container">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="index.html"><img src="../../assets/admin/layout3/img/logo-default.png" alt="logo"
+                <a href="index.html"><img src="/assets/admin/layout3/img/logo-default.png" alt="logo"
                                           class="logo-default"></a>
             </div>
             <!-- END LOGO -->
@@ -98,7 +101,7 @@
                     <li class="dropdown dropdown-user dropdown-dark">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
-                            <img alt="" class="img-circle" src="../../assets/admin/layout3/img/avatar9.jpg">
+                            <img alt="" class="img-circle" src="/assets/admin/layout3/img/avatar9.jpg">
                             <span class="username username-hide-mobile">Nick</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
@@ -300,7 +303,7 @@
                         <div class="portlet-body">
                             <div class="table-toolbar">
                                 <div class="row">
-                                    <form role="form">
+                                    <form role="form" id="searchForm">
                                         <div class="form-body">
                                             <div class="row col-md-12">
                                                 <div class="col-md-12">
@@ -313,7 +316,7 @@
                                                             </td>
                                                             <td style="width:70%">
                                                                 <div class="input-group date form_month col-md-13"
-                                                                     data-date="" data-date-format="yyyy/mm/dd">
+                                                                     data-date="" data-date-format="yyyy-mm-dd">
                                                                     <input type="text" size="16" class="form-control">
                                                                     <span class="input-group-btn">
 																		<button class="btn default date-set"
@@ -329,8 +332,9 @@
                                                             </td>
                                                             <td style="width:15%">
                                                                 <div class="input-group date form_month col-md-13"
-                                                                     data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input type="text" size="16" class="form-control">
+                                                                     data-date="" data-date-format="yyyy-mm-dd">
+                                                                    <input name="search.signingDate" type="text"
+                                                                           size="16" class="form-control">
                                                                     <span class="input-group-btn">
 																		<button class="btn default date-set"
                                                                                 type="button"><i
@@ -345,12 +349,11 @@
                                                             </td>
                                                             <td style="width:15%">
                                                                 <select class="select2_category form-control"
-                                                                        data-placeholder="Choose a Category"
-                                                                        tabindex="1">
-                                                                    <option value="Category 1" checked>所有</option>
-                                                                    <option value="Category 2">已结题</option>
-                                                                    <option value="Category 3">待结题</option>
-                                                                    <option value="Category 4">未通过</option>
+                                                                        name="search.endProjectResult">
+                                                                    <option value="所有" checked>所有</option>
+                                                                    <option value="已结题">已结题</option>
+                                                                    <option value="未结题">未结题</option>
+                                                                    <option value="未通过">未通过</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -359,7 +362,8 @@
                                                                 项目名称
                                                             </td>
                                                             <td style="width:15%">
-                                                                <input type="text" class="form-control"
+                                                                <input name="search.projectName" type="text"
+                                                                       class="form-control"
                                                                        placeholder="项目名称">
                                                             </td>
                                                         </tr>
@@ -387,126 +391,34 @@
                                                                     </th>
                                                                 </tr>
                                                                 </thead>
-                                                                <tbody>
+                                                                <tbody id="tbody">
 
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        1
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            111111 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-success">
-																		已结题 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        2
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            222222 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-danger">
-																		待结题</span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        3
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            333333 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-danger">
-																		待结题 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        4
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            444444 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-default">
-																		未通过 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        5
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            555555 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-success">
-																		已结题 </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="odd gradeX">
-
-                                                                    <td>
-                                                                        6
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="#">
-                                                                            666666 </a>
-                                                                    </td>
-                                                                    <td>
-																		<span class="label label-sm label-success">
-																		已结题 </span>
-                                                                    </td>
-                                                                </tr>
                                                                 </tbody>
                                                             </table>
-
                                                         </div>
                                                         <!-- END EXAMPLE TABLE PORTLET-->
                                                         <div style="float:right;">
                                                             <ul class="pagination">
-                                                                <li><a href="#">&laquo;</a></li>
-                                                                <li><a href="#">1</a></li>
-                                                                <li><a href="#">2</a></li>
-                                                                <li><a href="#">3</a></li>
-                                                                <li><a href="#">4</a></li>
-                                                                <li><a href="#">5</a></li>
-                                                                <li><a href="#">&raquo;</a></li>
+                                                                <li id="pre"><a>上一页</a></li>
+                                                                <li id="next"><a>下一页</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-actions right" style="border:0px solid #000;">
-                                            <div class="row" style="border:0px solid red;">
-                                                <div class="col-md-6 " style="border:0px solid green;">
-                                                    <div class="row">
-                                                        <div class="col-md-offset-11 col-md-4">
-                                                            <button type="submit" class="btn green"><a href="#5F"
-                                                                                                       style="color:#ffffff;text-decoration: none;">进行查询</a>
-                                                            </button>
-                                                        </div>
+                                    </form>
+                                    <div class="form-actions right" style="border:0px solid #000;">
+                                        <div class="row" style="border:0px solid red;">
+                                            <div class="col-md-6 " style="border:0px solid green;">
+                                                <div class="row">
+                                                    <div class="col-md-offset-11 col-md-4">
+                                                        <button id="search" class="btn green">进行查询</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -524,7 +436,8 @@
 
                                 <div class="portlet-body form">
                                     <!-- BEGIN FORM-->
-                                    <form action="#" class="form-horizontal">
+                                    <form action="/horizontal/horizontal/save.html" class="form-horizontal"
+                                          method="post">
                                         <div class="form-body">
                                             <!--锚点链接 -->
                                             <a name="5F" style="color:#ffffff;text-decoration: none;"> </a>
@@ -535,8 +448,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">项目名称</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="项目名称">
-
+                                                            <s:textfield id="projectName" type="text"
+                                                                         name="horizontal.projectName"
+                                                                         class="form-control"
+                                                                         placeholder="项目名称"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -545,8 +460,9 @@
                                                     <div class="form-group ">
                                                         <label class="control-label col-md-4 font-red-sunglo">委托方</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="委托方">
-
+                                                            <s:textfield type="text" name="horizontal.contractName"
+                                                                         class="form-control"
+                                                                         placeholder="委托方"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -558,8 +474,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">项目负责人单位</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="项目负责人单位">
+                                                            <s:textfield id="peopleUnit" type="text"
+                                                                         name="horizontal.unitName"
+                                                                         class="form-control"
+                                                                         placeholder="项目负责人单位"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -568,7 +486,12 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 font-red-sunglo">项目负责人</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="项目负责人">
+                                                            <a data-target="#long5" data-toggle="modal">
+                                                                <s:textfield id="treePeople" type="text"
+                                                                             name="horizontal.projectHeaderName"
+                                                                             class="form-control"
+                                                                             placeholder="项目负责人"/>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -581,8 +504,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">合同经费(万元)</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="合同经费(万元)">
+                                                            <s:textfield id="funds" type="text"
+                                                                         name="horizontal.contactExpenditure"
+                                                                         class="form-control"
+                                                                         placeholder="合同经费（万元）"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -592,8 +517,9 @@
                                                         <label class="control-label col-md-4 font-red-sunglo">合同时间</label>
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
-                                                                 data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="horizontal.signingDate" type="text"
+                                                                       size="16" class="form-control"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -613,8 +539,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">累计到位经费（万元）</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="累计到位经费（万元）">
+                                                            <s:textfield id="fundsCount" type="text"
+                                                                         name="horizontal.putExpenditure"
+                                                                         class="form-control"
+                                                                         placeholder="累计到位经费（万元）"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -623,8 +551,9 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">累计工作量（万元）</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="累计工作量（万元）">
+                                                            <s:textfield type="text" name="horizontal.putWorkNumber"
+                                                                         class="form-control"
+                                                                         placeholder="累计工作量（万元）"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -639,7 +568,7 @@
                                                         <label class="control-label col-md-6 ">有效期限（开始）</label>
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
-                                                                 data-date="" data-date-format="yyyy/mm">
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
                                                                 <input type="text" size="16" class="form-control">
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
@@ -656,8 +585,9 @@
                                                         <label class="control-label col-md-4">有效期限（结束）</label>
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
-                                                                 data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="horizontal.effectiveMin" type="text"
+                                                                       size="16" class="form-control">
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -676,7 +606,8 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">签约地点</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="签约地点">
+                                                            <input name="horizontal.signingAddress" type="text"
+                                                                   class="form-control" placeholder="签约地点">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -685,13 +616,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">项目类型</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control"
-                                                                    data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked>技术开发</option>
-                                                                <option value="Category 2">技术咨询</option>
-                                                                <option value="Category 3">技术转让</option>
-                                                                <option value="Category 4">技术服务</option>
-                                                            </select>
+                                                            <s:select
+                                                                    list="#{'技术开发':'技术开发','技术咨询':'技术咨询', '技术转让':'技术转让', '技术服务':'技术服务'}"
+                                                                    name="horizontal.projectType"
+                                                                    class="form-control"></s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -705,7 +633,9 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">合同编号</label>
                                                         <div class="col-md-6">
-                                                            <input type="email" class="form-control" placeholder="合同编号">
+                                                            <s:textfield type="text" name="horizontal.contractId"
+                                                                         class="form-control"
+                                                                         placeholder="合同编号"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -714,7 +644,9 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">合同份数</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" placeholder="合同份数">
+                                                            <s:textfield type="text" name="horizontal.contactNumber"
+                                                                         class="form-control"
+                                                                         placeholder="合同份数"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -728,8 +660,12 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">其他参与成员</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="其他参与成员">
+                                                            <a data-target="#otherPeopleWindow" data-toggle="modal">
+                                                                <s:textfield id="otherPeopleInput" type="text"
+                                                                             name="horizontal.memberName"
+                                                                             class="form-control"
+                                                                             placeholder="其他参与成员"/>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -743,8 +679,8 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3 ">备注</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control" placeholder="备注">
-
+                                                            <s:textfield type="text" name="horizontal.remark"
+                                                                         class="form-control"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -756,11 +692,9 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">立项结论</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control"
-                                                                    data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked>通过</option>
-                                                                <option value="Category 2">未通过</option>
-                                                            </select>
+                                                            <s:select list="#{'未通过':'未通过','通过':'通过'}"
+                                                                      name="horizontal.projectSetStatus"
+                                                                      class="form-control"></s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -769,11 +703,9 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 ">是否结题</label>
                                                         <div class="col-md-6">
-                                                            <select class="select2_category form-control"
-                                                                    data-placeholder="Choose a Category" tabindex="1">
-                                                                <option value="Category 1" checked>已结题</option>
-                                                                <option value="Category 2">未结题</option>
-                                                            </select>
+                                                            <s:select list="#{'未结题':'未结题','已结题':'已结题'}"
+                                                                      name="horizontal.endProjectResult"
+                                                                      class="form-control"></s:select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -788,8 +720,9 @@
                                                         <label class="control-label col-md-6 ">结题时间</label>
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month2 col-md-13"
-                                                                 data-date="" data-date-format="yyyy/mm">
-                                                                <input type="text" size="16" class="form-control">
+                                                                 data-date="" data-date-format="yyyy-mm-dd">
+                                                                <input name="horizontal.endProjectDate" type="text"
+                                                                       size="16" class="form-control">
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -807,10 +740,7 @@
                                                 <div class="col-md-12 " style="border:0px solid green;">
                                                     <div class="row">
                                                         <div class="col-md-offset-3 col-md-9">
-                                                            <button type="submit" class="btn blue">录入到位经费</button>
-                                                            <button type="submit" class="btn blue">录入到位工作量</button>
-                                                            <button type="submit" class="btn yellow">附件上传</button>
-                                                            <button type="submit" class="btn green">修改</button>
+                                                            <button type="submit" class="btn green">提交</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -893,6 +823,23 @@
     </div>
 </div>
 <!-- END PRE-FOOTER -->
+<%-- 项目负责人 --%>
+<div class="portlet-body">
+    <div id="long5" class="modal fade"
+         style="width:30%;height:60%;margin-top:-300px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div id="treeDiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%-- 项目负责人 --%>
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="container">
@@ -909,38 +856,39 @@
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-<script src="../../assets/global/plugins/respond.min.js"></script>
-<script src="../../assets/global/plugins/excanvas.min.js"></script>
+<script src="/assets/global/plugins/respond.min.js"></script>
+<script src="/assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
-<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
+<script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
         type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="../../assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-<script type="text/javascript" src="../../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-<script src="../../assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script src="/assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
 <script type="text/javascript"
-        src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+        src="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 <script type="text/javascript"
-        src="../../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        src="/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
-<script src="../../assets/admin/pages/scripts/components-editors.js"></script>
-<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+<script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="/assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+<script src="/assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="/assets/admin/pages/scripts/components-editors.js"></script>
+<script src="/assets/admin/pages/scripts/components-pickers.js"></script>
+<script src="/dtree/dtree.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function () {
@@ -951,7 +899,75 @@
         ComponentsEditors.init();
         ComponentsPickers.init();
 
+        // 查找
+        $('#search').click(function () {
+            $.post('/horizontal/horizontal/usearch.html', $('#searchForm').serialize(), function (data) {
+                data = JSON.parse(data);
+                var content = '';
+                for (var i = 0; i < data.length; i++) {
+                    var o = data[i];
+                    content += '<tr class="odd gradeX">' +
+                        '<td>' + o.id + '</td>' +
+                        '<td>' + o.projectName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
+                        '</tr>'
+                }
+                $('#tbody').html(content);
+            });
+        });
+        // 分页
+        $('#pre').click(function () {
+            $.get('/horizontal/horizontal_pre', function (data) {
+                if (data == '-1') return;
+                data = JSON.parse(data);
+                var content = '';
+                for (var i = 0; i < data.length; i++) {
+                    var o = data[i];
+                    content += '<tr class="odd gradeX">' +
+                        '<td>' + o.id + '</td>' +
+                        '<td>' + o.projectName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
+                        '</tr>'
+                }
+                $('#tbody').html(content);
+            });
+        });
+
+        $('#next').click(function () {
+            $.get('/horizontal/horizontal_next', function (data) {
+                if (data == '-1') return;
+                data = JSON.parse(data);
+                var content = '';
+                for (var i = 0; i < data.length; i++) {
+                    var o = data[i];
+                    content += '<tr class="odd gradeX">' +
+                        '<td>' + o.id + '</td>' +
+                        '<td>' + o.projectName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
+                        '</tr>'
+                }
+                $('#tbody').html(content);
+            });
+        });
+
+        // 添加树
+        $.get('/employee/employee/tree.html', function (data) {
+            data = JSON.parse(data);
+            window.d = new dTree('d');
+            data.forEach(function (obj) {
+                d.add(obj.id, obj.pid, obj.text, obj.url);
+            });
+            $('#treeDiv').html(d.toString());
+        });
     });
+
+    // 处理employee树
+    function employeeTree(name) {
+        $('#treePeople').val(name);
+        $.post('/employee_unitName', {name: name}, function (data) {
+            $('#peopleUnit').val(data);
+        });
+    }
 </script>
 <!-- END JAVASCRIPTS -->
 </body>

@@ -639,7 +639,7 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light ">
                         <div class="portlet-body form">
-                            <form role="form">
+                            <form name="form" role="form">
                                 <div class="form-body">
                                     <h3 class="form-section font-red-sunglo">经费预算</h3>
                                     <div class="row">
@@ -757,11 +757,11 @@
 
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form action="/vertical/vertical/save.html" method="post"
+                                        <form method="post"
                                               class="form-horizontal">
                                             <s:hidden name="vertical.id"/>
                                             <div class="form-body">
-                                                <h3 class="form-section font-red-sunglo">纵向课题录入</h3>
+                                                <h3 class="form-section font-red-sunglo">纵向课题信息</h3>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -1110,9 +1110,11 @@
                                                         <div class="col-md-7 " style="border:0px solid green;">
                                                             <div class="row">
                                                                 <div class="col-md-offset-3 col-md-9">
-                                                                    <button type="submit" class="btn green">提交</button>
-                                                                    <button type="submit" class="btn red">删除</button>
-                                                                    <button type="button" class="btn default">重置
+                                                                    <a href="javascript:form.action='/vertical/vertical/check.html';form.submit()"
+                                                                       class="btn green">提交</a>
+                                                                    <a href="javascript:form.action='/vertical/vertical/delete.html';form.submit()"
+                                                                       type="submit" class="btn red">删除</a>
+                                                                    <button type="reset" class="btn default">重置
                                                                     </button>
                                                                 </div>
                                                             </div>
@@ -1121,7 +1123,6 @@
 
                                                 </div>
                                             </div>
-
                                         </form>
                                         <!-- END FORM-->
 
