@@ -518,8 +518,9 @@
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
-                                                                <input name="horizontal.signingDate" type="text"
-                                                                       size="16" class="form-control"/>
+                                                                <input type="date" name="horizontal.signingDate"
+                                                                       value="<s:date name="horizontal.signingDate" format="yyyy-MM-dd" />"
+                                                                       class="form-control"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -586,8 +587,9 @@
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
-                                                                <input name="horizontal.effectiveMin" type="text"
-                                                                       size="16" class="form-control">
+                                                                <s:textfield type="text" name="horizontal.effectiveMin"
+                                                                             class="form-control"
+                                                                             placeholder="有效期限"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -606,8 +608,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 ">签约地点</label>
                                                         <div class="col-md-6">
-                                                            <input name="horizontal.signingAddress" type="text"
-                                                                   class="form-control" placeholder="签约地点">
+                                                            <s:textfield type="text"
+                                                                         name="horizontal.signingAddress"
+                                                                         class="form-control"
+                                                                         placeholder="签约地点"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -721,8 +725,9 @@
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month2 col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
-                                                                <input name="horizontal.endProjectDate" type="text"
-                                                                       size="16" class="form-control">
+                                                                <input type="text" name="horizontal.endProjectDate"
+                                                                       value="<s:date name="horizontal.endProjectDate" format="yyyy-MM-dd" />"
+                                                                       class="form-control"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -740,7 +745,15 @@
                                                 <div class="col-md-12 " style="border:0px solid green;">
                                                     <div class="row">
                                                         <div class="col-md-offset-3 col-md-9">
-                                                            <button type="submit" class="btn green">提交</button>
+                                                            <c:if test="${ requestScope.get(\"udetail\") eq null }">
+                                                                <%-- 可以修改 --%>
+                                                                <button type="submit" class="btn green">添加</button>
+                                                            </c:if>
+
+                                                            <c:if test="${ requestScope.get(\"udetail\") ne null }">
+                                                                <a class="btn green"
+                                                                   href="/horizontal/horizontal/reset.html">添加横向课题</a>
+                                                            </c:if>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -908,7 +921,7 @@
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
                         '<td>' + o.id + '</td>' +
-                        '<td>' + o.projectName + '</td>' +
+                        '<td><a href="/horizontal/horizontal/udetail/' + o.id + '.html">' + o.projectName + '</a></td>' +
                         '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
                         '</tr>'
                 }
@@ -925,7 +938,7 @@
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
                         '<td>' + o.id + '</td>' +
-                        '<td>' + o.projectName + '</td>' +
+                        '<td><a href="/horizontal/horizontal/udetail/' + o.id + '.html">' + o.projectName + '</a></td>' +
                         '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
                         '</tr>'
                 }
@@ -942,7 +955,7 @@
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
                         '<td>' + o.id + '</td>' +
-                        '<td>' + o.projectName + '</td>' +
+                        '<td><a href="/horizontal/horizontal/udetail/' + o.id + '.html">' + o.projectName + '</a></td>' +
                         '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
                         '</tr>'
                 }

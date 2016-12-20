@@ -457,9 +457,9 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">项目名称</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" name="vertical.verticalName"
-                                                                   class="form-control" placeholder="项目名称">
-
+                                                            <s:textfield id="projectName" type="text"
+                                                                         name="vertical.verticalName"
+                                                                         class="form-control" placeholder="项目名称"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -468,9 +468,9 @@
                                                     <div class="form-group ">
                                                         <label class="control-label col-md-4 font-red-sunglo">项目编号</label>
                                                         <div class="col-md-6">
-                                                            <input type="text" name="vertical.projectId"
-                                                                   class="form-control" placeholder="项目编号">
-
+                                                            <s:textfield type="text" name="vertical.projectId"
+                                                                         class="form-control"
+                                                                         placeholder="项目编号"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -494,8 +494,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-4 font-red-sunglo">项目负责人</label>
                                                         <div class="col-md-6">
-                                                            <input name="vertical.verticalHeaderName" type="text"
-                                                                   class="form-control" placeholder="项目负责人">
+                                                            <s:textfield id="treePeople" type="text"
+                                                                         name="vertical.verticalHeaderName"
+                                                                         class="form-control"
+                                                                         placeholder="项目负责人"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -508,9 +510,9 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-6 font-red-sunglo">批准金额(万元)</label>
                                                         <div class="col-md-6">
-                                                            <input name="vertical.approvalFunds" type="text"
-                                                                   class="form-control"
-                                                                   placeholder="批准金额(万元)">
+                                                            <s:textfield id="funds" name="vertical.approvalFunds"
+                                                                         type="text" class="form-control"
+                                                                         placeholder="批准金额（万元）"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -540,8 +542,9 @@
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
-                                                                <input name="vertical.starDate" type="text" size="16"
-                                                                       class="form-control">
+                                                                <input name="vertical.starDate" type="text"
+                                                                       class="form-control"
+                                                                       value="<s:date name="vertical.starDate" format="yyyy-MM-dd"/>"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -557,8 +560,9 @@
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
-                                                                <input name="vertical.endDate" type="text" size="16"
-                                                                       class="form-control">
+                                                                <input name="vertical.endDate" type="text"
+                                                                       class="form-control"
+                                                                       value="<s:date name="vertical.endDate" format="yyyy-MM-dd"/>"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -704,8 +708,9 @@
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
-                                                                <input name="vertical.examineDate" type="text" size="16"
-                                                                       class="form-control">
+                                                                <input name="vertical.examineDate" type="text"
+                                                                       value="<s:date name="vertical.examineDate" format="yyyy-MM-dd"/>"
+                                                                       class="form-control"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -735,8 +740,9 @@
                                                         <div class="col-md-6">
                                                             <div class="input-group date form_month col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
-                                                                <input name="vertical.projectSetDate" type="text"
-                                                                       size="16" class="form-control">
+                                                                <input type="text" name="vertical.projectSetDate"
+                                                                       value="<s:date name="vertical.projectSetDate" format="yyyy-MM-dd"/>"
+                                                                       class="form-control"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -753,7 +759,8 @@
                                                             <div class="input-group date form_month col-md-13"
                                                                  data-date="" data-date-format="yyyy-mm-dd">
                                                                 <input name="vertical.endTopicExamineDate" type="text"
-                                                                       size="16" class="form-control">
+                                                                       value="<s:date name="vertical.endTopicExamineDate" format="yyyy-MM-dd"/>"
+                                                                       class="form-control"/>
                                                                 <span class="input-group-btn">
 																<button class="btn default date-set" type="button"><i
                                                                         class="fa fa-calendar"></i></button>
@@ -830,8 +837,16 @@
                                             <div class="row" style="border:0px solid red;">
                                                 <div class="col-md-12 " style="border:0px solid green;">
                                                     <div class="row">
-                                                        <div class="col-md-offset-3 col-md-9">
-                                                            <button type="submit" class="btn green">提交</button>
+                                                        <div class="col-md-offset-2 col-md-9">
+                                                            <c:if test="${ requestScope.get(\"udetail\") eq null }">
+                                                                <%-- 可以修改 --%>
+                                                                <button type="submit" class="btn green">添加</button>
+                                                            </c:if>
+
+                                                            <c:if test="${ requestScope.get(\"udetail\") ne null }">
+                                                                <a class="btn green"
+                                                                   href="/vertical/vertical/reset.html">添加纵向课题</a>
+                                                            </c:if>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -979,7 +994,7 @@
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
                         '<td>' + o.id + '</td>' +
-                        '<td>' + o.VerticalName + '</td>' +
+                        '<td><a href="/vertical/vertical/udetail/' + o.id + '.html">' + o.VerticalName + '</a></td>' +
                         '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
                         '</tr>'
                 }
@@ -996,7 +1011,7 @@
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
                         '<td>' + o.id + '</td>' +
-                        '<td>' + o.VerticalName + '</td>' +
+                        '<td><a href="/vertical/vertical/udetail/' + o.id + '.html">' + o.VerticalName + '</a></td>' +
                         '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
                         '</tr>'
                 }
@@ -1013,7 +1028,7 @@
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
                         '<td>' + o.id + '</td>' +
-                        '<td>' + o.VerticalName + '</td>' +
+                        '<td><a href="/vertical/vertical/udetail/' + o.id + '.html">' + o.VerticalName + '</a></td>' +
                         '<td><span class="label label-sm label-success">' + o.endTopicExamineResult + '</span></td>' +
                         '</tr>'
                 }

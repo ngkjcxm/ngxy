@@ -75,7 +75,7 @@ public class HorizentalAction extends BaseAction {
     public String search() {
         curPage = 1;
         list = horizontalService.search(search);
-        pageCount = (int) Math.ceil(list.size() / perPage);
+        pageCount = (int) Math.ceil(list.size() / (double) perPage);
         if (list.size() > perPage) {
             pageList = list.subList(0, perPage);
         } else {
@@ -114,7 +114,7 @@ public class HorizentalAction extends BaseAction {
      */
     @RequiresAuthentication
     public void next() {
-        if (curPage >= pageCount) {
+        if (curPage > pageCount) {
             json("-1");
             return;
         }
@@ -128,6 +128,7 @@ public class HorizentalAction extends BaseAction {
     public void page() {
         int begin = (curPage - 1) * perPage;
         int end = curPage * perPage;
+        if (end > list.size()) end = list.size();
         pageList = list.subList(begin, end);
         json(pageList);
     }
@@ -139,6 +140,26 @@ public class HorizentalAction extends BaseAction {
     public String detail() {
         horizontal = horizontalService.get(id);
         return SUCCESS;
+    }
+
+    /**
+     * 重置信息
+     */
+    @RequiresAuthentication
+    public String reset() {
+        horizontal = null;
+        return "user";
+    }
+
+    /**
+     * 用户页面详细信息
+     */
+    @RequiresAuthentication
+    public String udetail() {
+        horizontal = horizontalService.get(id);
+        // 添加标志，令前台不能修改
+        getRequest().setAttribute("udetail", "udetail");
+        return "user";
     }
 
     /**

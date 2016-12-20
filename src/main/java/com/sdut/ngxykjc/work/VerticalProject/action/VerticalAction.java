@@ -46,9 +46,9 @@ public class VerticalAction extends BaseAction {
     }
 
     /**
-     * 当前页:从1开始
+     * 当前页:从0开始
      */
-    private int curPage = 1;
+    private int curPage = 0;
 
     /**
      * 总页数
@@ -65,9 +65,11 @@ public class VerticalAction extends BaseAction {
      */
     @RequiresAuthentication
     public String search() {
-        curPage = 1;
+        curPage = 0;
         list = verticalDao.search(search);
-        pageCount = (int) Math.ceil(list.size() / perPage);
+        pageCount = (int) Math.ceil(list.size() / (double) perPage);
+        System.out.println(list.size());
+        System.out.println(pageCount);
         if (list.size() > perPage) {
             pageList = list.subList(0, perPage);
         } else {
@@ -78,7 +80,7 @@ public class VerticalAction extends BaseAction {
 
     @RequiresAuthentication
     public void usearch() {
-        curPage = 1;
+        curPage = 0;
         list = verticalDao.search(search);
         pageCount = (int) Math.ceil(list.size() / perPage);
         if (list.size() > perPage) {
@@ -93,7 +95,7 @@ public class VerticalAction extends BaseAction {
      * 上一页
      */
     public void pre() {
-        if (curPage == 1) {
+        if (curPage == 0) {
             json("-1");
             return;
         }
@@ -110,6 +112,7 @@ public class VerticalAction extends BaseAction {
             return;
         }
         curPage++;
+        System.out.println(curPage);
         page();
     }
 
@@ -117,8 +120,9 @@ public class VerticalAction extends BaseAction {
      * 分页
      */
     public void page() {
-        int begin = (curPage - 1) * perPage;
-        int end = curPage * perPage;
+        int begin = curPage * perPage;
+        int end = (curPage + 1) * perPage;
+        if (end > list.size()) end = list.size();
         pageList = list.subList(begin, end);
         json(pageList);
     }
@@ -130,6 +134,26 @@ public class VerticalAction extends BaseAction {
     public String detail() {
         vertical = (VerticalProject) verticalDao.getById(VerticalProject.class, id);
         return SUCCESS;
+    }
+
+    /**
+     * 重置信息
+     */
+    @RequiresAuthentication
+    public String reset() {
+        vertical = null;
+        return "user";
+    }
+
+    /**
+     * udetail
+     */
+    @RequiresAuthentication
+    public String udetail() {
+        vertical = (VerticalProject) verticalDao.getById(VerticalProject.class, id);
+        // 添加标志，令前台不能修改
+        getRequest().setAttribute("udetail", "udetail");
+        return "user";
     }
 
     /**

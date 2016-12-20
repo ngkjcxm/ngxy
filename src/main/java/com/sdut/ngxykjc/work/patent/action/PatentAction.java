@@ -76,7 +76,7 @@ public class PatentAction extends BaseAction {
     /**
      * 当前页
      */
-    private int curpage = 1;
+    private int curpage = 0;
     /**
      * 一页总条数
      */
@@ -84,8 +84,8 @@ public class PatentAction extends BaseAction {
 
     @RequiresAuthentication
     public String search() {
-        curpage = 1;
-        int first = curpage + (curpage - 1) * pageCount;
+        curpage = 0;
+        int first = curpage * pageCount;
         List<Patent> lists = patentDao.selectPage(Patent.class, search, first, pageCount);
         pageList = lists;
         //System.out.println(pageList);
@@ -94,7 +94,7 @@ public class PatentAction extends BaseAction {
 
     public void next() {
         curpage++;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<Patent> lists = patentDao.selectPage(Patent.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;
@@ -109,13 +109,12 @@ public class PatentAction extends BaseAction {
     }
 
     public void pre() {
-        if ((curpage - 1) <= 0) {
+        if (curpage == 0) {
             json(pageList);
             return;
         }
-
         curpage--;
-        int first = curpage + (curpage - 1) * pageCount;
+        int first = curpage * pageCount;
         List<Patent> lists = patentDao.selectPage(Patent.class, search, first, pageCount);
         if (!CollectionUtils.isEmpty(lists)) {
             pageList = lists;
