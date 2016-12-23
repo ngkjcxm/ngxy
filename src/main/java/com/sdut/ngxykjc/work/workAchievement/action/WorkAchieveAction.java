@@ -67,6 +67,13 @@ public class WorkAchieveAction extends BaseAction {
     private WorkArchieveSearch search;
 
     /**
+     * 添加
+     */
+    public String addUI() {
+        return "add";
+    }
+
+    /**
      * 搜索
      */
     @RequiresAuthentication
@@ -125,6 +132,16 @@ public class WorkAchieveAction extends BaseAction {
         workAchieveDao.saveOrUpdate(workAchieve);
         workAchieve = null;
         return "user";
+    }
+
+    /**
+     * 添加
+     */
+    @RequiresAuthentication
+    public String add() {
+        workAchieveDao.saveOrUpdate(workAchieve);
+        workAchieve = null;
+        return "add";
     }
 
     @RequiresPermissions(UserPermissions.WORK_ACHIEVE)

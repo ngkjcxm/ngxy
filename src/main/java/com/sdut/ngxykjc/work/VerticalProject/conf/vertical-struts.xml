@@ -8,6 +8,7 @@
         <action name="vertical_*" class="verticalAction" method="{1}">
             <result name="success">/jsp/vertical/listUI.jsp</result>
             <result name="listquery">/jsp/QueryStatistics/vertical.jsp</result>
+            <result name="add">/jsp/vertical/addUI.jsp</result>
             <result name="user">/jsp/vertical/vertical.jsp</result>
         </action>
     </package>

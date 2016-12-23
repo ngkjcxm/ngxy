@@ -69,6 +69,13 @@ public class HorizentalAction extends BaseAction {
     }
 
     /**
+     * 添加
+     */
+    public String addUI() {
+        return "add";
+    }
+
+    /**
      * 搜索
      */
     @RequiresAuthentication
@@ -170,6 +177,16 @@ public class HorizentalAction extends BaseAction {
         horizontalService.saveOrUpdate(horizontal);
         horizontal = null;
         return "user";
+    }
+
+    /**
+     * 添加
+     */
+    @RequiresAuthentication
+    public String add() {
+        horizontalService.saveOrUpdate(horizontal);
+        horizontal = null;
+        return "add";
     }
 
     @RequiresPermissions(UserPermissions.HORIZONTAL)

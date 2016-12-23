@@ -8,6 +8,7 @@
         <action name="horizontal_*" class="horizentalAction" method="{1}">
             <result name="success">/jsp/horizontal/listUI.jsp</result>
             <result name="listquery">/jsp/QueryStatistics/horizontalFunds.jsp</result>
+            <result name="add">/jsp/horizontal/addUI.jsp</result>
             <result name="user">/jsp/horizontal/horizontal.jsp</result>
         </action>
     </package>

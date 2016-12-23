@@ -30,6 +30,16 @@ public class SoftwareAction extends BaseAction {
     private SoftwareDao softwareDao;
 
     /**
+     * 添加
+     */
+    public String addUI() {
+        return "add";
+    }
+    public String listUI() {
+        return SUCCESS;
+    }
+
+    /**
      * 当前页
      */
     private int curpage = 0;
@@ -110,6 +120,16 @@ public class SoftwareAction extends BaseAction {
         softwareDao.saveOrUpdate(software);
         software = null;
         return "user";
+    }
+
+    /**
+     * 添加
+     */
+    @RequiresAuthentication
+    public String add() {
+        softwareDao.saveOrUpdate(software);
+        software = null;
+        return "add";
     }
 
     /**

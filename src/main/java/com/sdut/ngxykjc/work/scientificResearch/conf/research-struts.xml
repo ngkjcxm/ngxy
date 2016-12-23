@@ -8,6 +8,7 @@
         <action name="research_*" class="researchAction" method="{1}">
             <result name="success">/jsp/research/listUI.jsp</result>
             <result name="user">/jsp/research/scientific.jsp</result>
+            <result name="add">/jsp/research/addUI.jsp</result>
             <result name="listquery">/jsp/QueryStatistics/scientificResearch.jsp</result>
         </action>
     </package>

@@ -41,17 +41,17 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start ">
+                <li class="start">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
                 </li>
-                <li class="active open">
+                <li class="active">
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
-                        <span class="arrow open"></span>
+                        <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -80,18 +80,18 @@
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
-                        <span class="arrow "></span>
+                        <span class="arrow open"></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow "></span>
+                                <span class="arrow open"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="horizontalAction_addUI.action">
+                                    <a href="${basePath}horizontal_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
@@ -118,7 +118,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}vertical_addUI.action">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
@@ -145,13 +145,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_addUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_listUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -166,7 +166,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}workAchieve_addUI.action">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
@@ -187,7 +187,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_addUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
@@ -208,7 +208,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}research_addUI.action">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
@@ -222,14 +222,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}software_addUI.action">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
@@ -252,122 +252,65 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="#">
+                            <a href="${basePath}employee_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}horizontal_listQueryUI.action">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
+                        <!--<li>
+                        <a href="#">
+                        <i class="icon-paper-plane"></i>
+                        横向课题工作量统计
+                        </a>
+                        </li> -->
                         <li>
-                            <a href="#">
-                                <i class="icon-paper-plane"></i>
-                                横向课题工作量统计
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="${basePath}vertical_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}paper_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}workAchieve_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}patent_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}research_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}software_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="icon-wallet"></i>
-                        <span class="title">个人查询统计</span>
-                        <span class="arrow "></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                横向经费
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                横向工作量
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                纵向课题
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                论文成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                著作成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                专利成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                科研奖励
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                软件著作权
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>
-    </div>
     <!-- END SIDEBAR -->
     <!-- BEGIN CONTENT Gao-->
     <div class="page-content-wrapper">

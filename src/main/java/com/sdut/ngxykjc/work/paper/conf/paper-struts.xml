@@ -8,6 +8,7 @@
         <action name="paper_*" class="paperAction" method="{1}">
             <result name="success">/jsp/paper/listUI.jsp</result>
             <result name="user">/jsp/paper/paper.jsp</result>
+            <result name="add">/jsp/paper/addUI.jsp</result>
         </action>
     </package>
 </struts>

@@ -46,13 +46,13 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start active ">
+                <li class="start">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
@@ -69,7 +69,7 @@
                                 <i class="icon-home"></i>
                                 学校基本信息管理</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="${basePath}unit_listUI.action">
                                 <i class="icon-home"></i>
                                 单位基本信息管理</a>
@@ -85,18 +85,18 @@
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
-                        <span class="arrow "></span>
+                        <span class="arrow open"></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow "></span>
+                                <span class="arrow open"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="horizontalAction_addUI.action">
+                                    <a href="${basePath}horizontal_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
@@ -123,7 +123,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}vertical_addUI.action">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
@@ -150,13 +150,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_addUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_listUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -171,7 +171,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}workAchieve_addUI.action">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
@@ -192,7 +192,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_addUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
@@ -213,7 +213,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}research_addUI.action">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
@@ -227,14 +227,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}software_addUI.action">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
@@ -312,252 +312,196 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="icon-wallet"></i>
-                        <span class="title">个人查询统计</span>
-                        <span class="arrow "></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                横向经费
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                横向工作量
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                纵向课题
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                论文成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                著作成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                专利成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                科研奖励
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                软件著作权
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>
-    </div>
-    <!-- END SIDEBAR -->
-    <!-- BEGIN CONTENT Gao-->
-    <div class="page-content-wrapper">
-        <div class="page-content">
-            <!-- BEGIN PAGE HEADER-->
-            <!-- BEGIN PAGE HEAD -->
-            <div class="page-head">
-                <!-- BEGIN PAGE TITLE -->
-                <div class="page-title">
-                    <h1>单位基本信息</h1>
-                </div>
-                <!-- END PAGE TITLE -->
+        <!-- END SIDEBAR -->
+        <!-- BEGIN CONTENT Gao-->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <!-- BEGIN PAGE HEADER-->
+                <!-- BEGIN PAGE HEAD -->
+                <div class="page-head">
+                    <!-- BEGIN PAGE TITLE -->
+                    <div class="page-title">
+                        <h1>单位基本信息</h1>
+                    </div>
+                    <!-- END PAGE TITLE -->
 
-            </div>
-            <!-- END PAGE HEAD -->
-            <!-- BEGIN PAGE BREADCRUMB -->
-            <ul class="page-breadcrumb breadcrumb">
-                <li>
-                    <a style="text-decoration:none;">基础信息管理</a>
-                    <i class="fa fa-circle"></i>
-                </li>
-                <li>
-                    <a style="text-decoration:none;">单位信息管理</a>
-                    <i class="fa fa-circle"></i>
-                </li>
-                <li>
-                    <a style="text-decoration:none;">单位基本信息</a>
-                </li>
-            </ul>
-            <!-- END PAGE BREADCRUMB -->
-            <!-- END PAGE HEADER-->
-            <!-- BEGIN PAGE CONTENT Li-->
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="portlet red box">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-search"></i>查找
+                </div>
+                <!-- END PAGE HEAD -->
+                <!-- BEGIN PAGE BREADCRUMB -->
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a style="text-decoration:none;">基础信息管理</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a style="text-decoration:none;">单位信息管理</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a style="text-decoration:none;">单位基本信息</a>
+                    </li>
+                </ul>
+                <!-- END PAGE BREADCRUMB -->
+                <!-- END PAGE HEADER-->
+                <!-- BEGIN PAGE CONTENT Li-->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="portlet red box">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-search"></i>查找
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"></a>
+                                </div>
                             </div>
-                            <div class="tools">
-                                <a href="javascript:;" class="collapse"></a>
-                            </div>
-                        </div>
-                        <div class="portlet-body">
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-11">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control ">
-                                            <span class="input-group-btn">
+                            <div class="portlet-body">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-11">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control ">
+                                                <span class="input-group-btn">
 												<button class="btn red" type="button"><a style="color:#fff;"><i
                                                         class="fa fa-search"></i></a>模糊查询</button>
 											</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0"
-                                 class="scrollspy-example" style="height:375px;">
+                                <div data-spy="scroll" data-target="#navbar-example2" data-offset="0"
+                                     class="scrollspy-example" style="height:375px;">
 
-                                <!-- BEGIN SAMPLE FORM PORTLET-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <!-- BEGIN SAMPLE FORM PORTLET-->
-                                        <div class="portlet light ">
-                                            <div id="treeDiv"></div>
+                                    <!-- BEGIN SAMPLE FORM PORTLET-->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- BEGIN SAMPLE FORM PORTLET-->
+                                            <div class="portlet light ">
+                                                <div id="treeDiv"></div>
+                                            </div>
+                                            <!-- END SAMPLE FORM PORTLET-->
                                         </div>
-                                        <!-- END SAMPLE FORM PORTLET-->
                                     </div>
+                                    <!-- END SAMPLE FORM PORTLET-->
                                 </div>
-                                <!-- END SAMPLE FORM PORTLET-->
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet box red">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-graduation-cap"></i> 单位基本信息
+                    <div class="col-md-9">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet box red">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-graduation-cap"></i> 单位基本信息
+                                </div>
+                                <div class="tools">
+                                    <a href="" class="collapse">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="tools">
-                                <a href="" class="collapse">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portlet-body form">
-                            <form name="form" method="post" class="form-horizontal">
-                                <s:hidden name="unit.id"/>
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">单位编号</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.unitId" class="form-control"/>
+                            <div class="portlet-body form">
+                                <form name="form" method="post" class="form-horizontal">
+                                    <s:hidden name="unit.id"/>
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">单位编号</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.unitId" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">单位名称</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.unitName" class="form-control"/>
+                                            </div>
                                         </div>
-                                        <label class="control-label col-md-2" for="inputError">单位名称</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.unitName" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">学校编号</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.schoolId" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">学校名称</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.schoolName" class="form-control"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">学校编号</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.schoolId" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">单位类型</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.unitType" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">单位简称</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.unitSimName" class="form-control"/>
+                                            </div>
                                         </div>
-                                        <label class="control-label col-md-2" for="inputError">学校名称</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.schoolName" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">单位序号</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.unitOrder" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">行政级别</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.administrativeLevel"
+                                                             class="form-control"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">单位类型</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.unitType" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">办公地点</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.officeLocal" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">业务邮箱</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.eMail" class="form-control"/>
+                                            </div>
                                         </div>
-                                        <label class="control-label col-md-2" for="inputError">单位简称</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.unitSimName" class="form-control"/>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">电话</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.phone" class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputError">传真</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.fox" class="form-control"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">单位序号</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.unitOrder" class="form-control"/>
-                                        </div>
-                                        <label class="control-label col-md-2" for="inputError">行政级别</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.administrativeLevel"
-                                                         class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">办公地点</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.officeLocal" class="form-control"/>
-                                        </div>
-                                        <label class="control-label col-md-2" for="inputError">业务邮箱</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.eMail" class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">电话</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.phone" class="form-control"/>
-                                        </div>
-                                        <label class="control-label col-md-2" for="inputError">传真</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.fox" class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="inputWarning">备注</label>
-                                        <div class="col-md-4">
-                                            <s:textfield type="text" name="unit.remark" class="form-control"/>
-                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">备注</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="unit.remark" class="form-control"/>
+                                            </div>
 
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-actions right">
-                                    <a href="javascript:form.action='unit_save';form.submit()" class="btn red">追加<i
-                                            class="fa fa-plus"></i></a>
-                                    <a href="javascript:form.action='unit_save';form.submit()" class="btn red">修改<i
-                                            class="fa fa-edit"></i></a>
-                                    <a href="javascript:form.action='unit_delete';form.submit()" class="btn red">删除<i
-                                            class="fa fa-times"></i></a>
-                                    <a href="javascript:form.reset()" class="btn blue-hoki">重置 <i
-                                            class="fa fa-file-o"></i></a>
-                                </div>
-                            </form>
+                                    <div class="form-actions right">
+                                        <a href="javascript:form.action='unit_save';form.submit()" class="btn red">追加<i
+                                                class="fa fa-plus"></i></a>
+                                        <a href="javascript:form.action='unit_save';form.submit()" class="btn red">修改<i
+                                                class="fa fa-edit"></i></a>
+                                        <a href="javascript:form.action='unit_delete';form.submit()"
+                                           class="btn red">删除<i
+                                                class="fa fa-times"></i></a>
+                                        <a href="javascript:form.reset()" class="btn blue-hoki">重置 <i
+                                                class="fa fa-file-o"></i></a>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <!-- END SAMPLE FORM PORTLET-->
                     </div>
-                    <!-- END SAMPLE FORM PORTLET-->
-                </div>
 
+                </div>
             </div>
-        </div>
-        <!-- END PAGE CONTENT-->
+            <!-- END PAGE CONTENT-->
 
+        </div>
     </div>
-</div>
-<!-- END CONTENT -->
+    <!-- END CONTENT -->
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->

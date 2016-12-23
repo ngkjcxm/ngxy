@@ -24,487 +24,11 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css">
-    <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
-          type="text/css">
-    <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
-    <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
-          type="text/css"/>
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css" href="/assets/global/plugins/jstree/dist/themes/default/style.min.css"/>
-    <!-- END PAGE LEVEL STYLES -->
-    <!-- BEGIN THEME STYLES -->
-    <link href="/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"/>
-    <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/admin/layout4/css/layout.css" rel="stylesheet" type="text/css"/>
-    <link id="style_color" href="/assets/admin/layout4/css/themes/light.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/admin/layout4/css/custom.css" rel="stylesheet" type="text/css"/>
-    <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
-</head>
-<!-- END HEAD -->
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-<!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-fixed-top">
-    <!-- BEGIN HEADER INNER -->
-    <div class="page-header-inner">
-        <!-- BEGIN LOGO -->
-        <div class="page-logo">
-            <a href="index.html">
-                <img src="/assets/admin/layout4/img/logo-light.png" alt="logo" class="logo-default"/>
-            </a>
-            <div class="menu-toggler sidebar-toggler">
-                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-            </div>
-        </div>
-        <!-- END LOGO -->
-        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
-           data-target=".navbar-collapse">
-        </a>
-        <!-- END RESPONSIVE MENU TOGGLER -->
-        <!-- BEGIN PAGE ACTIONS -->
-        <!-- DOC: Remove "hide" class to enable the page header actions -->
-        <div class="page-actions">
-            <div class="btn-group">
-                <button type="button" class="btn red-haze btn-sm dropdown-toggle" data-toggle="dropdown"
-                        data-hover="dropdown" data-close-others="true">
-                    <span class="hidden-sm hidden-xs">Actions&nbsp;</span><i class="fa fa-angle-down"></i>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-docs"></i> New Post </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-tag"></i> New Comment </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-share"></i> Share </a>
-                    </li>
-                    <li class="divider">
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-flag"></i> Comments <span class="badge badge-success">4</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-users"></i> Feedbacks <span class="badge badge-danger">2</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- END PAGE ACTIONS -->
-        <!-- BEGIN PAGE TOP -->
-        <div class="page-top">
-            <!-- BEGIN HEADER SEARCH BOX -->
-            <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-            <form class="search-form" action="extra_search.html" method="GET">
-                <div class="input-group">
-                    <input type="text" class="form-control input-sm" placeholder="Search..." name="query">
-                    <span class="input-group-btn">
-					<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
-					</span>
-                </div>
-            </form>
-            <!-- END HEADER SEARCH BOX -->
-            <!-- BEGIN TOP NAVIGATION MENU -->
-            <div class="top-menu">
-                <ul class="nav navbar-nav pull-right">
-                    <li class="separator hide">
-                    </li>
-                    <!-- BEGIN NOTIFICATION DROPDOWN -->
-                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-extended dropdown-notification dropdown-dark"
-                        id="header_notification_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                           data-close-others="true">
-                            <i class="icon-bell"></i>
-                            <span class="badge badge-success">
-						7 </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="external">
-                                <h3><span class="bold">12 pending</span> notifications</h3>
-                                <a href="extra_profile.html">view all</a>
-                            </li>
-                            <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 250px;"
-                                    data-handle-color="#637283">
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">just now</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-success">
-										<i class="fa fa-plus"></i>
-										</span>
-										New user registered. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">3 mins</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-danger">
-										<i class="fa fa-bolt"></i>
-										</span>
-										Server #12 overloaded. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">10 mins</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-warning">
-										<i class="fa fa-bell-o"></i>
-										</span>
-										Server #2 not responding. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">14 hrs</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-info">
-										<i class="fa fa-bullhorn"></i>
-										</span>
-										Application error. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">2 days</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-danger">
-										<i class="fa fa-bolt"></i>
-										</span>
-										Database overloaded 68%. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">3 days</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-danger">
-										<i class="fa fa-bolt"></i>
-										</span>
-										A user IP blocked. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">4 days</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-warning">
-										<i class="fa fa-bell-o"></i>
-										</span>
-										Storage Server #4 not responding dfdfdfd. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">5 days</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-info">
-										<i class="fa fa-bullhorn"></i>
-										</span>
-										System Error. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">9 days</span>
-                                            <span class="details">
-										<span class="label label-sm label-icon label-danger">
-										<i class="fa fa-bolt"></i>
-										</span>
-										Storage server failed. </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- END NOTIFICATION DROPDOWN -->
-                    <li class="separator hide">
-                    </li>
-                    <!-- BEGIN INBOX DROPDOWN -->
-                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                           data-close-others="true">
-                            <i class="icon-envelope-open"></i>
-                            <span class="badge badge-danger">
-						4 </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="external">
-                                <h3>You have <span class="bold">7 New</span> Messages</h3>
-                                <a href="inbox.html">view all</a>
-                            </li>
-                            <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 275px;"
-                                    data-handle-color="#637283">
-                                    <li>
-                                        <a href="inbox.html?a=view">
-										<span class="photo">
-										<img src="/assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
-										</span>
-                                            <span class="subject">
-										<span class="from">
-										Lisa Wong </span>
-										<span class="time">Just Now </span>
-										</span>
-                                            <span class="message">
-										Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="inbox.html?a=view">
-										<span class="photo">
-										<img src="/assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
-										</span>
-                                            <span class="subject">
-										<span class="from">
-										Richard Doe </span>
-										<span class="time">16 mins </span>
-										</span>
-                                            <span class="message">
-										Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="inbox.html?a=view">
-										<span class="photo">
-										<img src="/assets/admin/layout3/img/avatar1.jpg" class="img-circle" alt="">
-										</span>
-                                            <span class="subject">
-										<span class="from">
-										Bob Nilson </span>
-										<span class="time">2 hrs </span>
-										</span>
-                                            <span class="message">
-										Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="inbox.html?a=view">
-										<span class="photo">
-										<img src="/assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
-										</span>
-                                            <span class="subject">
-										<span class="from">
-										Lisa Wong </span>
-										<span class="time">40 mins </span>
-										</span>
-                                            <span class="message">
-										Vivamus sed auctor 40% nibh congue nibh... </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="inbox.html?a=view">
-										<span class="photo">
-										<img src="/assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
-										</span>
-                                            <span class="subject">
-										<span class="from">
-										Richard Doe </span>
-										<span class="time">46 mins </span>
-										</span>
-                                            <span class="message">
-										Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- END INBOX DROPDOWN -->
-                    <li class="separator hide">
-                    </li>
-                    <!-- BEGIN TODO DROPDOWN -->
-                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-extended dropdown-tasks dropdown-dark" id="header_task_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                           data-close-others="true">
-                            <i class="icon-calendar"></i>
-                            <span class="badge badge-primary">
-						3 </span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks">
-                            <li class="external">
-                                <h3>You have <span class="bold">12 pending</span> tasks</h3>
-                                <a href="page_todo.html">view all</a>
-                            </li>
-                            <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 275px;"
-                                    data-handle-color="#637283">
-                                    <li>
-                                        <a href="javascript:;">
-										<span class="task">
-										<span class="desc">New release v1.2 </span>
-										<span class="percent">30%</span>
-										</span>
-                                            <span class="progress">
-										<span style="width: 40%;" class="progress-bar progress-bar-success"
-                                              aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span
-                                                class="sr-only">40% Complete</span></span>
-										</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-										<span class="task">
-										<span class="desc">Application deployment</span>
-										<span class="percent">65%</span>
-										</span>
-                                            <span class="progress">
-										<span style="width: 65%;" class="progress-bar progress-bar-danger"
-                                              aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span
-                                                class="sr-only">65% Complete</span></span>
-										</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-										<span class="task">
-										<span class="desc">Mobile app release</span>
-										<span class="percent">98%</span>
-										</span>
-                                            <span class="progress">
-										<span style="width: 98%;" class="progress-bar progress-bar-success"
-                                              aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span
-                                                class="sr-only">98% Complete</span></span>
-										</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-										<span class="task">
-										<span class="desc">Database migration</span>
-										<span class="percent">10%</span>
-										</span>
-                                            <span class="progress">
-										<span style="width: 10%;" class="progress-bar progress-bar-warning"
-                                              aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span
-                                                class="sr-only">10% Complete</span></span>
-										</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-										<span class="task">
-										<span class="desc">Web server upgrade</span>
-										<span class="percent">58%</span>
-										</span>
-                                            <span class="progress">
-										<span style="width: 58%;" class="progress-bar progress-bar-info"
-                                              aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"><span
-                                                class="sr-only">58% Complete</span></span>
-										</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-										<span class="task">
-										<span class="desc">Mobile development</span>
-										<span class="percent">85%</span>
-										</span>
-                                            <span class="progress">
-										<span style="width: 85%;" class="progress-bar progress-bar-success"
-                                              aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span
-                                                class="sr-only">85% Complete</span></span>
-										</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-										<span class="task">
-										<span class="desc">New UI release</span>
-										<span class="percent">38%</span>
-										</span>
-                                            <span class="progress progress-striped">
-										<span style="width: 38%;" class="progress-bar progress-bar-important"
-                                              aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span
-                                                class="sr-only">38% Complete</span></span>
-										</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- END TODO DROPDOWN -->
-                    <!-- BEGIN USER LOGIN DROPDOWN -->
-                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-user dropdown-dark">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                           data-close-others="true">
-						<span class="username username-hide-on-mobile">
-						Nick </span>
-                            <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                            <img alt="" class="img-circle" src="/assets/admin/layout4/img/avatar9.jpg"/>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-default">
-                            <li>
-                                <a href="extra_profile.html">
-                                    <i class="icon-user"></i> My Profile </a>
-                            </li>
-                            <li>
-                                <a href="page_calendar.html">
-                                    <i class="icon-calendar"></i> My Calendar </a>
-                            </li>
-                            <li>
-                                <a href="inbox.html">
-                                    <i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
-								3 </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page_todo.html">
-                                    <i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
-								7 </span>
-                                </a>
-                            </li>
-                            <li class="divider">
-                            </li>
-                            <li>
-                                <a href="extra_lock.html">
-                                    <i class="icon-lock"></i> Lock Screen </a>
-                            </li>
-                            <li>
-                                <a href="userAction_logout.action">
-                                    <i class="icon-key"></i> Log Out </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- END USER LOGIN DROPDOWN -->
-                    <!-- BEGIN USER LOGIN DROPDOWN -->
-                    <li class="dropdown dropdown-extended quick-sidebar-toggler">
-                        <span class="sr-only">Toggle Quick Sidebar</span>
-                        <i class="icon-logout"></i>
-                    </li>
-                    <!-- END USER LOGIN DROPDOWN -->
-                </ul>
-            </div>
-            <!-- END TOP NAVIGATION MENU -->
-        </div>
-        <!-- END PAGE TOP -->
-    </div>
-    <!-- END HEADER INNER -->
-</div>
-<!-- END HEADER -->
+<!--公共头部-->
+<%@ include file="../publicHead/listUI.jsp" %>
+<!--公共头部End-->
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
@@ -514,9 +38,9 @@
         <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
         <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <div class="page-sidebar navbar-collapse collapse">
-             <!-- BEGIN SIDEBAR MENU -->
+            <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start ">
+                <li class="start">
                     <a href="${basePath}user_home.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
@@ -551,14 +75,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="active open">
+                <li class="active">
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
                         <span class="arrow open"></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="active open">
+                        <li class="active">
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
@@ -566,7 +90,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="active">
-                                    <a href="horizontalAction_addUI.action">
+                                    <a href="${basePath}horizontal_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
@@ -593,7 +117,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}vertical_addUI.action">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
@@ -620,13 +144,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_addUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_listUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -641,7 +165,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}workAchieve_addUI.action">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
@@ -662,7 +186,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_addUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
@@ -683,7 +207,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}research_addUI.action">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
@@ -697,20 +221,20 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}software_addUI.action">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="${basePath}research_listUI.action">
+                                    <a href="${basePath}software_listUI.action">
                                         <i class="icon-rocket"></i>
                                         软件著作权审核
                                     </a>
@@ -727,118 +251,62 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="#">
+                            <a href="${basePath}employee_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}horizontal_listQueryUI.action">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
+                        <!--<li>
+                        <a href="#">
+                        <i class="icon-paper-plane"></i>
+                        横向课题工作量统计
+                        </a>
+                        </li> -->
                         <li>
-                            <a href="#">
-                                <i class="icon-paper-plane"></i>
-                                横向课题工作量统计
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="${basePath}vertical_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}paper_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}workAchieve_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}patent_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}research_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}software_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="icon-wallet"></i>
-                        <span class="title">个人查询统计</span>
-                        <span class="arrow "></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                横向经费
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                横向工作量
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                纵向课题
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                论文成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                著作成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                专利成果
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                科研奖励
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                软件著作权
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>
@@ -847,226 +315,28 @@
     <!-- BEGIN CONTENT Gao-->
     <div class="page-content-wrapper">
         <div class="page-content">
-            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                            <h4 class="modal-title">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            Widget settings form goes here
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn blue">Save changes</button>
-                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-            <!-- /.modal -->
-            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <!-- BEGIN PAGE HEADER-->
-            <!-- BEGIN PAGE HEAD -->
-            <div class="page-head">
-                <!-- BEGIN PAGE TITLE -->
-                <div class="page-title">
-                    <h1>横向课题信息</h1>
-                </div>
-                <!-- END PAGE TITLE -->
-
-            </div>
-            <!-- END PAGE HEAD -->
-            <!-- BEGIN PAGE BREADCRUMB -->
-            <ul class="page-breadcrumb breadcrumb">
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">科研成果管理</a>
-                </li>
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">横向课题相关</a>
-                </li>
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">横向课题录入</a>
-                </li>
-            </ul>
-            <!-- END PAGE BREADCRUMB -->
-            <!-- END PAGE HEADER-->
-            <!-- BEGIN PAGE CONTENT Li-->
             <div class="row">
-                <div class="col-md-4">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet light ">
-                        <div class="portlet-body form">
-                            <form action="/horizontal/horizontal/search.html" role="form" method="post">
-                                <div class="form-body">
-                                    <h3 class="form-section font-red-sunglo">横向课题信息查找</h3>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table id="user" class="table table-bordered  " style="text-align:center;">
-                                                <tbody>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        到款时间
-                                                    </td>
-                                                    <td style="width:70%">
-                                                        <div>
-                                                            <input type="date" class="form-control">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        签订时间
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <div>
-                                                            <input type="date" name="search.signingDate"
-                                                                   class="form-control">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        审核情况
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <select class="select2_category form-control"
-                                                                name="search.endProjectResult">
-                                                            <option value="所有" checked>所有</option>
-                                                            <option value="已结题">已结题</option>
-                                                            <option value="未结题">未结题</option>
-                                                            <option value="未通过">未通过</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        项目名称
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <input type="text" name="search.projectName"
-                                                               class="form-control" placeholder="项目名称">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        归属单位
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <input type="text" name="search.unitName" class="form-control"
-                                                               placeholder="归属单位">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        结题年份
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <div>
-                                                            <input type="date" name="search.endProjectDate"
-                                                                   class="form-control">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <button class="btn btn-primary btn-block">搜索</button>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div style="height:320px;">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12">
-                                                <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                                                <div class="portlet-body">
-                                                    <table class="table table-striped table-bordered table-hover"
-                                                           id="sample_2" style="text-align:center;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="text-align:center;">
-                                                                序号
-                                                            </th>
-                                                            <th style="text-align:center;">
-                                                                项目名称
-                                                            </th>
-                                                            <th style="text-align:center;">
-                                                                负责人
-                                                            </th>
-                                                            <th style="text-align:center;">
-                                                                完成情况
-                                                            </th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody id="tbody">
-                                                        <c:forEach var="o" items="${pageList}">
-                                                            <tr class="odd gradeX">
-                                                                <td>
-                                                                        ${o.id}
-                                                                </td>
-                                                                <td>
-                                                                    <a href="/horizontal/horizontal/detail/${o.id}.html">
-                                                                            ${o.projectName} </a>
-                                                                </td>
-                                                                <td>
-                                                                        ${o.projectHeaderName}
-                                                                </td>
-                                                                <td>
-																<span class="label label-sm label-success">
-                                                                        ${o.endProjectResult} </span>
-                                                                </td>
-                                                            </tr>
-                                                        </c:forEach>
-                                                        </tbody>
-                                                    </table>
 
-                                                </div>
-                                                <!-- END EXAMPLE TABLE PORTLET-->
-                                                <div style="float:right;">
-                                                    <ul class="pagination">
-                                                        <li id="pre"><a>上一页</a></li>
-                                                        <li id="next"><a>下一页</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- END SAMPLE FORM PORTLET-->
-
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="tabbable tabbable-custom tabbable-noborder tabbable-reversed">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_2">
-
                                 <div class="portlet light ">
-
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form action="/horizontal/horizontal/save.html" method="post"
+                                        <form id="horizontalForm" method="post"
+                                              action="/horizontal/horizontal/add.html"
                                               class="form-horizontal">
                                             <s:hidden name="horizontal.id"/>
                                             <div class="form-body">
-                                                <h3 class="form-section font-red-sunglo">横向课题录入</h3>
+                                                <h3 class="form-section font-red-sunglo">横向课题信息详情</h3>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">项目名称</label>
-                                                            <div class="col-md-8">
-                                                                <s:textfield type="text" name="horizontal.projectName"
+                                                            <label class="control-label col-md-6 font-red-sunglo">项目名称</label>
+                                                            <div class="col-md-5">
+                                                                <s:textfield id="projectName" type="text"
+                                                                             name="horizontal.projectName"
                                                                              class="form-control"
                                                                              placeholder="项目名称"/>
                                                             </div>
@@ -1075,8 +345,8 @@
                                                     <!--/span-->
                                                     <div class="col-md-6">
                                                         <div class="form-group ">
-                                                            <label class="control-label col-md-4 font-red-sunglo">委托方</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3 font-red-sunglo">委托方</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text" name="horizontal.contractName"
                                                                              class="form-control"
                                                                              placeholder="委托方"/>
@@ -1089,9 +359,10 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">项目负责人单位</label>
-                                                            <div class="col-md-8">
-                                                                <s:textfield type="text" name="horizontal.unitName"
+                                                            <label class="control-label col-md-6 font-red-sunglo">项目负责人单位</label>
+                                                            <div class="col-md-5">
+                                                                <s:textfield id="peopleUnit" type="text"
+                                                                             name="horizontal.unitName"
                                                                              class="form-control"
                                                                              placeholder="项目负责人单位"/>
                                                             </div>
@@ -1100,12 +371,14 @@
                                                     <!--/span-->
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">项目负责人</label>
-                                                            <div class="col-md-8">
-                                                                <s:textfield type="text"
-                                                                             name="horizontal.projectHeaderName"
-                                                                             class="form-control"
-                                                                             placeholder="项目负责人"/>
+                                                            <label class="control-label col-md-3 font-red-sunglo">项目负责人</label>
+                                                            <div class="col-md-5">
+                                                                <a data-target="#long5" data-toggle="modal">
+                                                                    <s:textfield id="treePeople" type="text"
+                                                                                 name="horizontal.projectHeaderName"
+                                                                                 class="form-control"
+                                                                                 placeholder="项目负责人"/>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1115,9 +388,9 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">合同经费(万元)</label>
-                                                            <div class="col-md-8">
-                                                                <s:textfield type="text"
+                                                            <label class="control-label col-md-6 font-red-sunglo">合同经费(万元)</label>
+                                                            <div class="col-md-5">
+                                                                <s:textfield id="funds" type="text"
                                                                              name="horizontal.contactExpenditure"
                                                                              class="form-control"
                                                                              placeholder="合同经费（万元）"/>
@@ -1127,8 +400,8 @@
                                                     <!--/span-->
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">合同时间</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3 font-red-sunglo">合同时间</label>
+                                                            <div class="col-md-5">
                                                                 <input type="date" name="horizontal.signingDate"
                                                                        value="<s:date name="horizontal.signingDate" format="yyyy-MM-dd" />"
                                                                        class="form-control"/>
@@ -1137,14 +410,13 @@
                                                     </div>
                                                     <!--/span-->
                                                 </div>
-
                                                 <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">累计到位经费（万元）</label>
-                                                            <div class="col-md-8">
-                                                                <s:textfield type="text"
+                                                            <label class="control-label col-md-6">累计到位经费（万元）</label>
+                                                            <div class="col-md-5">
+                                                                <s:textfield id="fundsCount" type="text"
                                                                              name="horizontal.putExpenditure"
                                                                              class="form-control"
                                                                              placeholder="累计到位经费（万元）"/>
@@ -1153,8 +425,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">累计工作量（万元）</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3">累计工作量（万元）</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text" name="horizontal.putWorkNumber"
                                                                              class="form-control"
                                                                              placeholder="累计工作量（万元）"/>
@@ -1164,8 +436,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">有效期限</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-6">有效期限</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text" name="horizontal.effectiveMin"
                                                                              class="form-control"
                                                                              placeholder="办公电话"/>
@@ -1174,8 +446,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">签约地点</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3">签约地点</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text"
                                                                              name="horizontal.signingAddress"
                                                                              class="form-control"
@@ -1185,8 +457,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">项目类型</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-6">项目类型</label>
+                                                            <div class="col-md-5">
                                                                 <s:select
                                                                         list="#{'技术开发':'技术开发','技术咨询':'技术咨询', '技术转让':'技术转让', '技术服务':'技术服务'}"
                                                                         name="horizontal.projectType"
@@ -1196,8 +468,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">合同编号</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3">合同编号</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text" name="horizontal.contractId"
                                                                              class="form-control"
                                                                              placeholder="合同编号"/>
@@ -1206,8 +478,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">合同份数</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-6">合同份数</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text" name="horizontal.contactNumber"
                                                                              class="form-control"
                                                                              placeholder="合同份数"/>
@@ -1216,28 +488,33 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">其他参与成员</label>
-                                                            <div class="col-md-8">
-                                                                <s:textfield type="text" name="horizontal.memberName"
-                                                                             class="form-control"
-                                                                             placeholder="其他参与成员"/>
+                                                            <label class="control-label col-md-3">其他参与成员</label>
+                                                            <div class="col-md-5">
+                                                                <a data-target="#otherPeopleWindow" data-toggle="modal">
+                                                                    <s:textfield id="otherPeopleInput" type="text"
+                                                                                 name="horizontal.memberName"
+                                                                                 class="form-control"
+                                                                                 placeholder="其他参与成员"/>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <%--<div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-2">备注</label>
-                                                            <div class="col-md-10">
-                                                                <s:textfield type="text" name="horizontal.remark" class="form-control"
-                                                                       placeholder="其他参与成员" />
+                                                            <label class="control-label col-md-3">备注</label>
+                                                            <div class="col-md-7">
+                                                                <s:textfield type="text" name="horizontal.remark"
+                                                                             class="form-control"/>
                                                             </div>
                                                         </div>
-                                                    </div>--%>
-                                                    <h3 class="form-section font-red-sunglo">审核信息</h3>
+                                                    </div>
+                                                </div>
+                                                <h3 class="form-section font-red-sunglo">审核信息</h3>
+                                                <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">立项结论</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-6 font-red-sunglo">立项结论</label>
+                                                            <div class="col-md-5">
                                                                 <s:select list="#{'未通过':'未通过','通过':'通过'}"
                                                                           name="horizontal.projectSetStatus"
                                                                           class="form-control"></s:select>
@@ -1246,8 +523,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">是否结题</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3 font-red-sunglo">是否结题</label>
+                                                            <div class="col-md-5">
                                                                 <s:select list="#{'未结题':'未结题','已结题':'已结题'}"
                                                                           name="horizontal.endProjectResult"
                                                                           class="form-control"></s:select>
@@ -1256,27 +533,19 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">结题时间</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-6">结题时间</label>
+                                                            <div class="col-md-5">
                                                                 <input type="date" name="horizontal.endProjectDate"
                                                                        value="<s:date name="horizontal.endProjectDate" format="yyyy-MM-dd" />"
                                                                        class="form-control"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-2">备注</label>
-                                                            <div class="col-md-10">
-                                                                <s:textfield type="text" name="horizontal.remark"
-                                                                             class="form-control"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">登记人</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3 font-red-sunglo">登记人</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text"
                                                                              name="horizontal.registrationPeoName"
                                                                              class="form-control"/>
@@ -1285,8 +554,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">登记时间</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-6">登记时间</label>
+                                                            <div class="col-md-5">
                                                                 <input type="date" name="horizontal.registrationDate"
                                                                        value="<s:date name="horizontal.registrationDate" format="yyyy-MM-dd" />"
                                                                        class="form-control"/>
@@ -1295,8 +564,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 font-red-sunglo">审核人</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3 font-red-sunglo">审核人</label>
+                                                            <div class="col-md-5">
                                                                 <s:textfield type="text"
                                                                              name="horizontal.examinePeoName"
                                                                              class="form-control"/>
@@ -1305,8 +574,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">审核时间</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-6">审核时间</label>
+                                                            <div class="col-md-5">
                                                                 <input type="date" name="horizontal.examineDate"
                                                                        value="<s:date name="horizontal.examineDate" format="yyyy-MM-dd" />"
                                                                        class="form-control"/>
@@ -1315,8 +584,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4">附件上传</label>
-                                                            <div class="col-md-8">
+                                                            <label class="control-label col-md-3">附件上传</label>
+                                                            <div class="col-md-5">
                                                                 <%--<input type="file"/>--%>
                                                             </div>
                                                         </div>
@@ -1324,18 +593,25 @@
                                                 </div>
                                             </div>
                                             <div class="form-actions right" style="border:0px solid #000;">
-                                                <div class="row" style="border:0px solid red;">
-                                                    <div class="col-md-12 " style="border:0px solid green;">
-                                                        <div class="row">
-                                                            <div class="col-md-offset-3 col-md-9">
-                                                                <button type="submit" class="btn green">提交</button>
-                                                                <button type="button" class="btn default">取消</button>
-                                                            </div>
-                                                        </div>
+                                                <div class="row">
+                                                    <%--<div class=" col-md-4">--%>
+                                                    <%--<div class="form-group">--%>
+                                                    <%--<a data-target="#long3" data-toggle="modal">--%>
+                                                    <%--<button id="fundsBtn" type="button"--%>
+                                                    <%--class="btn blue">--%>
+                                                    <%--已到位经费审核--%>
+                                                    <%--</button>--%>
+                                                    <%--</a>--%>
+                                                    <%--</div>--%>
+                                                    <%--</div>--%>
+                                                    <div class="col-md-offset-4 col-md-6">
+                                                        <button type="submit" class="btn green" data-toggle="modal">提交
+                                                        </button>
+                                                        <%--<a href="javascript:doDelete()" class="btn red">删除</a>--%>
+                                                        <button type="reset" class="btn default">取消</button>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </form>
                                         <!-- END FORM-->
                                     </div>
@@ -1347,16 +623,317 @@
             </div>
             <!-- END SAMPLE FORM PORTLET-->
         </div>
-
     </div>
 </div>
 <!-- END PAGE CONTENT-->
+<!-- 弹出框 已到位经费审核 -->
+<div class="portlet-body">
+    <div id="long3" class="modal fade modal-scroll" tabindex="-1" data-replace="true"
+         style="width:90%;height:80%;margin-top:-250px;margin-left:-45%;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        </div>
+        <div class="row">
+            <!-- 查找列表开始-->
+            <div class="col-md-5">
+                <!-- BEGIN SAMPLE FORM PORTLET-->
+                <div class="portlet light ">
+                    <div class="portlet-body form">
+                        <div class="form-body">
+                            <h3 class="form-section font-red-sunglo">已到位经费审核查找</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered  " style="text-align:center;">
+                                        <tbody>
+                                        <tr>
+                                            <td style="width:30%;font-size:15px;text-align:center;">审核情况</td>
+                                            <td style="width:70%">
+                                                <select id="fundsSelect"
+                                                        class="select2_category form-control"
+                                                        data-placeholder="Choose a Category" tabindex="1">
+                                                    <option value="所有" checked>所有</option>
+                                                    <option value="已通过">已通过</option>
+                                                    <option value="待审核">待审核</option>
+                                                    <option value="未通过">未通过</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <button id="fundsSearch" class="btn btn-primary btn-block">搜索</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div style="height:320px;">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                                        <div class="portlet-body">
+                                            <table class="table table-striped table-bordered table-hover"
+                                                   id="sample_2" style="text-align:center;">
+                                                <thead>
+                                                <tr>
+                                                    <th style="text-align:center;">序号</th>
+                                                    <th style="text-align:center;">到款说明</th>
+                                                    <th style="text-align:center;">完成</th>
+                                                </tr>
+                                                </thead>
 
+                                                <tbody id="fundsBody">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 查找列表结束-->
+            <!-- 详细信息开始-->
+            <div class="col-md-7">
+                <div class="tabbable tabbable-custom tabbable-noborder tabbable-reversed">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_2">
+                            <div class="portlet light ">
+                                <div class="portlet-body form">
+                                    <!-- 已到位经费审核详情表单开始-->
+                                    <form id="fundsForm" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="form-section font-red-sunglo">已到位经费审核详情</h3>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5 font-red-sunglo">课题名称</label>
+                                                        <div class="col-md-7">
+                                                            <input id="checkName" name="funds.horizontalName"
+                                                                   type="text" class="form-control" placeholder="课题名称"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5 font-red-sunglo">合同经费（万元）</label>
+                                                        <div class="col-md-7">
+                                                            <input id="checkFunds" type="text" class="form-control"
+                                                                   placeholder="合同经费（万元）"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5 font-red-sunglo">累计到位经费（万元）</label>
+                                                        <div class="col-md-7">
+                                                            <input id="checkFundsGo" type="text" class="form-control"
+                                                                   placeholder="累计到位经费（万元）"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5">累计研发费（万元）</label>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control"
+                                                                   placeholder="累计研发费（万元）"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5">累计设备费（万元）</label>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control"
+                                                                   placeholder="累计设备费（万元）"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5">到位经费（万元）</label>
+                                                        <div class="col-md-7">
+                                                            <input name="funds.intoFunds" type="text"
+                                                                   class="form-control" placeholder="项目负责人"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5">其中研发费（万元）</label>
+                                                        <div class="col-md-7">
+                                                            <input name="funds.rdExpenses" type="text"
+                                                                   class="form-control" placeholder="项目负责人"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5">其中设备费（万元）</label>
+                                                        <div class="col-md-7">
+                                                            <input id="equipmentExpenses" name="funds.equipmentExpenses"
+                                                                   type="text" class="form-control"
+                                                                   placeholder="项目负责人"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5">到款时间</label>
+                                                        <div class="col-md-7">
+                                                            <input id="intoMoneyDate" name="funds.intoMoneyDate"
+                                                                   type="date" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5">是否开具发票</label>
+                                                        <div class="col-md-7">
+                                                            <select id="isInvoice" name="funds.isInvoice"
+                                                                    class="form-control">
+                                                                <option value="否">否</option>
+                                                                <option value="是">是</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3 class="form-section font-red-sunglo">已到位经费审核列表</h3>
+                                            <table class="table table-striped table-bordered table-hover"
+                                                   style="text-align:center;">
+                                                <thead>
+                                                <tr>
+                                                    <th style="text-align:center;"> 序号</th>
+                                                    <th style="text-align:center;"> 参与人</th>
+                                                    <th style="text-align:center;">创建账号</th>
+                                                    <th style="text-align:center;">研发费（万元）</th>
+                                                    <th style="text-align:center;"> 设备费（万元）</th>
+                                                    <th style="text-align:center;">研发账号</th>
+                                                    <th style="text-align:center;">基金账号</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="detailBody">
+
+                                                </tbody>
+                                            </table>
+                                            <div class="form-actions right" style="border:0px solid #000;">
+                                                <div class="row" style="border:0px solid red;">
+                                                    <div class="col-md-12 " style="border:0px solid green;">
+                                                        <div class="col-md-12 " style="border:0px solid green;">
+                                                            <div class="row">
+                                                                <div class="col-md-offset-3 col-md-9">
+                                                                    <a id="check" class="btn green">审核到位经费 </a>
+                                                                    <button id="reset" type="reset" class="btn green">
+                                                                        继续添加经费
+                                                                    </button>
+                                                                    <a id="save" class="btn green">保存</a>
+                                                                    <a id="delete" class="btn red">删除经费</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="funds.id"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 详细信息结束-->
+        </div>
+    </div>
 </div>
+<!-- End弹出框 已到位经费审核 -->
+<div class="portlet-body">
+    <div id="long5" class="modal fade modal-scroll" tabindex="-1" data-replace="true"
+         style="width:30%;height:60%;margin-top:-300px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div id="treeDiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- END CONTENT -->
+<div class="modal fade draggable-modal" id="draggable" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">是否保存用户信息</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                <button type="button" id="saveHorizontal" class="btn blue">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>
-<!-- END CONTAINER -->
+<!-- 其他参与人弹窗 -->
+<div id="otherPeopleWindow" class="modal fade" role="dialog" tabindex="-1" data-replace="true"
+     style="width:750px;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    </div>
+    <div style="margin-left: 50px;">
+        <div class="panel panel-primary select-all">
+            <div class="panel-heading">
+                <h2 class="panel-title">添加其他参与人</h2>
+            </div>
+            <div class="panel-body">
+                <select class="form-control" id="selectedDepartment">
+                    <option>党政办公室</option>
+                    <option>农业工程系</option>
+                    <option>食品科学与工程系</option>
+                    <option>工业设计系</option>
+                    <option>可再生能源工程系</option>
+                    <option>制图教学部</option>
+                </select>
+
+                <div class="row select-pad">
+                    <div class="select">
+                        <ul id="select-list" class="list-group" style="overflow: auto;height: 100%;">
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <ul class="list-group text-center">
+                            <a id="add" href="javascript:;" class="list-group-item" title="右移"><strong>＞＞</strong></a>
+                            <a id="remove" href="javascript:;" class="list-group-item"
+                               title="左移"><strong>＜＜</strong></a>
+                        </ul>
+                    </div>
+                    <div id="selected" class="selected" style="overflow: auto;height: 100%;"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-offset-3 col-xs-6">
+                        <input id="otherPeople" type="text" class="form-control col-xs-10" placeholder="添加成员姓名"/>
+                    </div>
+                    <button id="addOther" class="btn btn-danger">添加</button>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button id="success" class="btn btn-primary" style="margin-left:530px;">添加完成</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 其他参与人弹窗/end -->
+
 <!-- BEGIN FOOTER -->
 <div class="page-footer navbar-fixed-bottom">
     <div class="page-footer-inner">
@@ -1369,59 +946,50 @@
         <i class="icon-arrow-up"></i>
     </div>
 </div>
+
+
 <!-- END FOOTER -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="/assets/global/plugins/respond.min.js"></script>
-<script src="/assets/global/plugins/excanvas.min.js"></script>
-<![endif]-->
-<script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
-        type="text/javascript"></script>
-<script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-
-<script type="text/javascript" src="/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript"
-        src="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="/assets/admin/layout4/scripts/layout.js" type="text/javascript"></script>
-<script src="/assets/admin/layout4/scripts/demo.js" type="text/javascript"></script>
-<script src="/assets/admin/pages/scripts/table-managed.js"></script>
+<script src="/lib/js/select.js"></script>
 <script>
+
+    $('#saveHorizontal').click(function () {
+        var formDeletetask = document.getElementById("horizontalForm");
+        formDeletetask.action = "${basePath}horizontal_check.action";
+        formDeletetask.submit();
+    });
+
     jQuery(document).ready(function () {
-        // initiate layout and plugins
-        Metronic.init(); // init metronic core components
-        Layout.init(); // init current layout
-        Demo.init(); // init demo features
-        //TableManaged.init();
-        //TableAdvanced.init();
+        function doDelete() {
+            alert("是否删除");
+            document.forms[0].action = "/horizontal/horizontal/delete.html"
+            document.forms[0].submit();
+        }
+
+        // 添加树
+        $.get('/employee/employee/tree.html', function (data) {
+            data = JSON.parse(data);
+            window.d = new dTree('d');
+            data.forEach(function (obj) {
+                d.add(obj.id, obj.pid, obj.text, obj.url);
+            });
+            $('#treeDiv').html(d.toString());
+        });
 
         // 分页
         $('#pre').click(function () {
             $.get('/horizontal/horizontal_pre', function (data) {
-                if(data == '-1') return;
+                if (data == '-1') return;
                 data = JSON.parse(data);
                 var content = '';
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                            '<td>' + o.id + '</td>' +
-                            '<td><a href="/horizontal/horizontal/detail/' + o.id + '.html">' + o.projectName + '</a> </td>' +
-                            '<td>' + o.projectHeaderName + '</td>' +
-                            '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
-                            '</tr>'
+                        '<td>' + o.id + '</td>' +
+                        '<td><a href="/horizontal/horizontal/detail/' + o.id + '.html">' + o.projectName + '</a> </td>' +
+                        '<td>' + o.projectHeaderName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
+                        '</tr>'
                 }
                 $('#tbody').html(content);
             });
@@ -1429,24 +997,154 @@
 
         $('#next').click(function () {
             $.get('/horizontal/horizontal_next', function (data) {
-                if(data == '-1') return;
+                if (data == '-1') return;
                 data = JSON.parse(data);
                 var content = '';
                 for (var i = 0; i < data.length; i++) {
                     var o = data[i];
                     content += '<tr class="odd gradeX">' +
-                            '<td>' + o.id + '</td>' +
-                            '<td><a href="/horizontal/horizontal_detail?id=' + o.id + '">' + o.projectName + '</a> </td>' +
-                            '<td>' + o.projectHeaderName + '</td>' +
-                            '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
-                            '</tr>'
+                        '<td>' + o.id + '</td>' +
+                        '<td><a href="/horizontal/horizontal_detail?id=' + o.id + '">' + o.projectName + '</a> </td>' +
+                        '<td>' + o.projectHeaderName + '</td>' +
+                        '<td><span class="label label-sm label-success">' + o.endProjectResult + '</span></td>' +
+                        '</tr>'
                 }
                 $('#tbody').html(content);
             });
         });
+
+        // 到位经费信息注入并初始化列表信息
+        $('#fundsBtn').click(function () {
+            //课题名称：projectName
+            //合同经费：funds
+            //累计到位经费：fundsCount
+            $('#checkName').val($('#projectName').val());
+            $('#checkFunds').val($('#funds').val());
+            $('#checkFundsGo').val($('#fundsCount').val());
+
+            fundsList();
+        });
+
+        //继续添加
+        $('#reset').click(function () {
+            // 重置表单后注入有用信息
+            // 如果不设置演示操作，会导致不能注入值
+            setTimeout(function () {
+                $('#checkName').val($('#projectName').val());
+                $('#checkFunds').val($('#funds').val());
+                $('#checkFundsGo').val($('#fundsCount').val());
+                // 设置id
+                $('#id').val('0');
+            }, 10);
+        });
+
+        //提交经费表单
+        $('#save').click(function () {
+            console.log($('#fundsForm').serialize());
+            $.ajax({
+                type: "POST",
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                url: '/horizontal/horizontal/saveF.html',
+                data: $('#fundsForm').serialize(),
+                success: function (data) {
+                    // 重新获取funds list
+                    fundsList();
+                    if (data == 'ok') {
+                        alert("操作成功");
+                    } else {
+                        alert("操作失败");
+                    }
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            });
+        });
+
+        // 审核
+        $('#check').click(function () {
+            $.get('/horizontal/horizontal/checkFunds.html', function (data) {
+                // 重新获取funds list
+                fundsList();
+
+                if (data == 'ok') {
+                    alert("操作成功");
+                } else {
+                    alert("操作失败");
+                }
+            });
+        });
+
+        // 删除
+        $('#delete').click(function () {
+            $.get('/horizontal/horizontal/deleteFunds.html', function (data) {
+                // 重新获取funds list
+                fundsList();
+
+                if (data == 'OK') {
+                    alert("操作成功");
+                } else {
+                    alert("操作失败");
+                }
+            });
+        });
+
+        // 搜索
+        $('#fundsSearch').click(function () {
+            var fundsSelect = $('#fundsSelect').val();
+            var search = {fundsSearch: fundsSelect};
+            fundsList('/horizontal/horizontal_searchF', search);
+        });
     });
-    function selectMonth() {
-        WdatePicker({dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false});
+
+    /**
+     * 初始化funds列表并绑定事件
+     */
+    function fundsList(url, search) {
+        url = url || '/horizontal/horizontal/fundsList.html';
+        search = search || {};
+        $.post(url, search, function (data) {
+            data = JSON.parse(data);
+            var str = '';
+            var i = 1;
+            data.forEach(function (item) {
+                str += '<tr class="odd gradeX"><td>' + (i++) + '</td><td><a class="detail" href="#" data-id="' + item.id + '">' + item.explain + ' </a></td><td><span class="label label-sm label-success">' + item.state + ' </span></td></tr>'
+            });
+            $('#fundsBody').html(str);
+
+
+            // 添加监听事件
+            $('.detail').click(function () {
+                var id = $(this).attr('data-id');
+                $.get('/horizontal/horizontal_fundsDetail?fundsId=' + id, function (data) {
+                    data = JSON.parse(data);
+                    $('#intoFunds').val(data.intoFunds);
+                    $('#rdExpenses').val(data.rdExpenses);
+                    $('#equipmentExpenses').val(data.equipmentExpenses);
+                    $('#intoMoneyDate').val(data.intoMoneyDate);
+                    $('#isInvoice').val(data.isInvoice);
+                    $('#id').val(data.id);
+                    var str = '<tr class="odd gradeX"><td>1</td><td><a href="#">'
+                        + data.registerPeoName + '</a></td>' +
+                        '<td><span class="label label-sm label-danger">是</span></td><td>' + data.intoFunds + '</td><td>' + data.equipmentExpenses + '</td>' +
+                        '<td>123456</td><td>9001-115148</td></tr>';
+                    $('#detailBody').html(str);
+                });
+            });
+
+
+        });
+    }
+
+
+    // 处理employee树
+    function employeeTree(name) {
+        $('#treePeople').val(name);
+        $.post('/employee_unitName', {name: name}, function (data) {
+            $('#peopleUnit').val(data);
+        });
+
+
     }
 </script>
 <!-- END JAVASCRIPTS -->

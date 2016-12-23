@@ -37,6 +37,13 @@ public class PatentAction extends BaseAction {
     }
 
     /**
+     * 添加
+     */
+    public String addUI() {
+        return "add";
+    }
+
+    /**
      * 详细信息
      */
     @RequiresAuthentication
@@ -54,6 +61,17 @@ public class PatentAction extends BaseAction {
         patent = null;
         return SUCCESS;
     }
+
+    /**
+     * 添加
+     */
+    @RequiresAuthentication
+    public String add() {
+        patentDao.saveOrUpdate(patent);
+        patent = null;
+        return "add";
+    }
+
 
     @RequiresPermissions(UserPermissions.PATENT)
     public String check() {

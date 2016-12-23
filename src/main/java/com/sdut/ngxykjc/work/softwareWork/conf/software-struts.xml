@@ -9,6 +9,7 @@
         <action name="software_*" class="softwareAction" method="{1}">
             <result name="success">/jsp/softwareWork/listUI.jsp</result>
             <result name="user">/jsp/softwareWork/software.jsp</result>
+            <result name="add">/jsp/softwareWork/addUI.jsp</result>
             <result name="listquery">/jsp/QueryStatistics/softwarework.jsp</result>
         </action>
     </package>

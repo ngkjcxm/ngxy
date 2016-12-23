@@ -40,6 +40,13 @@ public class PaperAction extends BaseAction {
     }
 
     /**
+     * 添加
+     */
+    public String addUI() {
+        return "add";
+    }
+
+    /**
      * 跳转页面
      *
      * @return
@@ -75,7 +82,17 @@ public class PaperAction extends BaseAction {
     public String save() {
         paperDao.saveOrUpdate(paper);
         paper = null;
-        return SUCCESS;
+        return "user";
+    }
+
+    /**
+     * 添加
+     */
+    @RequiresAuthentication
+    public String add() {
+        paperDao.saveOrUpdate(paper);
+        paper = null;
+        return "add";
     }
 
     /**

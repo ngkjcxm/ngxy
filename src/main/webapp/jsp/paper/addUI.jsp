@@ -621,13 +621,13 @@
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
-                                <li>
+                                <li class="active">
                                     <a href="${basePath}paper_addUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="${basePath}paper_listUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
@@ -741,10 +741,10 @@
                             </a>
                         </li>
                         <!--<li>
-                        <a href="#">
-                        <i class="icon-paper-plane"></i>
-                        横向课题工作量统计
-                        </a>
+                            <a href="#">
+                                <i class="icon-paper-plane"></i>
+                                横向课题工作量统计
+                            </a>
                         </li> -->
                         <li>
                             <a href="${basePath}vertical_listQueryUI.action">
@@ -849,198 +849,10 @@
     <!-- BEGIN CONTENT Gao-->
     <div class="page-content-wrapper">
         <div class="page-content">
-            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                            <h4 class="modal-title">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            Widget settings form goes here
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn blue">Save changes</button>
-                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-            <!-- /.modal -->
-            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <!-- BEGIN PAGE HEADER-->
-            <!-- BEGIN PAGE HEAD -->
-            <div class="page-head">
-                <!-- BEGIN PAGE TITLE -->
-                <div class="page-title">
-                    <h1>论文成果审核</h1>
-                </div>
-                <!-- END PAGE TITLE -->
-
-            </div>
-            <!-- END PAGE HEAD -->
-            <!-- BEGIN PAGE BREADCRUMB -->
-            <ul class="page-breadcrumb breadcrumb">
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">科研成果管理</a>
-                </li>
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">论文成果相关</a>
-                </li>
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">论文成果审核</a>
-                </li>
-            </ul>
-            <!-- END PAGE BREADCRUMB -->
-            <!-- END PAGE HEADER-->
             <!-- BEGIN PAGE CONTENT Li-->
             <div class="row">
-                <div class="col-md-4">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet light ">
-                        <div class="portlet-body form">
-                            <form role="form" action="/paper/paper/search.html" method="post">
-                                <div class="form-body">
-                                    <h3 class="form-section font-red-sunglo">审核信息查找</h3>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table id="user" class="table table-bordered  " style="text-align:center;">
-                                                <tbody>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        发表年度
-                                                    </td>
-                                                    <td style="width:70%">
-                                                        <div class="input-group date form_year col-md-13">
-                                                            <input name="search.date" type="month"
-                                                                   class="form-control"/>
-                                                        </div>
-                                                    </td>
-                                                </tr>
 
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        审核情况
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <select name="search.state"
-                                                                class="select2_category form-control">
-                                                            <option value="所有" checked>所有</option>
-                                                            <option value="通过">已通过</option>
-                                                            <option value="待审核">待审核</option>
-                                                            <option value="未通过">未通过</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        论文名称
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <input name="search.name" type="text" class="form-control"
-                                                               placeholder="论文名称">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        论文作者
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <input name="search.author" type="text" class="form-control"
-                                                               placeholder="论文作者">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:30%;font-size:15px;text-align:center;">
-                                                        归属单位
-                                                    </td>
-                                                    <td style="width:15%">
-                                                        <select name="search.unit" class="select2_category form-control"
-                                                                data-placeholder="Choose a Category" tabindex="1">
-                                                            <option value="农业工程与食品科学学院">农业工程与食品科学学院</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <button class="btn-primary btn-block btn">搜索</button>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div style="height:320px;">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12">
-                                                <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                                                <div class="portlet-body">
-                                                    <table class="table table-striped table-bordered table-hover"
-                                                           id="sample_2" style="text-align:center;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="text-align:center;">
-                                                                序号
-                                                            </th>
-                                                            <th style="text-align:center;">
-                                                                论文名称
-                                                            </th>
-                                                            <th style="text-align:center;">
-                                                                首作者
-                                                            </th>
-                                                            <th style="text-align:center;">
-                                                                完成情况
-                                                            </th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody id="tbody">
-                                                        <c:forEach var="o" items="${pageList}">
-                                                            <tr class="odd gradeX">
-                                                                <td>
-                                                                        ${o.id}
-                                                                </td>
-                                                                <td>
-                                                                    <a href="/paper/paper/detail/${o.id}.html">
-                                                                            ${o.paperName} </a>
-                                                                </td>
-                                                                <td>
-                                                                        ${o.author1Name}
-                                                                </td>
-                                                                <td>
-																<span class="label label-sm label-success">
-                                                                        ${o.examineResult} </span>
-                                                                </td>
-                                                            </tr>
-                                                        </c:forEach>
-                                                        </tbody>
-                                                    </table>
-
-                                                </div>
-                                                <!-- END EXAMPLE TABLE PORTLET-->
-                                                <div style="float:right;">
-                                                    <ul class="pagination">
-                                                        <li id="pre"><a>上一页</a></li>
-                                                        <li id="next"><a>下一页</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- END SAMPLE FORM PORTLET-->
-
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="tabbable tabbable-custom tabbable-noborder tabbable-reversed">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_2">
@@ -1049,14 +861,15 @@
 
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form name="form" method="post" class="form-horizontal">
+                                        <form id="formPaper" action="/paper/paper/add.html" method="post"
+                                              name="formPaper" class="form-horizontal">
                                             <div class="form-body">
                                                 <h3 class="form-section font-red-sunglo">论文成果录入</h3>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-2 font-red-sunglo">论文题目</label>
-                                                            <div class="col-md-10">
+                                                            <div class="col-md-9">
                                                                 <s:textfield name="paper.paperName" type="text"
                                                                              class="form-control" placeholder="论文题目"/>
                                                             </div>
@@ -1067,7 +880,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-2 font-red-sunglo">刊物名称</label>
-                                                            <div class="col-md-10">
+                                                            <div class="col-md-9">
                                                                 <s:textfield name="paper.publishName" type="text"
                                                                              class="form-control" placeholder="刊物名称"/>
                                                             </div>
@@ -1096,10 +909,10 @@
                                                         </div>
                                                     </div>
                                                     <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 ">是否学生</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 font-red-sunglo">是否学生</label>
+                                                            <div class="col-md-8">
                                                                 <s:select name="paper.isStudent"
                                                                           class="select2_category form-control"
                                                                           list="#{'否':'否','是':'是'}"
@@ -1126,20 +939,17 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 font-red-sunglo">发表时间</label>
                                                             <div class="col-md-6">
-                                                                <div class="input-group date form_day2 col-md-13"
-                                                                     data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input name="paper.publishDate" type="date"
-                                                                           value="<s:date name="paper.publishDate" format="yyyy-MM-dd"/>"
-                                                                           class="form-control"/>
-                                                                </div>
+                                                                <input name="paper.publishDate" type="date"
+                                                                       value="<s:date name="paper.publishDate" format="yyyy-MM-dd"/>"
+                                                                       class="form-control"/>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 font-red-sunglo">论文级别</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 font-red-sunglo">论文级别</label>
+                                                            <div class="col-md-8">
                                                                 <s:select name="paper.paperLevel"
                                                                           class="select2_category form-control"
                                                                           list="#{
@@ -1164,7 +974,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 font-red-sunglo">ISSN</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="paper.ISSN" type="text"
+                                                                <s:textfield name="paper.issn" type="text"
                                                                              class="form-control" placeholder="ISSN"/>
                                                             </div>
                                                         </div>
@@ -1172,7 +982,7 @@
                                                     <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-4 ">通讯作者</label>
+                                                            <label class="control-label col-md-4 font-red-sunglo">通讯作者</label>
                                                             <div class="col-md-6">
                                                                 <s:textfield name="paper.tAuthorName" type="text"
                                                                              class="form-control" placeholder="通讯作者"/>
@@ -1180,10 +990,10 @@
                                                         </div>
                                                     </div>
                                                     <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 ">论文类型</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 font-red-sunglo">论文类型</label>
+                                                            <div class="col-md-8">
                                                                 <s:select name="paper.paperType"
                                                                           class="select2_category form-control"
                                                                           list="#{
@@ -1196,40 +1006,31 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 font-red-sunglo">ISBN</label>
                                                             <div class="col-md-6">
-                                                                <s:textfield name="paper.ISBN" type="text"
+                                                                <s:textfield name="paper.isbn" type="text"
                                                                              class="form-control" placeholder="ISBN"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 font-red-sunglo">检索时间</label>
                                                             <div class="col-md-6">
-                                                                <div class="input-group date form_day2 col-md-13"
-                                                                     data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input name="paper.searchDate" type="date"
-                                                                           value="<s:date name="paper.searchDate" format="yyyy-MM-dd"/>"
-                                                                           class="form-control"/>
-                                                                </div>
+                                                                <input name="paper.searchDate" type="date"
+                                                                       value="<s:date name="paper.searchDate" format="yyyy-MM-dd"/>"
+                                                                       class="form-control"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5">检索类型</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 font-red-sunglo">检索类型</label>
+                                                            <div class="col-md-8">
                                                                 <s:select name="paper.indexedRetrieval"
                                                                           class="select2_category form-control"
                                                                           list="#{
@@ -1249,10 +1050,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -1273,7 +1071,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4">出版地</label>
@@ -1283,11 +1080,10 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 font-red-sunglo">所属学科</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 font-red-sunglo">所属学科</label>
+                                                            <div class="col-md-8">
                                                                 <s:select name="paper.subjectName"
                                                                           class="select2_category form-control"
                                                                           list="#{
@@ -1298,10 +1094,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -1312,7 +1105,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">第三作者</label>
@@ -1322,20 +1114,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 ">第四作者</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">第四作者</label>
+                                                            <div class="col-md-8">
                                                                 <s:textfield name="paper.author4Name" type="text"
                                                                              class="form-control" placeholder="第四作者"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -1346,7 +1134,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">第六作者</label>
@@ -1356,20 +1143,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 ">第七作者</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">第七作者</label>
+                                                            <div class="col-md-8">
                                                                 <s:textfield name="paper.author7Name" type="text"
                                                                              class="form-control" placeholder="第七作者"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -1380,7 +1163,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">出版社</label>
@@ -1390,20 +1172,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 ">检索号</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">检索号</label>
+                                                            <div class="col-md-8">
                                                                 <s:textfield name="paper.searchId" type="text"
                                                                              class="form-control" placeholder="检索号"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -1414,33 +1192,26 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">会议时间</label>
-                                                            <div class="col-md-6">
-                                                                <div class="input-group date form_day2 col-md-13">
-                                                                    <input name="paper.meetingDate" type="date"
-                                                                           value="<s:date name="paper.meetingDate" format="yyyy-MM-dd"/>"
-                                                                           class="form-control"/>
-                                                                </div>
+                                                            <div class="col-md-6    ">
+                                                                <input name="paper.meetingDate" type="date"
+                                                                       value="<s:date name="paper.meetingDate" format="yyyy-MM-dd"/>"
+                                                                       class="form-control"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 ">会议国家</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">会议国家</label>
+                                                            <div class="col-md-8">
                                                                 <s:textfield name="paper.meetingCountry" type="text"
                                                                              class="form-control" placeholder="会议国家"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -1448,14 +1219,16 @@
                                                             <div class="col-md-6">
                                                                 <div class="input-group date form_year2 col-md-13"
                                                                      data-date="" data-date-format="yyyy">
-                                                                    <input name="paper.grantYear" type="date"
-                                                                           value="<s:date name="paper.grantYear" format="yyyy-MM-dd"/>"
-                                                                           class="form-control"/>
+                                                                    <s:textfield type="text" name="paper.grantYear"
+                                                                                 class="form-control"/>
+                                                                    <span class="input-group-btn">
+																	<button class="btn default date-set"
+                                                                            type="button"><i class="fa fa-calendar"></i></button>
+																	</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 ">会议城市</label>
@@ -1465,20 +1238,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-5 ">奖金(元)</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">奖金(元)</label>
+                                                            <div class="col-md-8">
                                                                 <s:textfield name="paper.bonus" type="text"
                                                                              class="form-control" placeholder="奖金(元)"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
-                                                <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -1496,89 +1265,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-4 =-">登记人</label>
-                                                            <div class="col-md-6">
-                                                                <s:textfield name="paper.registerPeoName" type="text"
-                                                                             class="form-control" placeholder="登记人"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-5 =">审核结论</label>
-                                                            <div class="col-md-6">
-                                                                <s:select name="paper.examineResult"
-                                                                          class="select2_category form-control"
-                                                                          list="#{
-                                                                          '未通过':'未通过',
-                                                                          '通过':'通过',
-                                                                          '待审核':'待审核'
-                                                                          }"
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--/span-->
-                                                </div>
-                                                <!--/row-->
-                                                <!--/row-->
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-6 ">审核时间</label>
-                                                            <div class="col-md-6">
-                                                                <div class="input-group date form_day2 col-md-13"
-                                                                     data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input name="paper.examineDate" type="date"
-                                                                           value="<s:date name="paper.examineDate" format="yyyy-MM-dd"/>"
-                                                                           class="form-control"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-4 ">登记时间</label>
-                                                            <div class="col-md-6">
-                                                                <div class="input-group date form_day2 col-md-13"
-                                                                     data-date="" data-date-format="yyyy/mm/dd">
-                                                                    <input name="paper.registerDate" type="date"
-                                                                           value="<s:date name="paper.registerDate" format="yyyy-MM-dd"/>"
-                                                                           class="form-control"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-5 ">审核人</label>
-                                                            <div class="col-md-6">
-                                                                <s:textfield name="paper.examinePeoName" type="text"
-                                                                             class="form-control" placeholder="审核人"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--/span-->
-                                                </div>
-                                                <!--/row-->
-                                                <!--/row-->
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-6 ">备注</label>
-                                                            <div class="col-md-6">
-                                                                <s:textfield name="paper.remark" type="text"
-                                                                             class="form-control" placeholder="备注"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--/span-->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label col-md-4 font-red-sunglo">学校通讯作者</label>
@@ -1593,30 +1279,101 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
                                                 </div>
-                                                <!--/row-->
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-2 ">备注</label>
+                                                            <div class="col-md-9">
+                                                                <s:textfield name="paper.remark" type="text"
+                                                                             class="form-control" placeholder="备注"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <h3 class="form-section font-red-sunglo">审核信息</h3>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-4 ">登记人</label>
+                                                            <div class="col-md-6">
+                                                                <s:textfield name="paper.registerPeoName" type="text"
+                                                                             class="form-control" placeholder="登记人"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-4 ">审核结论</label>
+                                                            <div class="col-md-6">
+                                                                <s:select name="paper.examineResult"
+                                                                          class="select2_category form-control"
+                                                                          list="#{
+                                                                          '未通过':'未通过',
+                                                                          '通过':'通过',
+                                                                          '待审核':'待审核'
+                                                                          }"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-4 ">审核时间</label>
+                                                            <div class="col-md-6">
+                                                                <input name="paper.examineDate" type="date"
+                                                                       value="<s:date name="paper.examineDate" format="yyyy-MM-dd"/>"
+                                                                       class="form-control"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-4 ">登记时间</label>
+                                                            <div class="col-md-6">
+                                                                <div class="input-group  col-md-12"
+                                                                     data-date="" data-date-format="yyyy/mm/dd">
+                                                                    <input name="paper.registerDate" type="date"
+                                                                           value="<s:date name="paper.registerDate" format="yyyy-MM-dd"/>"
+                                                                           class="form-control"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-4 ">审核人</label>
+                                                            <div class="col-md-6">
+                                                                <s:textfield name="paper.examinePeoName" type="text"
+                                                                             class="form-control" placeholder="审核人"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="form-actions right" style="border:0px solid #000;">
                                                 <div class="row" style="border:0px solid red;">
                                                     <div class="col-md-12 " style="border:0px solid green;">
                                                         <div class="row">
-                                                            <div class="col-md-offset-3 col-md-9">
-                                                                <a href="javascript:form.action='/paper/paper/save.html';form.submit()"
-                                                                   class="btn green">提交</a>
-                                                                <a href="javascript:form.action='/paper/paper/delete.html';form.submit()"
-                                                                   class="btn red">删除</a>
-                                                                <button type="reset" class="btn default">重置</button>
-                                                                <button type="button" class="btn green">导出Excel</button>
+                                                            <div class="col-md-offset-2 col-md-1">
+                                                                <!--此处为样式保留，不要删除！ -->
+                                                            </div>
+                                                            <div class="col-md-offset-2 col-md-6">
+                                                                <%--<input class="btn green" type="submit"--%>
+                                                                <%--onclick="javascript:return confirm('您确认要提交该著作成果吗？');"></input>--%>
+                                                                <button type="submit" class="btn green">提交</button>
+                                                                <button type="reset" class="btn red">取消</button>
+                                                                <%--<a id="deleteWork" class="btn red">删除</a>--%>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                             </div>
-
                                         </form>
-                                        <!-- END FORM-->
                                     </div>
                                 </div>
                             </div>
@@ -1682,6 +1439,17 @@
 <script src="/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/assets/admin/pages/scripts/components-pickers.js"></script>
 <script>
+    //查找
+    function search() {
+        $.ajax({
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+            url: '/paper/paper/search.html',
+            data: $('#searchForm').serialize()
+        })
+    }
+
+
     jQuery(document).ready(function () {
         // initiate layout and plugins
         Metronic.init(); // init metronic core components
@@ -1729,6 +1497,50 @@
                 $('#tbody').html(content);
             });
         });
+
+        //郭昌仑:这个方法未被使用
+        // 删除
+        $('#deleteWork').click(function () {
+
+            if (confirm("删除后将无法恢复，确认删除该论文成果吗！！")) {
+                $.get('/paper/paper/delete.html', function (data) {
+                    if (data == 'yes') {
+                        alert("操作成功");
+                        search();
+                    } else {
+                        alert("操作失败");
+                    }
+                });
+            }
+        });
+
+        //郭昌仑:这个方法未被使用
+        //新增
+        $('#papersubmit').click(function () {
+
+            if (confirm("您确认提交该论文成功吗？")) {
+                console.log($('#formPaper').serialize());
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                    url: '/paper/paper/add.html',
+                    data: $('#formPaper').serialize(),
+                    success: function (data) {
+                        if (data == 'yes') {
+                            alert("操作成功");
+                            search();
+                        } else {
+                            alert("操作失败");
+                        }
+                    },
+                    error: function (data) {
+                        alert("error");
+                    }
+                });
+            }
+        });
+
+
     });
 
 </script>

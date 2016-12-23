@@ -30,6 +30,13 @@ public class ResearchAction extends BaseAction {
     private ScientificResearchService scientificResearchService;
 
     /**
+     * 添加
+     */
+    public String addUI() {
+        return "add";
+    }
+
+    /**
      * 当前页
      */
     private int curpage = 0;
@@ -77,12 +84,24 @@ public class ResearchAction extends BaseAction {
     @RequiresAuthentication
     public String save() {
         scientificResearchService.saveOrUpdate(scientificResearchReward);
+        scientificResearchReward = null;
         return "user";
+    }
+
+    /**
+     * 添加
+     */
+    @RequiresAuthentication
+    public String add() {
+        scientificResearchService.saveOrUpdate(scientificResearchReward);
+        scientificResearchReward = null;
+        return "add";
     }
 
     @RequiresPermissions(UserPermissions.SCIENTIFIC_RESEARCH)
     public String check() {
         scientificResearchService.saveOrUpdate(scientificResearchReward);
+        scientificResearchReward = null;
         return SUCCESS;
     }
 

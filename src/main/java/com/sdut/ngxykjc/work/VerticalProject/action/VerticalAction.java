@@ -46,6 +46,13 @@ public class VerticalAction extends BaseAction {
     }
 
     /**
+     * 添加
+     */
+    public String addUI() {
+        return "add";
+    }
+
+    /**
      * 当前页:从0开始
      */
     private int curPage = 0;
@@ -164,6 +171,16 @@ public class VerticalAction extends BaseAction {
         verticalDao.saveOrUpdate(vertical);
         vertical = null;
         return "user";
+    }
+
+    /**
+     * 添加
+     */
+    @RequiresAuthentication
+    public String add() {
+        verticalDao.saveOrUpdate(vertical);
+        vertical = null;
+        return "add";
     }
 
     @RequiresPermissions(UserPermissions.VERTICAL)
