@@ -192,7 +192,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_listUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果审核
                                     </a>

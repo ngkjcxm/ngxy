@@ -41,8 +41,8 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start">
-                    <a href="${basePath}user_home.action">
+                <li class="start active ">
+                    <a href="${basePath}user_homeUI.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
@@ -76,18 +76,18 @@
                         </li>
                     </ul>
                 </li>
-                <li class="active">
+                <li>
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
-                        <span class="arrow open"></span>
+                        <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="active">
+                        <li>
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow open"></span>
+                                <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
@@ -96,7 +96,7 @@
                                         横向课题录入
                                     </a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="${basePath}horizontal_listUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题核立
@@ -193,7 +193,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_listUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果审核
                                     </a>
@@ -222,7 +222,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
@@ -264,10 +264,10 @@
                             </a>
                         </li>
                         <!--<li>
-                        <a href="#">
-                        <i class="icon-paper-plane"></i>
-                        横向课题工作量统计
-                        </a>
+                            <a href="#">
+                                <i class="icon-paper-plane"></i>
+                                横向课题工作量统计
+                            </a>
                         </li> -->
                         <li>
                             <a href="${basePath}vertical_listQueryUI.action">
@@ -307,203 +307,257 @@
                         </li>
                     </ul>
                 </li>
-
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-wallet"></i>
+                        <span class="title">个人查询统计</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                横向经费
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                横向工作量
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                纵向课题
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                论文成果
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                著作成果
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                专利成果
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                科研奖励
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                软件著作权
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>
-        <!-- END SIDEBAR -->
-        <!-- BEGIN CONTENT Gao-->
-        <div class="page-content-wrapper">
-            <div class="page-content">
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT Gao-->
+    <div class="page-content-wrapper">
+        <div class="page-content">
 
-                <!-- BEGIN PAGE HEADER-->
-                <!-- BEGIN PAGE HEAD -->
-                <div class="page-head">
-                    <!-- BEGIN PAGE TITLE -->
-                    <div class="page-title">
-                        <h1>人员权限分配管理</h1>
-                    </div>
-                    <!-- END PAGE TITLE -->
+            <!-- BEGIN PAGE HEADER-->
+            <!-- BEGIN PAGE HEAD -->
+            <div class="page-head">
+                <!-- BEGIN PAGE TITLE -->
+                <div class="page-title">
+                    <h1>人员权限分配管理</h1>
                 </div>
-                <!-- END PAGE HEAD -->
-                <!-- BEGIN PAGE BREADCRUMB -->
-                <ul class="page-breadcrumb breadcrumb">
-                    <li>
-                        <i class="fa fa-circle"></i>
-                        <a style="text-decoration:none;">基础信息管理</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-circle"></i>
-                        <a style="text-decoration:none;">人员权限分配管理</a>
-                    </li>
-                </ul>
-                <!-- END PAGE BREADCRUMB -->
-                <!-- END PAGE HEADER-->
-                <!-- BEGIN PAGE CONTENT Li-->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="portlet red box">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-search"></i>查找
-                                </div>
-                                <div class="tools">
-                                    <a href="javascript:;" class="collapse">
-                                    </a>
-                                </div>
+                <!-- END PAGE TITLE -->
+            </div>
+            <!-- END PAGE HEAD -->
+            <!-- BEGIN PAGE BREADCRUMB -->
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <i class="fa fa-circle"></i>
+                    <a style="text-decoration:none;">基础信息管理</a>
+                </li>
+                <li>
+                    <i class="fa fa-circle"></i>
+                    <a style="text-decoration:none;">人员权限分配管理</a>
+                </li>
+            </ul>
+            <!-- END PAGE BREADCRUMB -->
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN PAGE CONTENT Li-->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="portlet red box">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-search"></i>查找
                             </div>
-                            <div class="portlet-body">
-                                <div id="tree"></div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
                             </div>
                         </div>
+                        <div class="portlet-body">
+                            <div id="tree"></div>
+                        </div>
                     </div>
-                    <div class="col-md-9">
-                        <!-- BEGIN SAMPLE FORM PORTLET-->
-                        <div class="portlet box red">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-graduation-cap"></i> 人员权限分配管理
-                                </div>
-                                <div class="tools">
-                                    <a href="" class="collapse">
-                                    </a>
-                                </div>
+                </div>
+                <div class="col-md-9">
+                    <!-- BEGIN SAMPLE FORM PORTLET-->
+                    <div class="portlet box red">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-graduation-cap"></i> 人员权限分配管理
                             </div>
-                            <div class="portlet-body form">
-                                <form name="form" method="post" class="form-horizontal">
-                                    <s:hidden name="user.id"/>
-                                    <s:hidden name="user.role" value="manager"/>
-                                    <div class="form-body">
+                            <div class="tools">
+                                <a href="" class="collapse">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form name="form" method="post" class="form-horizontal">
+                                <s:hidden name="user.id"/>
+                                <s:hidden name="user.role" value="manager"/>
+                                <div class="form-body">
+                                    <div class="form-group">
                                         <div class="form-group">
-                                            <div class="form-group">
-                                                <label class="control-label col-md-2" for="inputWarning">姓名</label>
-                                                <div class="col-md-4">
-                                                    <s:textfield type="text" name="user.realName" class="form-control"/>
-                                                </div>
-                                                <label class="control-label col-md-2" for="inputWarning">角色</label>
-                                                <div class="col-md-4">
-                                                    <div class="checkbox-list">
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.paperPermission"/>论文审批用户</label>
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.workAchievePermission"
-                                                                        id="inlineCheckbox2"/>著作审批用户</label>
-                                                    </div>
-                                                </div>
+                                            <label class="control-label col-md-2" for="inputWarning">姓名</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="user.realName" class="form-control"/>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-2" for="inputWarning">办公地点</label>
-                                                <div class="col-md-4">
-                                                    <s:textfield type="text" name="user.workSpace"
-                                                                 class="form-control"/>
-                                                </div>
-                                                <label class="control-label col-md-2" for="inputWarning"></label>
-                                                <div class="col-md-4">
-                                                    <div class="checkbox-list">
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.patentPermission"
-                                                                        id="inlineCheckbox3"
-                                                            />专利审批用户</label>
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.scientficSearchPermission"
-                                                                        id="inlineCheckbox4"
-                                                            />科研奖励审批用户</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-2" for="inputWarning">办公电话</label>
-                                                <div class="col-md-4">
-                                                    <s:textfield type="text" name="user.phone"
-                                                                 class="form-control"/>
-                                                </div>
-                                                <label class="control-label col-md-2" for="inputWarning"></label>
-                                                <div class="col-md-4">
-                                                    <div class="checkbox-list">
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.horizontalPermission"
-                                                                        id="inlineCheckbox5"/>横向审批用户</label>
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.verticalPermission"
-                                                                        id="inlineCheckbox6"
-                                                            />纵向审批用户</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-2" for="inputWarning">业务邮箱</label>
-                                                <div class="col-md-4">
-                                                    <s:textfield type="text" name="user.email"
-                                                                 class="form-control"/>
-                                                </div>
-                                                <label class="control-label col-md-2" for="inputWarning"></label>
-                                                <div class="col-md-4">
-                                                    <div class="checkbox-list">
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.queryPermission" id="inlineCheckbox7"
-                                                            />查询信息用户</label>
-                                                        <label class="checkbox-inline">
-                                                            <s:checkbox name="user.softwarePermission"
-                                                                        id="inlineCheckbox8"
-                                                            />软件著作权审批用户</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-2" for="inputWarning">备注</label>
-                                                <div class="col-md-4">
-                                                    <s:textfield type="text" name="user.remark" class="form-control"/>
+                                            <label class="control-label col-md-2" for="inputWarning">角色</label>
+                                            <div class="col-md-4">
+                                                <div class="checkbox-list">
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.paperPermission"/>论文审批用户</label>
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.workAchievePermission"
+                                                                    id="inlineCheckbox2"/>著作审批用户</label>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">办公地点</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="user.workSpace"
+                                                             class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputWarning"></label>
+                                            <div class="col-md-4">
+                                                <div class="checkbox-list">
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.patentPermission" id="inlineCheckbox3"
+                                                        />专利审批用户</label>
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.scientficSearchPermission"
+                                                                    id="inlineCheckbox4"
+                                                        />科研奖励审批用户</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">办公电话</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="user.phone"
+                                                             class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputWarning"></label>
+                                            <div class="col-md-4">
+                                                <div class="checkbox-list">
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.horizontalPermission"
+                                                                    id="inlineCheckbox5"/>横向审批用户</label>
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.verticalPermission" id="inlineCheckbox6"
+                                                        />纵向审批用户</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">业务邮箱</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="user.email"
+                                                             class="form-control"/>
+                                            </div>
+                                            <label class="control-label col-md-2" for="inputWarning"></label>
+                                            <div class="col-md-4">
+                                                <div class="checkbox-list">
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.queryPermission" id="inlineCheckbox7"
+                                                        />查询信息用户</label>
+                                                    <label class="checkbox-inline">
+                                                        <s:checkbox name="user.softwarePermission" id="inlineCheckbox8"
+                                                        />软件著作权审批用户</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2" for="inputWarning">备注</label>
+                                            <div class="col-md-4">
+                                                <s:textfield type="text" name="user.remark" class="form-control"/>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-actions right">
-                                        <button type="reset" class="btn red">追加 <i
-                                                class="fa fa-plus"></i></button>
-                                        <a href="javascript:form.action='/user/user/save.html';form.submit()"
-                                           class="btn red">保存 <i
-                                                class="fa fa-edit"></i></a>
-                                        <a href="javascript:form.action='/user/user/delete.html';form.submit()"
-                                           class="btn red">删除 <i
-                                                class="fa fa-times"></i></a>
-                                    </div>
+                                </div>
+                                <div class="form-actions right">
+                                    <button type="reset" class="btn red">追加 <i
+                                            class="fa fa-plus"></i></button>
+                                    <a href="javascript:form.action='/user/user/save.html';form.submit()"
+                                       class="btn red">保存 <i
+                                            class="fa fa-edit"></i></a>
+                                    <a href="javascript:form.action='/user/user/delete.html';form.submit()"
+                                       class="btn red">删除 <i
+                                            class="fa fa-times"></i></a>
+                                </div>
 
-                                </form>
-                            </div>
+                            </form>
                         </div>
-                        <!-- END SAMPLE FORM PORTLET-->
                     </div>
+                    <!-- END SAMPLE FORM PORTLET-->
                 </div>
             </div>
-            <!-- END PAGE CONTENT-->
         </div>
+        <!-- END PAGE CONTENT-->
     </div>
-    <!-- END CONTENT -->
-    <!-- BEGIN FOOTER -->
-    <div class="page-footer navbar-fixed-bottom">
-        <div class="page-footer-inner">
-            2014 &copy; Metronic by keenthemes. <a
-                href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
-                title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
-            Metronic!</a>
-        </div>
-        <div class="scroll-to-top">
-            <i class="icon-arrow-up"></i>
-        </div>
+</div>
+<!-- END CONTENT -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer navbar-fixed-bottom">
+    <div class="page-footer-inner">
+        2014 &copy; Metronic by keenthemes. <a
+            href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+            title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
+        Metronic!</a>
     </div>
-    <!-- END FOOTER -->
-    <script>
-        $(function () {
-            $.get('/user/user/tree.html', function (data) {
-                data = JSON.parse(data);
-                window.d = new dTree('d');
-                data.forEach(function (obj) {
-                    d.add(obj.id, obj.pid, obj.text, obj.url);
-                });
-                $('#tree').html(d.toString());
-            })
-        });
-    </script>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+</div>
+<!-- END FOOTER -->
+<script>
+    $(function () {
+        $.get('/user/user/tree.html', function (data) {
+            data = JSON.parse(data);
+            window.d = new dTree('d');
+            data.forEach(function (obj) {
+                d.add(obj.id, obj.pid, obj.text, obj.url);
+            });
+            $('#tree').html(d.toString());
+        })
+    });
+</script>
 </body>
 <!-- END BODY -->
 </html>

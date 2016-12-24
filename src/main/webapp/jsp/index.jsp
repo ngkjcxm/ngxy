@@ -64,7 +64,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="user/user/login.html" method="post">
+    <form class="login-form" action="${basePath}user_login" method="post">
         <div style="border:0px solid #000;width:100%;text-align:center;">
             <h3 class="form-title">科技信息管理系统</h3>
         </div>

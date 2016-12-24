@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<input type="date" id="currYear"/>
+<script>
+	//只选择年 startView: 2, maxViewMode: 2,minViewMode:2,
+	//只选择月 startView: 2, maxViewMode: 1,minViewMode:1,
+	//选择年的 startView: 4, minView: 4, format: 'yyyy', 
+	jQuery(document).ready(function)({
+		$("#currYear").datetimepicker({
+			starView : 2, //表示起始选择范围，0为日，1为月，2为年
+			maxViewMode : 1,//表示最大选择范围
+			minViewMode : 1,//表示最小选择范围
+			forceParse : false,
+			language : 'zh-CN',//汉化
+			format : "yyyymm",
+			weekStart : 1,
+			autoclose : true
+		});
+	});
+</script>
+</body>
+</html>

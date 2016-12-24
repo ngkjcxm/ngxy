@@ -29,12 +29,16 @@ public class SoftwareAction extends BaseAction {
     @Autowired
     private SoftwareDao softwareDao;
 
+    public String listQueryUI() {
+        return "listquery";
+    }
     /**
      * 添加
      */
     public String addUI() {
         return "add";
     }
+
     public String listUI() {
         return SUCCESS;
     }

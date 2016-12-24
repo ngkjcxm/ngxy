@@ -22,50 +22,21 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css">
-    <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
-          type="text/css">
-    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
-          type="text/css"/>
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/jstree/dist/themes/default/style.min.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="../../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
-    <!-- END PAGE LEVEL STYLES -->
-    <!--弹窗Css -->
-    <link href="../../assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="../../assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
-    <!--End弹窗Css -->
-    <!-- BEGIN THEME STYLES -->
-    <link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"/>
-    <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
-    <link href="../../assets/admin/layout4/css/layout.css" rel="stylesheet" type="text/css"/>
-    <link id="style_color" href="../../assets/admin/layout4/css/themes/light.css" rel="stylesheet" type="text/css"/>
-    <link href="../../assets/admin/layout4/css/custom.css" rel="stylesheet" type="text/css"/>
-    <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
-
-
+    <style>
+        @media only screen and (max-width: 1500px) {
+            #long3{width:90%;height:80%;margin-top:-15%;margin-left:-45%;}
+        }
+        @media only screen and (min-width: 1900px) {
+            #long3{width:90%;height:80%;margin-top:-20%;margin-left:-45%;}
+        }
+    </style>
 </head>
 <!-- END HEAD -->
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-<%@ include file="../publicHead/listUI.jsp" %>
-<!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-fixed-top">
-    <!-- BEGIN HEADER INNER -->
-    <!-- END HEADER INNER -->
-</div>
-<!-- END HEADER -->
-<div class="clearfix">
-</div>
+<!--公共头部-->
+<%@ include file="../publicHead/listUI.jsp"%>
+<!--公共头部End-->
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
     <!-- BEGIN SIDEBAR -->
@@ -76,7 +47,7 @@
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                 <li class="start active ">
-                    <a href="${basePath}user_home.action">
+                    <a href="${basePath}user_homeUI.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
@@ -125,7 +96,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="horizontalAction_addUI.action">
+                                    <a href="${basePath}horizontal_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
@@ -152,7 +123,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}vertical_addUI.action">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
@@ -179,13 +150,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_addUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_listUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -200,7 +171,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}workAchieve_addUI.action">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
@@ -221,13 +192,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_addUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_listUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果审核
                                     </a>
@@ -242,7 +213,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}research_addUI.action">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
@@ -263,7 +234,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}software_addUI.action">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
@@ -278,14 +249,14 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li  class="active">
                     <a href="javascript:;">
                         <i class="icon-bar-chart"></i>
                         <span class="title">查询统计信息</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="active">
                             <a href="${basePath}employee_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
@@ -298,10 +269,10 @@
                             </a>
                         </li>
                         <!--<li>
-                        <a href="#">
-                        <i class="icon-paper-plane"></i>
-                        横向课题工作量统计
-                        </a>
+                            <a href="#">
+                                <i class="icon-paper-plane"></i>
+                                横向课题工作量统计
+                            </a>
                         </li> -->
                         <li>
                             <a href="${basePath}vertical_listQueryUI.action">
@@ -406,61 +377,24 @@
     <!-- BEGIN CONTENT Gao-->
     <div class="page-content-wrapper">
         <div class="page-content">
-            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                            <h4 class="modal-title">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            Widget settings form goes here
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn blue">Save changes</button>
-                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
 
-            <div class="page-head">
-                <div class="page-title">
-                    <h1>人员基础信息统计</h1>
-                </div>
-            </div>
-            <ul class="page-breadcrumb breadcrumb">
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">查询统计信息</a>
-                </li>
-                <li>
-                    <i class="fa fa-circle"></i>
-                    <a style="text-decoration:none;">人员基础信息统计</a>
-                </li>
-            </ul>
-            <!-- END PAGE BREADCRUMB -->
-            <!-- END PAGE HEADER-->
-            <!-- BEGIN PAGE CONTENT Li-->
+
+            <!-- BEGIN 人员基础信息统计-->
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="tabbable tabbable-custom tabbable-noborder tabbable-reversed">
                         <div class="tab-content">
-                            <form id="employeeSearch" name="employeeSearch">
+                            <form id="employeeSearch" name="employeeSearch" class="form-horizontal">
                                 <div class="tab-pane active">
                                     <div class="portlet light ">
                                         <div class="portlet-body form">
                                             <div class="form-body">
                                                 <h3 class="form-section font-red-sunglo">人员基础信息统计</h3>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-2 ">姓名</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">姓名</label>
+                                                            <div class="col-md-3">
                                                                 <input name="search.employeeName"
                                                                        id = "employeeName"
                                                                        class="select2_category form-control"
@@ -471,10 +405,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-2 ">性别</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">性别</label>
+                                                            <div class="col-md-3">
                                                                 <select name="search.sex"
                                                                         id = "sex"
                                                                         class="select2_category form-control"
@@ -488,10 +422,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-2 ">职称</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">职称</label>
+                                                            <div class="col-md-3">
                                                                 <select name="search.title"
                                                                         id = "titile"
                                                                         class="select2_category form-control"
@@ -511,10 +445,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-2 ">学院</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4 ">学院</label>
+                                                            <div class="col-md-3">
                                                                 <select name="search.unitName"
                                                                         id = "unitName"
                                                                         class="select2_category form-control"
@@ -532,10 +466,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-2">学位</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4">学位</label>
+                                                            <div class="col-md-3">
                                                                 <select name="search.academicDegree"
                                                                         id = "academicDegree"
                                                                         class="select2_category form-control"
@@ -551,10 +485,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-2">政治面貌</label>
-                                                            <div class="col-md-6">
+                                                            <label class="control-label col-md-4">政治面貌</label>
+                                                            <div class="col-md-3">
                                                                 <select name="search.politicalStatus"
                                                                         id = "politicalStatus"
                                                                         class="select2_category form-control"
@@ -573,7 +507,7 @@
                                             <div class="row" style="border:0px solid red;">
                                                 <div class="col-md-12 " style="border:0px solid green;">
                                                     <div class="row">
-                                                        <div class="col-md-offset-3 col-md-10">
+                                                        <div class="col-md-offset-5 ">
                                                             <a data-target="#long3" data-toggle="modal">
                                                                 <button id="employeeBtn" type="button" class="btn green"
                                                                         onclick="showclick()">执行查询
@@ -597,8 +531,7 @@
 </div>
 <!-- 弹出框 执行查询 -->
 <div class="portlet-body">
-    <div id="long3" class="modal fade modal-scroll" tabindex="-1" data-replace="true"
-         style="width:90%;height:80%;margin-top:-400px;margin-left:-45%;">
+    <div id="long3" class="modal fade modal-scroll" tabindex="-1" data-replace="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
         </div>
@@ -679,66 +612,12 @@
     </div>
 </div>
 <!-- End弹出框 执行查询 -->
-<!-- BEGIN FOOTER -->
-<div class="page-footer navbar-fixed-bottom">
-    <div class="page-footer-inner">
-        2014 &copy; Metronic by keenthemes. <a
-            href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
-            title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
-        Metronic!</a>
-    </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
-    </div>
-</div>
-<!-- END FOOTER -->
+<!--公共尾部-->
+<%@ include file="../publicFoot/listUI.jsp" %>
+<!--公共尾部End-->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="../../assets/global/plugins/respond.min.js"></script>
-<script src="../../assets/global/plugins/excanvas.min.js"></script>
-<![endif]-->
-<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
-        type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
 
-<script type="text/javascript" src="../../assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript"
-        src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
-<script type="text/javascript"
-        src="../../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout4/scripts/layout.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout4/scripts/demo.js" type="text/javascript"></script>
-<script src="../../assets/admin/pages/scripts/table-managed.js"></script>
-<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
 <script>
-    jQuery(document).ready(function () {
-        // initiate layout and plugins
-        Metronic.init(); // init metronic core components
-        Layout.init(); // init current layout
-        Demo.init(); // init demo features
-        //TableManaged.init();
-        //TableAdvanced.init();
-        ComponentsPickers.init();
-
-    });
-    /*
-     employeeName sex  titile unitName academicDegree politicalStatus
-     */
-
 
     $('#return').click(function () {
         window.location.reload();

@@ -1,14 +1,15 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: sunmig
-  Date: 2016/11/10
-  Time: 20:49
+  User: sunming
+  Date: 2016/12/17
+  Time: 22:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -18,17 +19,23 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8"/>
-    <title>横向课题录入</title>
+    <title>科研成果审核</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
+</head>
+<!-- END HEAD -->
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-<!--公共头部-->
-<%@ include file="../publicHead/listUI.jsp" %>
-<!--公共头部End-->
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!--公共头部-->
+    <%@ include file="../publicHead/listUI.jsp" %>
+    <!--公共头部End-->
+</div>
+<!-- END HEADER -->
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
@@ -86,11 +93,11 @@
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow open"></span>
+                                <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}horizontal_addUI.action">
+                                    <a href="horizontalAction_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
@@ -117,7 +124,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}vertical_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
@@ -144,13 +151,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}paper_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="${basePath}paper_listUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -165,7 +172,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}workAchieve_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
@@ -186,7 +193,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}patent_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
@@ -203,11 +210,11 @@
                             <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">科研奖励相关</span>
-                                <span class="arrow "></span>
+                                <span class="arrow open"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="active">
-                                    <a href="${basePath}research_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
@@ -221,14 +228,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}software_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
@@ -320,7 +327,7 @@
                 <div class="col-md-12">
                     <div class="tabbable tabbable-custom tabbable-noborder tabbable-reversed">
                         <div class="tab-content">
-                            <form name="form" action="/research/research/add.html" class="form-horizontal"
+                            <form name="form" action="${basePath}research_check.action" class="form-horizontal"
                                   method="post" enctype="multipart/form-data">
                                 <div class="tab-pane active" id="tab_2">
                                     <div class="portlet light ">
@@ -609,7 +616,7 @@
                                                     <div class="col-md-offset-0 col-md-6">
                                                         <input type="submit" class="btn green"
                                                                onclick="javascript:return confirm('您确认要提交该科研成果吗？');"/>
-                                                        <button type="reset" class="btn default">删除</button>
+                                                        <a id="deleteWork" class="btn red">删除</a>
                                                     </div>
                                                 </div>
                                             </div>

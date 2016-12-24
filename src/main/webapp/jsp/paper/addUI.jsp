@@ -621,13 +621,13 @@
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
-                                <li class="active">
+                                <li>
                                     <a href="${basePath}paper_addUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="${basePath}paper_listUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
@@ -861,8 +861,7 @@
 
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form id="formPaper" action="/paper/paper/add.html" method="post"
-                                              name="formPaper" class="form-horizontal">
+                                        <form id="formPaper" action="/paper/paper/save." name="formPaper" class="form-horizontal">
                                             <div class="form-body">
                                                 <h3 class="form-section font-red-sunglo">论文成果录入</h3>
                                                 <div class="row">
@@ -1217,13 +1216,10 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-6 ">津贴发放年度</label>
                                                             <div class="col-md-6">
-                                                                <div class="input-group date form_year2 col-md-13"
-                                                                     data-date="" data-date-format="yyyy">
-                                                                    <s:textfield type="text" name="paper.grantYear"
-                                                                                 class="form-control"/>
+                                                                <div class="input-group date form_year2 col-md-13"  data-date="" data-date-format="yyyy">
+                                                                    <s:textfield type="text" name="paper.grantYear" class="form-control"/>
                                                                     <span class="input-group-btn">
-																	<button class="btn default date-set"
-                                                                            type="button"><i class="fa fa-calendar"></i></button>
+																	<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
 																	</span>
                                                                 </div>
                                                             </div>
@@ -1362,11 +1358,8 @@
                                                                 <!--此处为样式保留，不要删除！ -->
                                                             </div>
                                                             <div class="col-md-offset-2 col-md-6">
-                                                                <%--<input class="btn green" type="submit"--%>
-                                                                <%--onclick="javascript:return confirm('您确认要提交该著作成果吗？');"></input>--%>
-                                                                <button type="submit" class="btn green">提交</button>
-                                                                <button type="reset" class="btn red">取消</button>
-                                                                <%--<a id="deleteWork" class="btn red">删除</a>--%>
+                                                                <input class="btn green" type="submit" onclick="javascript:return confirm('您确认要提交该著作成果吗？');" ></input>
+                                                                <a id="deleteWork" class="btn red">删除</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1446,6 +1439,7 @@
             contentType: "application/x-www-form-urlencoded;charset=UTF-8",
             url: '/paper/paper/search.html',
             data: $('#searchForm').serialize()
+
         })
     }
 
@@ -1498,11 +1492,13 @@
             });
         });
 
-        //郭昌仑:这个方法未被使用
+
+
         // 删除
         $('#deleteWork').click(function () {
 
-            if (confirm("删除后将无法恢复，确认删除该论文成果吗！！")) {
+            if(confirm("删除后将无法恢复，确认删除该论文成果吗！！"))
+            {
                 $.get('/paper/paper/delete.html', function (data) {
                     if (data == 'yes') {
                         alert("操作成功");
@@ -1514,16 +1510,15 @@
             }
         });
 
-        //郭昌仑:这个方法未被使用
         //新增
         $('#papersubmit').click(function () {
 
-            if (confirm("您确认提交该论文成功吗？")) {
+            if( confirm("您确认提交该论文成功吗？")){
                 console.log($('#formPaper').serialize());
                 $.ajax({
                     type: "POST",
                     contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-                    url: '/paper/paper/add.html',
+                    url: '/paper/paper/save.html',
                     data: $('#formPaper').serialize(),
                     success: function (data) {
                         if (data == 'yes') {

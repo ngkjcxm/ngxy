@@ -514,10 +514,9 @@
         <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
-
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start">
-                    <a href="userAction_home.action">
+                <li class="start active ">
+                    <a href="${basePath}user_homeUI.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
@@ -526,105 +525,53 @@
                     <a href="javascript:;">
                         <i class="icon-puzzle"></i>
                         <span class="title">基础信息管理</span>
-                        <span class="arrow"></span>
+                        <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="#">
-                                <i class="icon-home"></i>
-                                学校信息管理
-                                <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="login_add.action">
-                                        <i class="icon-rocket"></i>
-                                        学校基本信息
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-rocket"></i>
-                                        学校财务基本信息
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="horizontalAction_search.action">
-                                        <i class="icon-rocket"></i>
-                                        学校法人基本信息
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-rocket"></i>
-                                        学校负责人基本信息
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-home"></i>
-                                单位信息管理
-                                <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="login_add.action">
-                                        <i class="icon-rocket"></i>
-                                        单位基本信息
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-home"></i>
-                                部门信息管理
-                                <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="login_add.action">
-                                        <i class="icon-rocket"></i>
-                                        部门基本信息
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="${basePath}employee_listUI.action">
                                 <i class="icon-home"></i>
                                 教工信息管理</a>
                         </li>
+                        <li>
+                            <a href="${basePath}school_listUI.action">
+                                <i class="icon-home"></i>
+                                学校基本信息管理</a>
+                        </li>
+                        <li>
+                            <a href="${basePath}unit_listUI.action">
+                                <i class="icon-home"></i>
+                                单位基本信息管理</a>
+                        </li>
+                        <li>
+                            <a href="${basePath}department_listUI.action">
+                                <i class="icon-home"></i>
+                                部门基本信息管理</a>
+                        </li>
                     </ul>
-
                 </li>
-                <li class="active open">
+                <li>
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
-                        <span class="arrow open"></span>
+                        <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow"></span>
+                                <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="login_add.action">
+                                    <a href="${basePath}horizontal_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="horizontalAction_search.action">
+                                    <a href="${basePath}horizontal_listUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题核立
                                     </a>
@@ -645,13 +592,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}vertical_addUI.action">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}vertical_listUI.action">
                                         <i class="icon-rocket"></i>
                                         纵向课题核立
                                     </a>
@@ -672,13 +619,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_addUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}paper_listUI.action">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -689,17 +636,17 @@
                             <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">著作成果相关</span>
-                                <span class="arrow"></span>
+                                <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}workAchieve_addUI.action">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}workAchieve_listUI.action">
                                         <i class="icon-rocket"></i>
                                         著作成果审核
                                     </a>
@@ -714,13 +661,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_addUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_listUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果审核
                                     </a>
@@ -735,34 +682,34 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}research_addUI.action">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}research_listUI.action">
                                         <i class="icon-rocket"></i>
                                         科研奖励审核
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
-                                <span class="arrow  open"></span>
+                                <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}software_addUI.action">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
                                 </li>
-                                <li class="active">
-                                    <a href="#">
+                                <li>
+                                    <a href="${basePath}software_listUI.action">
                                         <i class="icon-rocket"></i>
                                         软件著作权审核
                                     </a>
@@ -779,55 +726,55 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="#">
+                            <a href="${basePath}employee_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 人员基础信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}horizontal_listQueryUI.action">
                                 <i class="icon-bar-chart"></i>
                                 横向课题经费统计
                             </a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="#">
                                 <i class="icon-paper-plane"></i>
                                 横向课题工作量统计
                             </a>
-                        </li>
+                        </li> -->
                         <li>
-                            <a href="#">
+                            <a href="${basePath}vertical_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 纵向课题信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}paper_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 论文成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}workAchieve_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 著作成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}patent_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 专利成果信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}research_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 科研奖励信息统计
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${basePath}software_listQueryUI.action">
                                 <i class="icon-user"></i>
                                 软件著作权信息统计
                             </a>

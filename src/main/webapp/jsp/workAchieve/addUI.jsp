@@ -1,13 +1,13 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: sunmig
-  Date: 2016/11/10
-  Time: 20:49
+  User: sunming
+  Date: 2016/12/17
+  Time: 22:08
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -18,19 +18,20 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8"/>
-    <title>横向课题录入</title>
+    <title>著作成果审核</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
+</head>
+<!-- END HEAD -->
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
 <!--公共头部-->
 <%@ include file="../publicHead/listUI.jsp" %>
 <!--公共头部End-->
-<div class="clearfix">
-</div>
+<div class="clearfix"></div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
     <!-- BEGIN SIDEBAR -->
@@ -39,206 +40,77 @@
         <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
-            <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start">
-                    <a href="${basePath}user_home.action">
-                        <i class="icon-home"></i>
-                        <span class="title">首页</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="icon-puzzle"></i>
-                        <span class="title">基础信息管理</span>
-                        <span class="arrow "></span>
-                    </a>
+            <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true"
+                data-slide-speed="200">
+                <li class="start "><a href="${basePath}user_home.action"> <i class="icon-home"></i> <span
+                        class="title">首页</span> </a></li>
+                <li><a href="javascript:;"> <i class="icon-puzzle"></i> <span class="title">基础信息管理</span> <span
+                        class="arrow "></span> </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="${basePath}employee_listUI.action">
-                                <i class="icon-home"></i>
-                                教工信息管理</a>
-                        </li>
-                        <li>
-                            <a href="${basePath}school_listUI.action">
-                                <i class="icon-home"></i>
-                                学校基本信息管理</a>
-                        </li>
-                        <li>
-                            <a href="${basePath}unit_listUI.action">
-                                <i class="icon-home"></i>
-                                单位基本信息管理</a>
-                        </li>
-                        <li>
-                            <a href="${basePath}department_listUI.action">
-                                <i class="icon-home"></i>
-                                部门基本信息管理</a>
-                        </li>
+                        <li><a href="${basePath}employee_listUI.action"> <i class="icon-home"></i> 教工信息管理</a></li>
+                        <li><a href="${basePath}school_listUI.action"> <i class="icon-home"></i> 学校基本信息管理</a></li>
+                        <li><a href="${basePath}unit_listUI.action"> <i class="icon-home"></i> 单位基本信息管理</a></li>
+                        <li><a href="${basePath}department_listUI.action"> <i class="icon-home"></i> 部门基本信息管理</a></li>
                     </ul>
                 </li>
-                <li class="active">
-                    <a href="javascript:;">
-                        <i class="icon-rocket"></i>
-                        <span class="title">科研成果管理</span>
-                        <span class="arrow open"></span>
-                    </a>
+                <li class="active"><a href="javascript:;"> <i class="icon-rocket"></i> <span class="title">科研成果管理</span> <span
+                        class="arrow "></span> </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon-eye"></i>
-                                <span class="title"> 横向课题相关</span>
-                                <span class="arrow open"></span>
-                            </a>
+                        <li><a href="#"> <i class="icon-eye"></i> <span class="title"> 横向课题相关</span> <span
+                                class="arrow open"></span> </a>
                             <ul class="sub-menu">
-                                <li class="active">
-                                    <a href="${basePath}horizontal_addUI.action">
-                                        <i class="icon-rocket"></i>
-                                        横向课题录入
-                                    </a>
+                                <li><a href="horizontalAction_addUI.action"> <i class="icon-rocket"></i> 横向课题录入 </a>
                                 </li>
-                                <li>
-                                    <a href="${basePath}horizontal_listUI.action">
-                                        <i class="icon-rocket"></i>
-                                        横向课题核立
-                                    </a>
+                                <li><a href="${basePath}horizontal_listUI.action"> <i class="icon-rocket"></i> 横向课题核立
+                                </a></li>
+                                <li><a href="#"> <i class="icon-rocket"></i> 横向课题到款预算 </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"> <i class="icon-flag"></i> <span class="title">纵向课题相关</span> <span
+                                class="arrow "></span> </a>
+                            <ul class="sub-menu">
+                                <li><a href="#"> <i class="icon-rocket"></i> 纵向课题录入 </a></li>
+                                <li><a href="${basePath}vertical_listUI.action"> <i class="icon-rocket"></i> 纵向课题核立 </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-rocket"></i>
-                                        横向课题到款预算
-                                    </a>
+                                <li><a href="#"> <i class="icon-rocket"></i> 纵向课题到款预算 </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"> <i class="icon-speech"></i> <span class="title">论文成果相关</span> <span
+                                class="arrow "></span> </a>
+                            <ul class="sub-menu">
+                                <li><a href="#"> <i class="icon-rocket"></i> 论文成果导入 </a></li>
+                                <li><a href="#"> <i class="icon-rocket"></i> 论文成果审核 </a></li>
+                            </ul>
+                        </li>
+                        <li class=" active"><a href="#"> <i class="icon-speech"></i> <span class="title">著作成果相关</span> <span
+                                class="arrow open"></span> </a>
+                            <ul class="sub-menu">
+                                <li class="active"><a href="#"> <i class="icon-rocket"></i> 著作成果导入 </a></li>
+                                <li><a href="${basePath}workAchieve_listUI.action"> <i class="icon-rocket"></i> 著作成果审核
+                                </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"> <i class="icon-speech"></i> <span class="title">专利成果相关</span> <span
+                                class="arrow "></span> </a>
+                            <ul class="sub-menu">
+                                <li><a href="#"> <i class="icon-rocket"></i> 专利成果导入 </a></li>
+                                <li><a href="#"> <i class="icon-rocket"></i> 专利成果审核 </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"> <i class="icon-speech"></i> <span class="title">科研奖励相关</span> <span
+                                class="arrow "></span> </a>
+                            <ul class="sub-menu">
+                                <li><a href="#"> <i class="icon-rocket"></i> 科研奖励导入 </a></li>
+                                <li><a href="${basePath}research_listUI.action"> <i class="icon-rocket"></i> 科研奖励审核 </a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-flag"></i>
-                                <span class="title">纵向课题相关</span>
-                                <span class="arrow "></span>
-                            </a>
+                        <li><a href="#"> <i class="icon-speech"></i> <span class="title">软件著作权相关</span> <span
+                                class="arrow "></span> </a>
                             <ul class="sub-menu">
-                                <li>
-                                    <a href="${basePath}vertical_addUI.action">
-                                        <i class="icon-rocket"></i>
-                                        纵向课题录入
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="${basePath}vertical_listUI.action">
-                                        <i class="icon-rocket"></i>
-                                        纵向课题核立
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-rocket"></i>
-                                        纵向课题到款预算
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-speech"></i>
-                                <span class="title">论文成果相关</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="${basePath}paper_addUI.action">
-                                        <i class="icon-rocket"></i>
-                                        论文成果导入
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="${basePath}paper_listUI.action">
-                                        <i class="icon-rocket"></i>
-                                        论文成果审核
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="active">
-                            <a href="#">
-                                <i class="icon-speech"></i>
-                                <span class="title">著作成果相关</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="active">
-                                    <a href="${basePath}workAchieve_addUI.action">
-                                        <i class="icon-rocket"></i>
-                                        著作成果导入
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="${basePath}workAchieve_listUI.action">
-                                        <i class="icon-rocket"></i>
-                                        著作成果审核
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-speech"></i>
-                                <span class="title">专利成果相关</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="${basePath}patent_addUI.action">
-                                        <i class="icon-rocket"></i>
-                                        专利成果导入
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-rocket"></i>
-                                        专利成果审核
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-speech"></i>
-                                <span class="title">科研奖励相关</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="${basePath}research_addUI.action">
-                                        <i class="icon-rocket"></i>
-                                        科研奖励导入
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="${basePath}research_listUI.action">
-                                        <i class="icon-rocket"></i>
-                                        科研奖励审核
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="icon-speech"></i>
-                                <span class="title">软件著作权相关</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="${basePath}software_addUI.action">
-                                        <i class="icon-rocket"></i>
-                                        软件著作权导入
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="${basePath}software_listUI.action">
-                                        <i class="icon-rocket"></i>
-                                        软件著作权审核
-                                    </a>
-                                </li>
+                                <li><a href="#"> <i class="icon-rocket"></i> 软件著作权导入 </a></li>
+                                <li><a href="${basePath}software_listUI.action"> <i class="icon-rocket"></i> 软件著作权审核
+                                </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -285,8 +157,7 @@
                             <div class="tab-pane active" id="tab_2">
                                 <div class="portlet light ">
                                     <div class="portlet-body form">
-                                        <form name="form" method="post" action="/workAchieve/workAchieve/add.html"
-                                              class="form-horizontal">
+                                        <form name="form" method="post" action="/workAchieve/workAchieve/check.html" class="form-horizontal">
                                             <s:hidden name="workAchieve.id"/>
                                             <div class="form-body">
                                                 <h3 class="form-section font-red-sunglo">著作成果录入</h3>
@@ -1086,9 +957,8 @@
                                                                 <!--此处为样式保留，不要删除！ -->
                                                             </div>
                                                             <div class="col-md-offset-2 col-md-6">
-                                                                <input class="btn green" type="submit"
-                                                                       onclick="javascript:return confirm('您确认要提交该著作成果吗？');"></input>
-                                                                <button class="red btn" type="reset">取消</button>
+                                                                <input class="btn green" type="submit" onclick="javascript:return confirm('您确认要提交该著作成果吗？');" ></input>
+                                                                <a id="deleteWork" class="btn red">删除</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1146,7 +1016,8 @@
         // 删除
         $('#deleteWork').click(function () {
 
-            if (confirm("确认删除该课题？")) {
+            if(confirm("确认删除该课题？"))
+            {
                 $.get('/workAchieve/workAchieve/delete.html', function (data) {
                     if (data == 'yes') {
                         alert("操作成功");

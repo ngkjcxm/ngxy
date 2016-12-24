@@ -1,14 +1,13 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: sunmig
-  Date: 2016/11/10
-  Time: 20:49
+  User: sunming
+  Date: 2016/12/17
+  Time: 22:08
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -18,17 +17,20 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8"/>
-    <title>横向课题录入</title>
+    <title>纵向课题核立</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-<!--公共头部-->
-<%@ include file="../publicHead/listUI.jsp" %>
-<!--公共头部End-->
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!--公共头部-->
+    <%@ include file="../publicHead/listUI.jsp" %>
+    <!--公共头部End-->
+</div>
+<!-- END HEADER -->
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
@@ -86,11 +88,11 @@
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow open"></span>
+                                <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
-                                <li class="active">
-                                    <a href="${basePath}horizontal_addUI.action">
+                                <li>
+                                    <a href="horizontalAction_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
@@ -113,11 +115,11 @@
                             <a href="#">
                                 <i class="icon-flag"></i>
                                 <span class="title">纵向课题相关</span>
-                                <span class="arrow "></span>
+                                <span class="arrow open"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="active">
-                                    <a href="${basePath}vertical_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
@@ -144,13 +146,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}paper_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="${basePath}paper_listUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -165,7 +167,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}workAchieve_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
@@ -186,7 +188,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}patent_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
@@ -207,7 +209,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}research_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
@@ -221,14 +223,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}software_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
@@ -495,7 +497,7 @@
 
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form action="/vertical/vertical/add.html" method="post"
+                                        <form action="/vertical/vertical/save.html" method="post"
                                               class="form-horizontal">
                                             <s:hidden name="vertical.id"/>
                                             <div class="form-body">
@@ -836,18 +838,18 @@
                                                 <div class="row">
                                                     <div class=" col-md-4">
                                                         <div class="form-group">
-                                                            <%--<a data-target="#long3" data-toggle="modal">--%>
-                                                            <%--<button type="button" id="fundsBtn"--%>
-                                                            <%--class="btn blue "--%>
-                                                            <%--onclick="showHide3()">经费审核--%>
-                                                            <%--</button>--%>
-                                                            <%--</a>--%>
+                                                            <a data-target="#long3" data-toggle="modal">
+                                                                <button type="button" id="fundsBtn"
+                                                                        class="btn blue "
+                                                                        onclick="showHide3()">经费审核
+                                                                </button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-offset-0 col-md-6">
                                                         <button type="submit" class="btn green">提交</button>
-                                                        <%--<button type="submit" class="btn red">删除</button>--%>
-                                                        <button type="reset" class="btn default">重置</button>
+                                                        <button type="submit" class="btn red">删除</button>
+                                                        <button type="button" class="btn default">重置</button>
                                                     </div>
                                                 </div>
                                             </div>

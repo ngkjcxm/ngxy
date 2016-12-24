@@ -26,9 +26,13 @@
     <meta content="" name="author"/>
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-<!--公共头部-->
-<%@ include file="../publicHead/listUI.jsp" %>
-<!--公共头部End-->
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!--公共头部-->
+    <%@ include file="../publicHead/listUI.jsp" %>
+    <!--公共头部End-->
+</div>
+<!-- END HEADER -->
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
@@ -40,8 +44,8 @@
         <div class="page-sidebar navbar-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start">
-                    <a href="${basePath}user_home.action">
+                <li class="start active ">
+                    <a href="${basePath}user_homeUI.action">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
@@ -79,14 +83,14 @@
                     <a href="javascript:;">
                         <i class="icon-rocket"></i>
                         <span class="title">科研成果管理</span>
-                        <span class="arrow open"></span>
+                        <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
                         <li class="active">
                             <a href="#">
                                 <i class="icon-eye"></i>
                                 <span class="title"> 横向课题相关</span>
-                                <span class="arrow open"></span>
+                                <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
@@ -192,7 +196,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="${basePath}patent_listUI.action">
                                         <i class="icon-rocket"></i>
                                         专利成果审核
                                     </a>
@@ -221,7 +225,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
@@ -263,10 +267,10 @@
                             </a>
                         </li>
                         <!--<li>
-                        <a href="#">
-                        <i class="icon-paper-plane"></i>
-                        横向课题工作量统计
-                        </a>
+                            <a href="#">
+                                <i class="icon-paper-plane"></i>
+                                横向课题工作量统计
+                            </a>
                         </li> -->
                         <li>
                             <a href="${basePath}vertical_listQueryUI.action">
@@ -306,7 +310,63 @@
                         </li>
                     </ul>
                 </li>
-
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-wallet"></i>
+                        <span class="title">个人查询统计</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                横向经费
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                横向工作量
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                纵向课题
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                论文成果
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                著作成果
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                专利成果
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                科研奖励
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                软件著作权
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>
@@ -490,7 +550,7 @@
 
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form action="/horizontal/horizontal/check.html" method="post"
+                                        <form action="${basePath}horizontal_check.action" method="post"
                                               class="form-horizontal">
                                             <s:hidden name="horizontal.id"/>
                                             <div class="form-body">

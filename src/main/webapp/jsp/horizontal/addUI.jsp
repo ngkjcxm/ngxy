@@ -90,7 +90,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="active">
-                                    <a href="${basePath}horizontal_addUI.action">
+                                    <a href="horizontalAction_addUI.action">
                                         <i class="icon-rocket"></i>
                                         横向课题录入
                                     </a>
@@ -117,7 +117,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}vertical_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         纵向课题录入
                                     </a>
@@ -144,13 +144,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}paper_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         论文成果导入
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="${basePath}paper_listUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         论文成果审核
                                     </a>
@@ -165,7 +165,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}workAchieve_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         著作成果导入
                                     </a>
@@ -186,7 +186,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}patent_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         专利成果导入
                                     </a>
@@ -207,7 +207,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}research_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         科研奖励导入
                                     </a>
@@ -221,14 +221,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <i class="icon-speech"></i>
                                 <span class="title">软件著作权相关</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${basePath}software_addUI.action">
+                                    <a href="#">
                                         <i class="icon-rocket"></i>
                                         软件著作权导入
                                     </a>
@@ -325,7 +325,6 @@
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
                                         <form id="horizontalForm" method="post"
-                                              action="/horizontal/horizontal/add.html"
                                               class="form-horizontal">
                                             <s:hidden name="horizontal.id"/>
                                             <div class="form-body">
@@ -490,7 +489,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">其他参与成员</label>
                                                             <div class="col-md-5">
-                                                                <a data-target="#otherPeopleWindow" data-toggle="modal">
+                                                                <a data-target="#otherPeopleWindow" data-toggle="modal" >
                                                                     <s:textfield id="otherPeopleInput" type="text"
                                                                                  name="horizontal.memberName"
                                                                                  class="form-control"
@@ -594,21 +593,20 @@
                                             </div>
                                             <div class="form-actions right" style="border:0px solid #000;">
                                                 <div class="row">
-                                                    <%--<div class=" col-md-4">--%>
-                                                    <%--<div class="form-group">--%>
-                                                    <%--<a data-target="#long3" data-toggle="modal">--%>
-                                                    <%--<button id="fundsBtn" type="button"--%>
-                                                    <%--class="btn blue">--%>
-                                                    <%--已到位经费审核--%>
-                                                    <%--</button>--%>
-                                                    <%--</a>--%>
-                                                    <%--</div>--%>
-                                                    <%--</div>--%>
-                                                    <div class="col-md-offset-4 col-md-6">
-                                                        <button type="submit" class="btn green" data-toggle="modal">提交
-                                                        </button>
-                                                        <%--<a href="javascript:doDelete()" class="btn red">删除</a>--%>
-                                                        <button type="reset" class="btn default">取消</button>
+                                                    <div class=" col-md-4">
+                                                        <div class="form-group">
+                                                            <a data-target="#long3" data-toggle="modal">
+                                                                <button id="fundsBtn" type="button"
+                                                                        class="btn blue">
+                                                                    已到位经费审核
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-offset-0 col-md-6">
+                                                        <a class="btn green" data-toggle="modal" href="#draggable">提交</a>
+                                                        <a href="javascript:doDelete()" class="btn red">删除</a>
+                                                        <button type="button" class="btn default">取消</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -756,8 +754,8 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-5">到位经费（万元）</label>
                                                         <div class="col-md-7">
-                                                            <input name="funds.intoFunds" type="text"
-                                                                   class="form-control" placeholder="项目负责人"/>
+                                                            <input  name="funds.intoFunds" type="text"
+                                                                    class="form-control" placeholder="项目负责人"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -765,8 +763,8 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-5">其中研发费（万元）</label>
                                                         <div class="col-md-7">
-                                                            <input name="funds.rdExpenses" type="text"
-                                                                   class="form-control" placeholder="项目负责人"/>
+                                                            <input  name="funds.rdExpenses" type="text"
+                                                                    class="form-control" placeholder="项目负责人"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -775,8 +773,7 @@
                                                         <label class="control-label col-md-5">其中设备费（万元）</label>
                                                         <div class="col-md-7">
                                                             <input id="equipmentExpenses" name="funds.equipmentExpenses"
-                                                                   type="text" class="form-control"
-                                                                   placeholder="项目负责人"/>
+                                                                   type="text" class="form-control" placeholder="项目负责人"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -803,8 +800,7 @@
                                                 </div>
                                             </div>
                                             <h3 class="form-section font-red-sunglo">已到位经费审核列表</h3>
-                                            <table class="table table-striped table-bordered table-hover"
-                                                   style="text-align:center;">
+                                            <table class="table table-striped table-bordered table-hover" style="text-align:center;">
                                                 <thead>
                                                 <tr>
                                                     <th style="text-align:center;"> 序号</th>
@@ -839,7 +835,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="funds.id"/>
+                                        <input type="hidden"  name="funds.id"/>
                                     </form>
                                 </div>
                             </div>
@@ -946,6 +942,7 @@
         <i class="icon-arrow-up"></i>
     </div>
 </div>
+
 
 
 <!-- END FOOTER -->
@@ -1133,6 +1130,7 @@
             });
 
 
+
         });
     }
 
@@ -1143,6 +1141,7 @@
         $.post('/employee_unitName', {name: name}, function (data) {
             $('#peopleUnit').val(data);
         });
+
 
 
     }

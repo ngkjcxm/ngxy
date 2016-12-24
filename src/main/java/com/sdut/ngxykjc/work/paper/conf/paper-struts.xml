@@ -9,6 +9,7 @@
             <result name="success">/jsp/paper/listUI.jsp</result>
             <result name="user">/jsp/paper/paper.jsp</result>
             <result name="add">/jsp/paper/addUI.jsp</result>
+            <result name="listquery">/jsp/QueryStatistics/paper.jsp</result>
         </action>
     </package>
 </struts>
